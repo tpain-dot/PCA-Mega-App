@@ -291,6 +291,20 @@ class SjcData {
             'minister.',
         outcome: 'Sustained in Part',
       ),
+      SjcReference(
+        caseNumber: '2023-10',
+        caseTitle: 'Martinez & Cook v. Pacific Presbytery',
+        year: '2023',
+        pdfUrl:
+            'https://pcahistory.org/pca/sjc/cases/2023-10_Martinez_Cook_v_Pacific.pdf',
+        summary:
+            'Assigning a Shepherding Committee to "follow-up" with a Session was '
+            'not an impermissible visitation under BCO 11-4 and 13-9, but '
+            'Presbytery erred in not providing more specific direction. Simply '
+            'tasking a committee to "follow-up" without clear intention or scope '
+            'was insufficient.',
+        outcome: 'Partially Sustained',
+      ),
     ],
     'bco_13-10': [
       SjcReference(
@@ -707,6 +721,21 @@ class SjcData {
             'instruction and examination.',
         outcome: 'Sustained',
       ),
+      SjcReference(
+        caseNumber: '2019-11',
+        caseTitle: 'Crouse v. Northwest Georgia Presbytery (Second Case)',
+        year: '2019',
+        pdfUrl:
+            'https://pcahistory.org/pca/sjc/cases/2019-11_Crouse_v_NWGeorgia.pdf',
+        summary:
+            'A Session has discretion to determine a deacon\'s eligibility for '
+            're-election and may decline to advance a nomination without '
+            'bringing formal charges, as no sitting officer is guaranteed '
+            're-election at the end of a term. The filing of a complaint or '
+            'appeal may never, standing alone, constitute proper grounds to '
+            'deny any privilege of membership or office.',
+        outcome: 'Denied',
+      ),
     ],
     'bco_24-6': [
       SjcReference(
@@ -768,35 +797,14 @@ class SjcData {
         outcome: 'Denied',
       ),
     ],
+    // ═════════════════════════════════════════════════════════════
+    // PART II — RULES OF DISCIPLINE (BCO Chapters 27–46)
+    // PART III — WESTMINSTER STANDARDS REFERENCES
+    // ═════════════════════════════════════════════════════════════
+
     // ─────────────────────────────────────────────────────────────
     // BCO Ch 27-28 — Presbytery
     // ─────────────────────────────────────────────────────────────
-    'bco_27-1': [
-      SjcReference(
-        caseNumber: '2009-28',
-        caseTitle: 'Ruff v. Nashville',
-        year: '2009',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2009-28_Ruff_v_Nashville.pdf',
-        summary:
-            'P did an inadequate BCO 31-2 investigation of a TE and erred '
-                  'in declining to indict.',
-        outcome: 'Sustained',
-      ),
-    ],
-    'bco_27-3': [
-      SjcReference(
-        caseNumber: '2011-15',
-        caseTitle: 
-          'Hahn v. Philadelphia Metro West. (also Cases 2011-11 and 2011-12)',
-        year: '2011',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2011-15_Hahn_v_PhilaMetroWest.pdf',
-        summary:
-            'P erred by not instituting process against three people against',
-        outcome: 'Not Sustained',
-      ),
-    ],
     'bco_27-5': [
       SjcReference(
         caseNumber: '2019-05',
@@ -805,377 +813,182 @@ class SjcData {
         pdfUrl:
             'https://pcahistory.org/pca/sjc/cases/2019-05_Goggan_v_Missouri.pdf',
         summary:
-            'Case sustained.',
-        outcome: 'Sustained',
-      ),
-      SjcReference(
-        caseNumber: '2019-01',
-        caseTitle: 'Dodson et al. v. Ohio Presbytery',
-        year: '2019',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2019-01_Dodson_v_Ohio.pdf',
-        summary:
-            'Teaching parents and the congregation on this topic will '
-                  'often require book referrals, pastoral counsel, gentle '
-                  'admonition (BCO 27-5.',
-        outcome: '',
-      ),
-    ],
-    'bco_28-5': [
-      SjcReference(
-        caseNumber: '1978-01',
-        caseTitle: 'RE James H. Campbell vs. Mid-Atlantic Presbytery',
-        year: '1978',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/1978-01_Campbell_v_Mid-Atlantic.pdf',
-        summary:
-            'Receiving a commission report regarding alleged errors of a '
-                  'minister.',
-        outcome: '',
+            'The appellant failed to demonstrate sufficient reason to sustain any '
+            'errors alleged in his appeal of his excommunication. The presbytery '
+            'dismissed its judicial commission "with thanks" without a formal '
+            'vote to approve or disapprove the commission\'s report as required '
+            'by BCO 15-3, though this deficiency did not warrant reversal.',
+        outcome: 'Denied',
       ),
     ],
     // ─────────────────────────────────────────────────────────────
-    // BCO Ch 29-30 — The Synod / General Assembly
+    // BCO Ch 29 — General Assembly
     // ─────────────────────────────────────────────────────────────
     'bco_29-1': [
       SjcReference(
-        caseNumber: '2022-07',
-        caseTitle: 'Appeal of Harrell et al. v. Covenant Presbytery',
-        year: '2022',
+        caseNumber: '2005-09',
+        caseTitle: 'Kim v. Korean Eastern Presbytery (Second Case)',
+        year: '2005',
         pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2022-07_Harrell_v_Covenant.pdf',
+            'https://pcahistory.org/pca/sjc/cases/2005-09_Kim_v_KoreanEastern.pdf',
         summary:
-            'Therefore, if the prosecutor has the ability or capacity '
-                  'under the circumstances to include more reasonable '
-                  'specificity, he is obliged to do so, at least to the extent '
-                  'that fairness would require.',
-        outcome: 'Sustained',
-      ),
-      SjcReference(
-        caseNumber: '2019-11',
-        caseTitle: 'Crouse v. NW Georgia Presbytery',
-        year: '2019',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2019-11_Crouse_v_NWGeorgia.pdf',
-        summary:
-            'Therefore, a higher court should not reverse such a judgment '
-                  'by a lower court, unless there is clear error on the part of '
-                  'the lower court.',
-        outcome: 'Sustained',
-      ),
-      SjcReference(
-        caseNumber: '2011-15',
-        caseTitle: 
-          'Hahn v. Philadelphia Metro West. (also Cases 2011-11 and 2011-12)',
-        year: '2011',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2011-15_Hahn_v_PhilaMetroWest.pdf',
-        summary:
-            'P erred by not instituting process against three people against',
-        outcome: 'Not Sustained',
-      ),
-      SjcReference(
-        caseNumber: '2009-06',
-        caseTitle: 'Bordwine v. Pacific Northwest Presbytery',
-        year: '2009',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2009-06_Bordwine_v_PacificNW.pdf',
-        summary:
-            'P erred by declining to indict TE Peter Leithart after '
-                  'investigation into the views he expressed related to the '
-                  'Nine Declarations adopted by the 37th GA in Orlando, '
-                  'recommended by the study committee on federal vision.',
-        outcome: 'Sustained',
+            'The SJC found that Korean Eastern Presbytery acted '
+            'unconstitutionally by failing to follow congregational meeting '
+            'procedures, but because TE Kim had already been deposed in Case '
+            '2005-08, the matter was moot. Unconstitutional actions by a '
+            'presbytery do not justify a minister\'s refusal to obey the court\'s '
+            'authority.',
+        outcome: 'Sustained (moot)',
       ),
       SjcReference(
         caseNumber: '2006-06',
-        caseTitle: 'Ehrlich v. North Georgia',
+        caseTitle: 'Ehrlich v. North Georgia Presbytery',
         year: '2006',
         pdfUrl:
             'https://pcahistory.org/pca/sjc/cases/2006-06_Ehrlich_v_NorthGeorgia.pdf',
         summary:
-            'Complaint by two members against their Session\'s warning '
-                  'and instruction that the members not distribute a letter to '
-                  'the church critical of the pastor and Presbytery.',
-        outcome: 'Not Sustained',
+            'The Session of Intown Community Church acted within its authority '
+            'under BCO 12-5 when it instructed members not to distribute an "open '
+            'letter" to the congregation. The Session has jurisdiction to '
+            'maintain order and peace within the congregation, and this did not '
+            'unconstitutionally restrict the members\' rights under BCO 57-5 or '
+            'WCF 20.2.',
+        outcome: 'Denied',
+      ),
+      SjcReference(
+        caseNumber: '2007-08',
+        caseTitle: 'Jones v. Louisiana Presbytery',
+        year: '2007',
+        pdfUrl:
+            'https://pcahistory.org/pca/sjc/cases/2007-08_Jones_v_Louisiana.pdf',
+        summary:
+            'Louisiana Presbytery failed to apply the correct constitutional '
+            'standard when examining TE Wilkins\' views on the Federal Vision, '
+            'and erred in its application of BCO 21-4 regarding stated '
+            'differences with the Westminster Standards. A presbytery must apply '
+            'the denomination\'s doctrinal standards, not its own, when '
+            'evaluating a minister\'s views.',
+        outcome: 'Sustained',
+      ),
+      SjcReference(
+        caseNumber: '2012-05',
+        caseTitle: 'Hedman v. Pacific Northwest Presbytery',
+        year: '2012',
+        pdfUrl:
+            'https://pcahistory.org/pca/sjc/cases/2012-05_Hedman_v_PacificNorthwest.pdf',
+        summary:
+            'The SJC denied the complaint against Pacific Northwest Presbytery\'s '
+            'acquittal of TE Leithart on five Federal Vision-related charges. '
+            'Under BCO 39-3, the SJC could not reverse the lower court\'s factual '
+            'findings absent clear error. The Presbytery carefully complied with '
+            'procedural requirements, and neither the prosecution nor the '
+            'complainant proved Leithart\'s views violated the system of '
+            'doctrine.',
+        outcome: 'Denied',
+      ),
+      SjcReference(
+        caseNumber: '2016-16',
+        caseTitle: 'Sartorius v. Siouxlands Presbytery',
+        year: '2016',
+        pdfUrl:
+            'https://pcahistory.org/pca/sjc/cases/2016-16_Sartorius_v_Siouxlands.pdf',
+        summary:
+            'The SJC denied the complaint against Siouxlands Presbytery\'s '
+            'acquittal of TE Lawrence on Federal Vision-related charges, applying '
+            'BCO 39-3 deference to the lower court. The decision raised '
+            'significant concerns about lack of due process protections for '
+            'acquitted persons in acquittal complaints and urged the PCA to '
+            'consider amending the BCO.',
+        outcome: 'Denied',
       ),
     ],
+    // ─────────────────────────────────────────────────────────────
+    // BCO Ch 30 — Church Censures
+    // ─────────────────────────────────────────────────────────────
     'bco_30-1': [
       SjcReference(
-        caseNumber: '2005-01',
-        caseTitle: 'Appeal of Chastain v. Heritage',
-        year: '2005',
+        caseNumber: '2021-11',
+        caseTitle: 'Park et al. v. Korean Central Presbytery',
+        year: '2021',
         pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2005-01_Chastain_v_Heritage.pdf',
+            'https://pcahistory.org/pca/sjc/cases/2021-11_Park_v_KCP.pdf',
         summary:
-            'charge was unlawful, verdict was wrong, censure was unjust, '
-                  'and reversible errors in process. After SJC Decision, an '
-                  'Objection was filed by the TE who assisted in TE '
-                  'Chastain\'s defense. Protest filed by 8 TEs and 1 RE, from '
-                  '8 Presbyteries.',
-        outcome: 'Not Sustained',
+            'BCO 32-3 requires that at the first meeting of a judicial case, '
+            'nothing substantive be done except appointing a prosecutor, ordering '
+            'the indictment, and citing the accused. Imposing censure in the same '
+            'meeting violated this requirement. An informal suspension by a '
+            'non-PCA church cannot count as a valid censure under BCO 30-1.',
+        outcome: 'Sustained',
       ),
     ],
     'bco_30-2': [
       SjcReference(
         caseNumber: '2007-12',
-        caseTitle: 'Grady v. Southwest Florida',
+        caseTitle: 'Grady v. Southwest Florida Presbytery',
         year: '2007',
         pdfUrl:
             'https://pcahistory.org/pca/sjc/cases/2007-12_Grady_v_SouthwestFlorida.pdf',
         summary:
-            'SJC ruled P erred by including in its Minutes a Committee '
-                  'report with a finding of sins and errors of a TE. SJC ruled '
-                  'that action essentially imposed censure of Admonition '
-                  'without due process.',
+            'Southwest Florida Presbytery erred by reading into its minutes a '
+            'committee report containing findings of "sins and errors" against a '
+            'TE and appearing to adopt those findings. This effectively imposed '
+            'the censure of admonition without due process (BCO 30-2). While a '
+            'BCO 31-2 committee may form opinions about sins, the presbytery must '
+            'clarify it has not adopted such findings as its own.',
         outcome: 'Sustained',
       ),
     ],
     'bco_30-3': [
       SjcReference(
-        caseNumber: '2023-09',
-        caseTitle: 'Appeal of TE Myers v. Illiana',
-        year: '2023',
+        caseNumber: '2005-08',
+        caseTitle: 'Kim v. Korean Eastern Presbytery',
+        year: '2005',
         pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2023-09_Myers_v_Illiana.pdf',
+            'https://pcahistory.org/pca/sjc/cases/2005-08_Kim_v_KoreanEastern.pdf',
         summary:
-            'When an offender is indefinitely suspended from the '
-                  'Sacraments that censure is to be “administered to the '
-                  'impenitent offender until he exhibits signs of repentance, '
-                  'or until by his conduct, the necessity of the greatest '
-                  'censure be made manifest” (BCO 30-3).',
-        outcome: 'Sustained',
+            'The SJC sustained the charge of contumacy and deposition against TE '
+            'Kim but changed excommunication to indefinite suspension under BCO '
+            '30-3, reasoning that excommunication was too severe for contumacy in '
+            'a church governance dispute rather than a fundamental rejection of '
+            'the faith. Deposition (removal from office) and excommunication '
+            '(removal from membership) are distinct censures with different '
+            'thresholds.',
+        outcome: 'Partially Sustained',
       ),
     ],
     'bco_30-4': [
       SjcReference(
         caseNumber: '2023-09',
-        caseTitle: 'Appeal of TE Myers v. Illiana',
+        caseTitle: 'Myers v. Illiana Presbytery',
         year: '2023',
         pdfUrl:
             'https://pcahistory.org/pca/sjc/cases/2023-09_Myers_v_Illiana.pdf',
         summary:
-            'When an offender is indefinitely suspended from the '
-                  'Sacraments that censure is to be “administered to the '
-                  'impenitent offender until he exhibits signs of repentance, '
-                  'or until by his conduct, the necessity of the greatest '
-                  'censure be made manifest” (BCO 30-3).',
-        outcome: 'Sustained',
+            'Suspension from the Sacraments cannot be elevated to excommunication '
+            'without additional judicial process. The court must follow due '
+            'process to find the person "incorrigible and contumacious" (BCO '
+            '30-4) before elevating censures. The mere fact that a man disagrees '
+            'with a guilty verdict is not per se evidence of being incorrigible '
+            'or contumacious.',
+        outcome: 'Reversed',
       ),
     ],
     // ─────────────────────────────────────────────────────────────
-    // BCO Ch 31-33 — Discipline
+    // BCO Ch 31 — Preliminary Principles of Judicial Process
     // ─────────────────────────────────────────────────────────────
     'bco_31-2': [
       SjcReference(
-        caseNumber: '2022-04',
-        caseTitle: 'Sheppard v. Highlands Presbytery',
-        year: '2022',
+        caseNumber: '2006-02',
+        caseTitle: 'Memorial of Central Carolina Presbytery',
+        year: '2006',
         pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2022-04_Sheppard_v_Highlands.pdf',
+            'https://pcahistory.org/pca/sjc/cases/2006-02_Memorial_of_Central_Carolina.pdf',
         summary:
-            'The SJC ruled that BCO 31-2 unambiguously requires a court to '
-                'institute process once it determines a strong presumption of '
-                'guilt, and a court has no discretion to substitute a pastoral '
-                'approach instead. The court held that Highlands Presbytery '
-                'erred by finding a strong presumption of guilt against a '
-                'teaching elder but then deferring to a shepherding committee '
-                'rather than proceeding to judicial process, and further held '
-                'that the conditional motion (threatening process if '
-                'reconciliation failed) was improper because it damaged the '
-                'accused\'s right against self-incrimination.',
-        outcome: 'Sustained',
-      ),
-      SjcReference(
-        caseNumber: '2021-06',
-        caseTitle: 'Herron v. Central Indiana Presbytery',
-        year: '2021',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2021-06_Herron_v_CIP.pdf',
-        summary:
-            'The SJC held that BCO 31-2 leaves the standards for \'due '
-                'diligence,\' \'great discretion,\' and \'satisfactory '
-                'explanations\' to the judgment of the lower court, and that '
-                'the primary purpose of a 31-2 investigation is to determine '
-                'whether the threshold of a strong presumption of guilt is '
-                'met. The court also held that once a court finds a strong '
-                'presumption of guilt, it must proceed to trial and has no '
-                'option to decline to institute process, and that a minister '
-                'under 31-2 investigation who is suspended under BCO 31-10 '
-                'still retains rights to presbytery minutes and meetings as a '
-                'member of the court.',
-        outcome: 'Sustained in part, denied in part',
-      ),
-      SjcReference(
-        caseNumber: '2020-12',
-        caseTitle: 'Speck v. Missouri Presbytery',
-        year: '2020',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2020-12_Speck_v_Missouri.pdf',
-        summary:
-            'The SJC denied the complaint and held that Missouri Presbytery '
-                'did not clearly err in its BCO 31-2 investigation of a '
-                'teaching elder when, after conducting an extensive 97-page '
-                'investigation, it declined to find a strong presumption of '
-                'guilt. The court found that the presbytery exercised the '
-                'requisite \'due diligence and great discretion\' in seeking '
-                'explanations and that the decision not to indict was a '
-                'reasonable exercise of judgment entitled to deference under '
-                'BCO 39-3.',
-        outcome: 'Denied',
-      ),
-      SjcReference(
-        caseNumber: '2016-09',
-        caseTitle: 'Fordice v. Pacific Northwest Presbytery',
-        year: '2016',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2016-09_Fordice_v_PacificNW.pdf',
-        summary:
-            'The SJC ruled that while BCO 31-2 requires process upon a '
-                'finding of strong presumption of guilt, a court may properly '
-                'use BCO 38-1 (case without process via confession) in lieu of '
-                'a full trial when the accused voluntarily confesses. However, '
-                'the statement of facts in a 38-1 confession must constitute a '
-                '\'full statement\' that fairly covers all the issues raised '
-                'during the 31-2 investigation, and the court erred by '
-                'accepting a confession that addressed only a fraction of the '
-                'allegations underlying the strong-presumption finding.',
-        outcome: 'Sustained',
-      ),
-      SjcReference(
-        caseNumber: '2011-18',
-        caseTitle: 'Ruff v. Nashville Presbytery',
-        year: '2011',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2011-18_Ruff_v_Nashville.pdf',
-        summary:
-            'The SJC held that a BCO 31-2 investigation may properly '
-                'conclude through a BCO 38-1 case without process when the '
-                'accused voluntarily confesses, but the confession must be a '
-                'full statement of facts that adequately addresses all matters '
-                'raised during the investigation. The court found that '
-                'Nashville Presbytery erred by accepting an abstract '
-                'confession that failed to acknowledge particular sins against '
-                'particular people, when the investigation had been triggered '
-                'by reports of specific offenses against specific individuals.',
-        outcome: 'Sustained in part',
-      ),
-      SjcReference(
-        caseNumber: '2009-28',
-        caseTitle: 'Ruff v. Nashville Presbytery',
-        year: '2009',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2009-28_Ruff_v_Nashville.pdf',
-        summary:
-            'The SJC ruled that Nashville Presbytery failed to conduct an '
-                'adequate BCO 31-2 investigation, establishing several key '
-                'principles: (1) a presbytery must document, either through a '
-                'written report or in its minutes, the work conducted by its '
-                'investigating body to satisfy its duties under 31-2; (2) the '
-                'sole purpose of a 31-2 investigation is to determine whether '
-                'a strong presumption of guilt exists, not to convict or '
-                'absolve; (3) the duty to proceed pastorally does not relieve '
-                'a presbytery of its parallel responsibility to act '
-                'judicially; and (4) when behavior is described as \'sin\' by '
-                'the investigating body, the court must explain why there is '
-                'no strong presumption that an offense occurred.',
-        outcome: 'Sustained',
-      ),
-      SjcReference(
-        caseNumber: '2009-05',
-        caseTitle:
-            'Payne, Linton, Lyons, Woodward v. Western Carolina Presbytery '
-                '(Consolidated)',
-        year: '2009',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2009-05-08-09-10_Payne_Linton_Lyons_Woodward_v_WesternCarolina.pdf',
-        summary:
-            'The SJC held that BCO 31-2 does not specify particular '
-                'procedures for a court to follow during investigations; it '
-                'enjoins \'due diligence\' but also affords \'great '
-                'discretion.\' The court ruled that 31-2 does not stipulate a '
-                'timeline, composition of the investigating body, or interview '
-                'requirements, and that a court has far more flexibility '
-                'during the investigation phase than after it has instituted '
-                'process. The SJC also clarified that a presbytery clerk or '
-                'moderator does not have authority to unilaterally initiate a '
-                '31-2 investigation; that authority belongs to the presbytery '
-                'itself.',
-        outcome: 'Denied',
-      ),
-      SjcReference(
-        caseNumber: '2009-06',
-        caseTitle: 'Bordwine v. Pacific Northwest Presbytery',
-        year: '2009',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2009-06_Bordwine_v_PacificNW.pdf',
-        summary:
-            'The SJC ruled that a presbytery may not, without formal '
-                'judicial process, declare a teaching elder\'s views to be '
-                'either in accord or out of accord with the doctrinal '
-                'standards. The court held that when the record suggests a '
-                'strong presumption of guilt that a teaching elder\'s views '
-                'constitute offenses under BCO 31-2, the presbytery must '
-                'either counsel the elder pastorally under BCO 31-7 or take '
-                'steps to comply with its obligations under 31-2 by '
-                'instituting process.',
-        outcome: 'Sustained',
-      ),
-      SjcReference(
-        caseNumber: '2008-15',
-        caseTitle: 'M.H. Smith v. Western Carolina Presbytery',
-        year: '2008',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2008-15_and_group_MHSmith_v_WesternCarolina.pdf',
-        summary:
-            'The SJC held that once a BCO 31-2 investigation has commenced '
-                'and resulted in a finding of strong presumption of guilt, the '
-                'court must institute process (appoint a prosecutor, indict, '
-                'and proceed to trial) and cannot instead administratively '
-                '\'declare\' a view to be out of accord with the Constitution. '
-                'The court explained that a BCO 15-1 commission authorized for '
-                'a \'limited judicial task\' under 31-2 may make findings on '
-                'presumption of guilt that are entered on presbytery minutes '
-                'as the action of presbytery, but only the presbytery itself '
-                'may institute formal judicial process.',
-        outcome: 'Sustained in part',
-      ),
-      SjcReference(
-        caseNumber: '2008-14',
-        caseTitle: 'White v. Siouxlands Presbytery',
-        year: '2008',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2008-14_White_v_Siouxlands.pdf',
-        summary:
-            'The SJC provided a foundational interpretation of BCO 31-2, '
-                'holding that \'reports\' triggering the duty to investigate '
-                'means information \'known by common fame\' or \'general '
-                'rumor\' that is injurious to Christian character and '
-                'credible. The court ruled that the threshold for initiating a '
-                '31-2 investigation is not the standard of evidence required '
-                'for conviction at trial, nor even the standard for a strong '
-                'presumption of guilt; rather, \'hearsay\' that is credible '
-                'and injurious to Christian character is precisely the sort of '
-                'information countenanced by 31-2 as leading to '
-                'investigation. The presbytery erred by applying trial-level '
-                'evidentiary standards to refuse to investigate.',
-        outcome: 'Sustained',
-      ),
-      SjcReference(
-        caseNumber: '2008-09',
-        caseTitle: 'Red Mountain v. Evangel Presbytery',
-        year: '2008',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2008-09_RedMountain_v_Evangel.pdf',
-        summary:
-            'The SJC held that while a session may consider and rule on '
-                'requests apart from the formal provisions of BCO 31-2, the '
-                'nature of a request and the relief sought may make BCO 31-2 '
-                'investigation the appropriate framework. The court ruled that '
-                'it was not improper for the session to use a \'strong '
-                'presumption of guilt\' standard when the complainant\'s '
-                'request effectively called for the session to investigate and '
-                'potentially prosecute a charge against a member.',
+            'The SJC found that Louisiana Presbytery failed to demonstrate '
+            'adequate examination of TE Wilkins\' published views on the Federal '
+            'Vision, which raised serious questions about conformity with the '
+            'Westminster Standards. The SJC directed Louisiana Presbytery to '
+            'conduct a thorough investigation under BCO 31-2 and 13-9.f.',
         outcome: 'Sustained',
       ),
       SjcReference(
@@ -1185,19 +998,14 @@ class SjcData {
         pdfUrl:
             'https://pcahistory.org/pca/sjc/cases/2007-12_Grady_v_SouthwestFlorida.pdf',
         summary:
-            'The SJC ruled that while a presbytery committee may reach an '
-                'opinion during a BCO 31-2 investigation that a teaching '
-                'elder has engaged in \'sins and errors,\' the presbytery may '
-                'not adopt or endorse such findings as its own action without '
-                'due process. By concurring in a committee report containing '
-                'findings of sin and directing it be read to the congregation, '
-                'the presbytery effectively imposed the censure of admonition '
-                'without judicial process, which violated BCO 30-2.',
+            'Southwest Florida Presbytery erred by reading into its minutes a '
+            'committee report containing findings of "sins and errors" against a '
+            'TE and appearing to adopt those findings. This effectively imposed '
+            'the censure of admonition without due process (BCO 30-2). While a '
+            'BCO 31-2 committee may form opinions about sins, the presbytery must '
+            'clarify it has not adopted such findings as its own.',
         outcome: 'Sustained',
       ),
-    ],
-
-    'bco_31-5': [
       SjcReference(
         caseNumber: '2008-14',
         caseTitle: 'White v. Siouxlands Presbytery',
@@ -1205,73 +1013,247 @@ class SjcData {
         pdfUrl:
             'https://pcahistory.org/pca/sjc/cases/2008-14_White_v_Siouxlands.pdf',
         summary:
-            'P erred by not appointing a BCO 31-2 committee to '
-                  'investigate a minister\'s alleged Federal Vision view.',
+            'BCO 31-2 imposes a duty on presbyteries to investigate "reports '
+            'affecting the Christian character" of members, and a report '
+            'qualifying under BCO 31-2 does not require pre-validation to the '
+            'standard of proof required at trial (BCO 35). The purpose of a BCO '
+            '31-2 investigation is to determine whether a strong presumption of '
+            'guilt exists, not to convict or absolve.',
+        outcome: 'Sustained',
+      ),
+      SjcReference(
+        caseNumber: '2009-28',
+        caseTitle: 'Ruff v. Nashville Presbytery',
+        year: '2009',
+        pdfUrl:
+            'https://pcahistory.org/pca/sjc/cases/2009-28_Ruff_v_Nashville.pdf',
+        summary:
+            'Nashville Presbytery erred by failing to conduct an adequate BCO '
+            '31-2 investigation and by failing to find a strong presumption of '
+            'guilt. A presbytery must document the work of its investigating body '
+            'through a written report or in its minutes. The duty to proceed '
+            'pastorally does not relieve the responsibility to act judicially — '
+            'the two are parallel and complementary, not mutually exclusive.',
+        outcome: 'Sustained',
+      ),
+      SjcReference(
+        caseNumber: '2009-05',
+        caseTitle: 'Payne et al. v. Western Carolina Presbytery',
+        year: '2009',
+        pdfUrl:
+            'https://pcahistory.org/pca/sjc/cases/2009-05-08-09-10_Payne_Linton_Lyons_Woodward_v_WesternCarolina.pdf',
+        summary:
+            'BCO 31-2 affords presbyteries "great discretion" in how they conduct '
+            'investigations into reports affecting the Christian character of a '
+            'minister and does not prescribe particular investigation procedures. '
+            'The complaint that the investigating committee failed to interview '
+            'certain witnesses was not sustained. Complainants who are not '
+            'members of the presbytery lack standing under BCO 43-1.',
+        outcome: 'Denied',
+      ),
+      SjcReference(
+        caseNumber: '2009-06',
+        caseTitle: 'Bordwine v. Pacific Northwest Presbytery',
+        year: '2009',
+        pdfUrl:
+            'https://pcahistory.org/pca/sjc/cases/2009-06_Bordwine_v_PacificNW.pdf',
+        summary:
+            'The SJC sustained the complaint that Pacific Northwest Presbytery '
+            'erred in its handling of TE Leithart\'s fitness to continue as a PCA '
+            'Teaching Elder. The Record suggested aspects of his teachings '
+            'conflicted with PCA standards and could be injurious to the peace '
+            'and purity of the Church under BCO 13-9(f). The case was remanded '
+            'with instructions to proceed with a BCO 31-2 investigation.',
+        outcome: 'Sustained',
+      ),
+      SjcReference(
+        caseNumber: '2011-18',
+        caseTitle: 'Ruff v. Nashville Presbytery (Second Complaint)',
+        year: '2011',
+        pdfUrl:
+            'https://pcahistory.org/pca/sjc/cases/2011-18_Ruff_v_Nashville.pdf',
+        summary:
+            'Following remand, the SJC found that Presbytery conducted an '
+            'adequate BCO 31-2 investigation and was permitted to conclude the '
+            'matter under BCO 38-1. However, the confession was inadequate '
+            'because it was "almost entirely abstract" and did not acknowledge '
+            'particular sins against particular people. Citing WCF 15.5-6, men '
+            'ought not content themselves with general repentance but must repent '
+            'of particular sins particularly.',
+        outcome: 'Partially Sustained',
+      ),
+      SjcReference(
+        caseNumber: '2015-08',
+        caseTitle: 'Hardie v. Metro Atlanta Presbytery',
+        year: '2015',
+        pdfUrl:
+            'https://pcahistory.org/pca/sjc/cases/2015-08_Hardie_v_MetroAtlanta.pdf',
+        summary:
+            'An investigation conducted by a presbytery commission that resulted '
+            'in a finding of strong presumption of guilt satisfied BCO 31-2. '
+            'Presbytery\'s subsequent action to form a judicial commission, '
+            'appoint a prosecutor, and suspend the appellant under BCO 31-10 was '
+            'proper. The SJC applied BCO 39-3\'s "great deference" standard and '
+            'found no clear error.',
+        outcome: 'Denied',
+      ),
+      SjcReference(
+        caseNumber: '2020-12',
+        caseTitle: 'Speck v. Missouri Presbytery',
+        year: '2020',
+        pdfUrl:
+            'https://pcahistory.org/pca/sjc/cases/2020-12_Speck_v_Missouri.pdf',
+        summary:
+            'The BCO provides neither detailed standards for a BCO 31-2 '
+            'investigation nor specific requirements for determining a strong '
+            'presumption of guilt, leaving those matters to the court\'s judgment '
+            'subject to BCO 39-3.3 deference. The complainant\'s '
+            'characterizations of the accused\'s views were not shown to be '
+            'accurate by the record.',
+        outcome: 'Denied',
+      ),
+      SjcReference(
+        caseNumber: '2022-22',
+        caseTitle: 'Turner v. South Florida Presbytery',
+        year: '2022',
+        pdfUrl:
+            'https://pcahistory.org/pca/sjc/cases/2022-22_Turner_v_SouthFL.pdf',
+        summary:
+            'A presbytery has authority to investigate a Session under BCO 31-2, '
+            'but a judicial commission cannot render judgments of guilt without '
+            'presenting specific charges and conducting a trial, even when a '
+            'Session refuses to appear. A trial is required before adjudicating '
+            'guilt.',
+        outcome: 'Partially Sustained',
+      ),
+      SjcReference(
+        caseNumber: '2022-04',
+        caseTitle: 'Sheppard v. Highlands Presbytery',
+        year: '2022',
+        pdfUrl:
+            'https://pcahistory.org/pca/sjc/cases/2022-04_Sheppard_v_Highlands.pdf',
+        summary:
+            'BCO 31-2 is unambiguous: once a court determines a strong '
+            'presumption of guilt, it "shall institute process" — the court has '
+            'no discretion to substitute pastoral reconciliation. Under BCO '
+            '32-20, the matter was also time-barred since the offense occurred in '
+            '2017 and process was not timely instituted.',
         outcome: 'Sustained',
       ),
     ],
     'bco_31-7': [
       SjcReference(
+        caseNumber: '2009-06',
+        caseTitle: 'Bordwine v. Pacific Northwest Presbytery',
+        year: '2009',
+        pdfUrl:
+            'https://pcahistory.org/pca/sjc/cases/2009-06_Bordwine_v_PacificNW.pdf',
+        summary:
+            'The SJC sustained the complaint that Pacific Northwest Presbytery '
+            'erred in its handling of TE Leithart\'s fitness to continue as a PCA '
+            'Teaching Elder. The Record suggested aspects of his teachings '
+            'conflicted with PCA standards and could be injurious to the peace '
+            'and purity of the Church under BCO 13-9(f). The case was remanded '
+            'with instructions to proceed with a BCO 31-2 investigation.',
+        outcome: 'Sustained',
+      ),
+    ],
+    'bco_31-8': [
+      SjcReference(
+        caseNumber: '2011-15',
+        caseTitle: 'Hahn v. Philadelphia Metro West Presbytery',
+        year: '2011',
+        pdfUrl:
+            'https://pcahistory.org/pca/sjc/cases/2011-15_Hahn_v_PhilaMetroWest.pdf',
+        summary:
+            'While BCO 32-2 generally requires a court to commence process upon '
+            'the filing of charges, BCO 31-8 affords the court discretion to '
+            'decline when the accuser "is known to indulge a malignant spirit," '
+            '"is himself under censure or process," or "is known to be litigious, '
+            'rash or highly imprudent."',
+        outcome: 'Denied',
+      ),
+    ],
+    'bco_31-10': [
+      SjcReference(
+        caseNumber: '2015-08',
+        caseTitle: 'Hardie v. Metro Atlanta Presbytery',
+        year: '2015',
+        pdfUrl:
+            'https://pcahistory.org/pca/sjc/cases/2015-08_Hardie_v_MetroAtlanta.pdf',
+        summary:
+            'An investigation conducted by a presbytery commission that resulted '
+            'in a finding of strong presumption of guilt satisfied BCO 31-2. '
+            'Presbytery\'s subsequent action to form a judicial commission, '
+            'appoint a prosecutor, and suspend the appellant under BCO 31-10 was '
+            'proper. The SJC applied BCO 39-3\'s "great deference" standard and '
+            'found no clear error.',
+        outcome: 'Denied',
+      ),
+      SjcReference(
+        caseNumber: '2021-06',
+        caseTitle: 'Herron et al. v. Central Indiana Presbytery',
+        year: '2021',
+        pdfUrl:
+            'https://pcahistory.org/pca/sjc/cases/2021-06_Herron_v_CIP.pdf',
+        summary:
+            'A BCO 31-10 suspension does not remove one as a member of the court, '
+            'and denying a suspended minister access to presbytery minutes and '
+            'meetings constitutes a "refusal of reasonable indulgence" (BCO '
+            '43-2). Courts must ensure non-censure suspensions under BCO 31-10 '
+            'are "never" done as censure.',
+        outcome: 'Partially Sustained',
+      ),
+    ],
+    // ─────────────────────────────────────────────────────────────
+    // BCO Ch 32 — The Parties in Cases of Process
+    // ─────────────────────────────────────────────────────────────
+    'bco_32-2': [
+      SjcReference(
         caseNumber: '2008-14',
         caseTitle: 'White v. Siouxlands Presbytery',
         year: '2008',
         pdfUrl:
             'https://pcahistory.org/pca/sjc/cases/2008-14_White_v_Siouxlands.pdf',
         summary:
-            'P erred by not appointing a BCO 31-2 committee to '
-                  'investigate a minister\'s alleged Federal Vision view.',
+            'BCO 31-2 imposes a duty on presbyteries to investigate "reports '
+            'affecting the Christian character" of members, and a report '
+            'qualifying under BCO 31-2 does not require pre-validation to the '
+            'standard of proof required at trial (BCO 35). The purpose of a BCO '
+            '31-2 investigation is to determine whether a strong presumption of '
+            'guilt exists, not to convict or absolve.',
         outcome: 'Sustained',
       ),
-    ],
-    'bco_31-10': [
       SjcReference(
-        caseNumber: '2015-08',
-        caseTitle: '2015-08 Hardie v MetroAtlanta',
-        year: '2015',
+        caseNumber: '2011-15',
+        caseTitle: 'Hahn v. Philadelphia Metro West Presbytery',
+        year: '2011',
         pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2015-08_Hardie_v_MetroAtlanta.pdf',
+            'https://pcahistory.org/pca/sjc/cases/2011-15_Hahn_v_PhilaMetroWest.pdf',
         summary:
-            'therefore, to give “great deference” to MAP’s decision and '
-                  'to reverse only if there is “clear error.',
-        outcome: '',
-      ),
-      SjcReference(
-        caseNumber: '2007-16',
-        caseTitle: 'Appeal of Grady v. Southwest Florida',
-        year: '2007',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2007-16_Grady_v_SWFlorida.pdf',
-        summary:
-            'TE guilty at trial on three charges and indefinitely '
-                  'suspended from office. Appeal alleged seven specifications '
-                  'of error. SJC sustained convictions but vacated suspension '
-                  'and dissolution of call and remanded to P for '
-                  'reconsideration of both.',
-        outcome: 'Sustained in Part',
-      ),
-    ],
-    'bco_32-2': [
-      SjcReference(
-        caseNumber: '2016-07',
-        caseTitle: '2016-07 Avery&Lewelling v Nashville',
-        year: '2016',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2016-07_Avery%26Lewelling_v_Nashville.pdf',
-        summary:
-            'Case dismissed.',
-        outcome: 'Dismissed',
+            'While BCO 32-2 generally requires a court to commence process upon '
+            'the filing of charges, BCO 31-8 affords the court discretion to '
+            'decline when the accuser "is known to indulge a malignant spirit," '
+            '"is himself under censure or process," or "is known to be litigious, '
+            'rash or highly imprudent."',
+        outcome: 'Denied',
       ),
     ],
     'bco_32-3': [
       SjcReference(
-        caseNumber: '2021-11',
-        caseTitle: 'Park et al. v. Korean Central Presbytery',
-        year: '2021',
+        caseNumber: '2007-11',
+        caseTitle: 'Lee v. Korean Eastern Presbytery',
+        year: '2007',
         pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2021-11_Park_v_KCP.pdf',
+            'https://pcahistory.org/pca/sjc/cases/2007-11_Lee_v_KoreanEastern.pdf',
         summary:
-            'Case not sustained.',
-        outcome: 'Not Sustained',
+            'The SJC reversed the deposition and excommunication of TE Lee on '
+            'procedural grounds. "Interim pastor" and "stated supply" are the '
+            'same designation under BCO 22-6, limited to one year unless renewed '
+            'by presbytery. The prosecution failed to meet BCO 32-3 requirements '
+            'for proper service of the indictment — certified mail returned '
+            'undelivered does not satisfy notice requirements.',
+        outcome: 'Reversed',
       ),
       SjcReference(
         caseNumber: '2019-04',
@@ -1280,105 +1262,58 @@ class SjcData {
         pdfUrl:
             'https://pcahistory.org/pca/sjc/cases/2019-04_Williams_v_Chesapeake.pdf',
         summary:
-            'It is important to note that the reasoning and opinion above '
-                  'is applicable to this case only and should not be taken to '
-                  'be an exposition of whether a matter that begins as a case '
-                  'of process may ever be converted to a case without process '
-                  'under BCO 38-1.',
-        outcome: '',
-      ),
-      SjcReference(
-        caseNumber: '2007-11',
-        caseTitle: 'Appeal of Eliot Lee v. Korean Eastern',
-        year: '2007',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2007-11_Lee_v_KoreanEastern.pdf',
-        summary:
-            'SJC ruled P erred in proceeding to trial and reversed the '
-                  'deposition and excommunication.',
-        outcome: 'Sustained',
-      ),
-    ],
-    'bco_32-5': [
-      SjcReference(
-        caseNumber: '2022-07',
-        caseTitle: 'Appeal of Harrell et al. v. Covenant Presbytery',
-        year: '2022',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2022-07_Harrell_v_Covenant.pdf',
-        summary:
-            'Therefore, if the prosecutor has the ability or capacity '
-                  'under the circumstances to include more reasonable '
-                  'specificity, he is obliged to do so, at least to the extent '
-                  'that fairness would require.',
+            'Once an indictment is issued and a plea entered, the case is one of '
+            'process under BCO 32 and cannot be converted to BCO 38-1 (case '
+            'without process). BCO 38-1 requires the person to come forward '
+            'voluntarily as his own accuser with a full confession; a partial '
+            'plea to charges framed by a prosecutor does not satisfy this '
+            'standard.',
         outcome: 'Sustained',
       ),
       SjcReference(
-        caseNumber: '2005-01',
-        caseTitle: 'Appeal of Chastain v. Heritage',
-        year: '2005',
+        caseNumber: '2021-11',
+        caseTitle: 'Park et al. v. Korean Central Presbytery',
+        year: '2021',
         pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2005-01_Chastain_v_Heritage.pdf',
+            'https://pcahistory.org/pca/sjc/cases/2021-11_Park_v_KCP.pdf',
         summary:
-            'charge was unlawful, verdict was wrong, censure was unjust, '
-                  'and reversible errors in process. After SJC Decision, an '
-                  'Objection was filed by the TE who assisted in TE '
-                  'Chastain\'s defense. Protest filed by 8 TEs and 1 RE, from '
-                  '8 Presbyteries.',
-        outcome: 'Not Sustained',
+            'BCO 32-3 requires that at the first meeting of a judicial case, '
+            'nothing substantive be done except appointing a prosecutor, ordering '
+            'the indictment, and citing the accused. Imposing censure in the same '
+            'meeting violated this requirement. An informal suspension by a '
+            'non-PCA church cannot count as a valid censure under BCO 30-1.',
+        outcome: 'Sustained',
       ),
     ],
     'bco_32-6': [
       SjcReference(
         caseNumber: '2015-11',
-        caseTitle: '2015-11 Thompson v SouthFlorida',
+        caseTitle: 'Thompson v. South Florida Presbytery',
         year: '2015',
         pdfUrl:
             'https://pcahistory.org/pca/sjc/cases/2015-11_Thompson_v_SouthFlorida.pdf',
         summary:
-            'Judgment on June 28, 2015.) While that phrase might appear '
-                  'to be subjective, its location in BCO 32-6 and the fact that '
-                  'it is immediately censurable points to it being objective '
-                  'instead.',
-        outcome: '',
-      ),
-      SjcReference(
-        caseNumber: '2005-08',
-        caseTitle: 'Appeal of Peter B. Kim v. Korean Eastern',
-        year: '2005',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2005-08_Kim_v_KoreanEastern.pdf',
-        summary:
-            'Convicted of being "contumacious against the authority of '
-                  'Presbytery." Deposed and excommunicated. SJC upholds '
-                  'conviction but reduces excommunication to indefinite '
-                  'suspension from sacraments.',
-        outcome: 'Not Sustained',
+            'A BCO 30 censure cannot be imposed unless guilt is proven by a '
+            'mutually acceptable BCO 38-1 confession, a guilty plea, or '
+            'conviction at trial. The defendant\'s behavior did not constitute '
+            'the immediately censurable contumacy envisioned in BCO 32-6(b), and '
+            'the commission could not declare contumacy and excommunicate before '
+            'trial.',
+        outcome: 'Sustained',
       ),
     ],
     'bco_32-8': [
       SjcReference(
         caseNumber: '1978-01',
-        caseTitle: 'RE James H. Campbell vs. Mid-Atlantic Presbytery',
+        caseTitle: 'Campbell v. Mid-Atlantic Presbytery',
         year: '1978',
         pdfUrl:
             'https://pcahistory.org/pca/sjc/cases/1978-01_Campbell_v_Mid-Atlantic.pdf',
         summary:
-            'Receiving a commission report regarding alleged errors of a '
-                  'minister.',
-        outcome: '',
-      ),
-    ],
-    'bco_32-10': [
-      SjcReference(
-        caseNumber: '2007-11',
-        caseTitle: 'Appeal of Eliot Lee v. Korean Eastern',
-        year: '2007',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2007-11_Lee_v_KoreanEastern.pdf',
-        summary:
-            'SJC ruled P erred in proceeding to trial and reversed the '
-                  'deposition and excommunication.',
+            'The General Assembly found that Mid-Atlantic Presbytery had failed '
+            'to properly hear the case and instructed the Presbytery to schedule '
+            'a new hearing. The case addressed procedural questions about '
+            'moderator conflicts of interest in judicial hearings.',
         outcome: 'Sustained',
       ),
     ],
@@ -1390,80 +1325,47 @@ class SjcData {
         pdfUrl:
             'https://pcahistory.org/pca/sjc/cases/2012-03_Tarter_v_Evangel.pdf',
         summary:
-            'Case sustained.',
-        outcome: 'Sustained',
-      ),
-    ],
-    'bco_32-14': [
-      SjcReference(
-        caseNumber: '2015-04',
-        caseTitle: '2015-04 Thompson v SouthFlorida',
-        year: '2015',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2015-04_Thompson_v_SouthFlorida.pdf',
-        summary:
-            'Case not sustained.',
-        outcome: 'Not Sustained',
-      ),
-      SjcReference(
-        caseNumber: '2015-03',
-        caseTitle: '2015-03 Flesher&Weekly v MetroAtlanta',
-        year: '2015',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2015-03_Flesher%26Weekly_v_MetroAtlanta.pdf',
-        summary:
-            'DECISION ON COMPLAINT MARCH 3, 2016 The SJC finds the '
-                  'Complaint judicially out of order as the objections raised '
-                  'in the Complaint ought to be raised by a defendant during '
-                  'process with the court of original jurisdiction (BCO 32-14), '
-                  'or thereafter, if not satisfied, by an appellant on appeal '
-                  '(BCO.',
-        outcome: '',
-      ),
-    ],
-    'bco_32-17': [
-      SjcReference(
-        caseNumber: '1997-09',
-        caseTitle: 'Appeal of Dr. Shive v. Central Carolina',
-        year: '1997',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/1997-09_Shive_v_CentralCarolina.pdf',
-        summary:
-            'errors. SJC sustained on one, ruling S erred by '
-                  'excommunicating instead of imposing a lesser censure. '
-                  'Remanded for imposition of indef susp from sacraments.',
+            'The SJC found multiple procedural errors: the judicial commission '
+            'improperly constituted itself as a BCO 15-1 administrative '
+            'commission rather than a judicial commission; witnesses were not '
+            'examined in the presence of the accused as required by BCO 32-13; '
+            'and the commission confused the standard of proof under BCO 35-5.',
         outcome: 'Sustained',
       ),
     ],
     'bco_32-20': [
       SjcReference(
-        caseNumber: '2019-08',
-        caseTitle: 'Ganzel v. Central Florida Presbytery',
-        year: '2019',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2019-08_Ganzel_v_CentralFL.pdf',
-        summary:
-            'Central Florida Presbytery RE Howie Donahoe I agree this '
-                  'Appeal should be sustained, because I agree with the '
-                  'SJC\'s conclusion that it involved "a disciplinary process '
-                  'that was significantly flawed and prejudicial against the '
-                  'Appellant.',
-        outcome: '',
-      ),
-      SjcReference(
         caseNumber: '2016-05',
-        caseTitle: '2016-05 Troxell v Southwest',
+        caseTitle: 'Troxell v. Presbytery of the Southwest',
         year: '2016',
         pdfUrl:
             'https://pcahistory.org/pca/sjc/cases/2016-05_Troxell_v_Southwest.pdf',
         summary:
-            'therefore left with a record that shows that PSW voted to '
-                  'institute process in September 2015 for an offense that '
-                  'occurred in June 2014; the fifteen (15) month delay does not '
-                  'meet the standard specified in BCO 32-20.',
-        outcome: '',
+            'BCO 32-20\'s one-year limitation bars prosecution of offenses when '
+            'process was not commenced within one year and the offense has not '
+            '"recently become flagrant." When a presbytery initially chooses '
+            'pastoral rather than judicial handling, it cannot later reset the '
+            'timeline for prosecution.',
+        outcome: 'Partially Sustained',
+      ),
+      SjcReference(
+        caseNumber: '2022-04',
+        caseTitle: 'Sheppard v. Highlands Presbytery',
+        year: '2022',
+        pdfUrl:
+            'https://pcahistory.org/pca/sjc/cases/2022-04_Sheppard_v_Highlands.pdf',
+        summary:
+            'BCO 31-2 is unambiguous: once a court determines a strong '
+            'presumption of guilt, it "shall institute process" — the court has '
+            'no discretion to substitute pastoral reconciliation. Under BCO '
+            '32-20, the matter was also time-barred since the offense occurred in '
+            '2017 and process was not timely instituted.',
+        outcome: 'Sustained',
       ),
     ],
+    // ─────────────────────────────────────────────────────────────
+    // BCO Ch 33 — Original Jurisdiction by Higher Courts
+    // ─────────────────────────────────────────────────────────────
     'bco_33-1': [
       SjcReference(
         caseNumber: '2008-11',
@@ -1472,111 +1374,115 @@ class SjcData {
         pdfUrl:
             'https://pcahistory.org/pca/sjc/cases/2008-11_Broadwater_v_Chesapeake.pdf',
         summary:
-            'P erred by granting a BCO 33-1 petition from three Sessions '
-                  'and appointing a Commission to assume original jurisdiction '
-                  'over a church.',
-        outcome: 'Sustained',
+            'Chesapeake Presbytery erred when it assumed original jurisdiction '
+            'under BCO 33-1 without first making a preliminary finding that the '
+            'Session had refused to act. BCO 33-1 authorizes a presbytery to '
+            'assume original jurisdiction only when the session refuses to act in '
+            'doctrinal cases or cases of public scandal and two or more sessions '
+            'request it.',
+        outcome: 'Sustained in part',
       ),
     ],
     // ─────────────────────────────────────────────────────────────
-    // BCO Ch 34-36 — Special Cases / Process
+    // BCO Ch 34 — Special Rules Pertaining to Process
     // ─────────────────────────────────────────────────────────────
     'bco_34-1': [
       SjcReference(
-        caseNumber: '2022-11',
-        caseTitle: 'BCO 34-1 Petitions re: Central Indiana Presbytery',
-        year: '2022',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2022-11_Petitions_re_Central_Indiana.pdf',
-        summary:
-            'Therefore, consideration of these Petitions was postponed '
-                  'until after the final decision was rendered in Case 2022-10 '
-                  'PCA v.',
-        outcome: 'Refer to Other Case',
-      ),
-      SjcReference(
-        caseNumber: '2018-02',
-        caseTitle: 'Lewis v. Mississippi Valley Presbytery',
-        year: '2018',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2018-02_Lewis_v_MSValley.pdf',
-        summary:
-            'judgments on the matters noted in the [Central Carolina '
-                  'letter] are properly before the SJC under BCO 13-9.f, 40-4, '
-                  '40-5 and SJCM 16.1.',
-        outcome: '',
-      ),
-      SjcReference(
         caseNumber: '2004-08',
-        caseTitle: 'Thornton v. Westminster',
+        caseTitle: 'Thornton v. Westminster Presbytery',
         year: '2004',
         pdfUrl:
             'https://pcahistory.org/pca/sjc/cases/2004-08_Thornton_v_Westminster.pdf',
         summary:
-            'Presbytery erred by not approving a congregation\'s call '
-                  'to a TE who had been w/o call (BCO 20-10) and instead began '
-                  'divestiture process of BCO 34-10.',
+            'Westminster Presbytery erred in beginning divestiture under BCO '
+            '34-10 when the minister\'s call had not actually been dissolved and '
+            'he was not truly "without call for a prolonged period." The '
+            'Presbytery also erred in declining to place a call from a church it '
+            'had organized, violating BCO 20-10 and 21-1.',
         outcome: 'Sustained',
+      ),
+      SjcReference(
+        caseNumber: '2016-08',
+        caseTitle: 'Doty v. Nashville Presbytery',
+        year: '2016',
+        pdfUrl:
+            'https://pcahistory.org/pca/sjc/cases/2016-08_Doty_v_Nashville.pdf',
+        summary:
+            'A church member not under presbytery jurisdiction lacks standing '
+            'under BCO 43-1 to complain against a presbytery\'s action. When a '
+            'presbytery treats allegations as reports under BCO 31-2 and 34-1 '
+            'rather than a formal complaint, only members subject to the '
+            'presbytery\'s jurisdiction may complain.',
+        outcome: 'Dismissed (Judicially Out of Order)',
+      ),
+    ],
+    'bco_34-7': [
+      SjcReference(
+        caseNumber: '2005-08',
+        caseTitle: 'Kim v. Korean Eastern Presbytery',
+        year: '2005',
+        pdfUrl:
+            'https://pcahistory.org/pca/sjc/cases/2005-08_Kim_v_KoreanEastern.pdf',
+        summary:
+            'The SJC sustained the charge of contumacy and deposition against TE '
+            'Kim but changed excommunication to indefinite suspension under BCO '
+            '30-3, reasoning that excommunication was too severe for contumacy in '
+            'a church governance dispute rather than a fundamental rejection of '
+            'the faith. Deposition (removal from office) and excommunication '
+            '(removal from membership) are distinct censures with different '
+            'thresholds.',
+        outcome: 'Partially Sustained',
       ),
     ],
     'bco_34-10': [
       SjcReference(
-        caseNumber: '2025-12',
-        caseTitle: 'TE Assis & TE Brown v. South Florida Presbytery',
-        year: '2025',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2025-12,%20-13_Assis_and_Brown_v_SFL_final.pdf',
-        summary:
-            'BCO 34-10 requires a finding of habitual failure to '
-                  'discharge official functions and lack of acceptance to the '
-                  'Church. It cannot be applied to ministers actively '
-                  'discharging their functions who remain acceptable to their '
-                  'churches, even if those churches are departing the PCA.',
-        outcome: 'Sustained',
-      ),
-      SjcReference(
-        caseNumber: '2023-07',
-        caseTitle: 'TE Evans v. Arizona Presbytery',
-        year: '2024',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2023-07_Evans_v_Arizona.pdf',
-        summary:
-            'A presbytery may not initiate divestiture under BCO 34-10 '
-                  'against a minister who has already lawfully withdrawn by '
-                  'affiliating with another denomination under BCO 38-3.a. Once '
-                  'jurisdiction is lost through withdrawal, divestiture is '
-                  'inapplicable.',
-        outcome: 'Sustained',
-      ),
-      SjcReference(
         caseNumber: '2004-08',
-        caseTitle: 'Thornton v. Westminster',
+        caseTitle: 'Thornton v. Westminster Presbytery',
         year: '2004',
         pdfUrl:
             'https://pcahistory.org/pca/sjc/cases/2004-08_Thornton_v_Westminster.pdf',
         summary:
-            'Presbytery erred by not approving a congregation\'s call '
-                  'to a TE who had been w/o call (BCO 20-10) and instead began '
-                  'divestiture process of BCO 34-10.',
+            'Westminster Presbytery erred in beginning divestiture under BCO '
+            '34-10 when the minister\'s call had not actually been dissolved and '
+            'he was not truly "without call for a prolonged period." The '
+            'Presbytery also erred in declining to place a call from a church it '
+            'had organized, violating BCO 20-10 and 21-1.',
+        outcome: 'Sustained',
+      ),
+      SjcReference(
+        caseNumber: '2023-07',
+        caseTitle: 'Evans v. Arizona Presbytery',
+        year: '2023',
+        pdfUrl:
+            'https://pcahistory.org/pca/sjc/cases/2023-07_Evans_v_Arizona.pdf',
+        summary:
+            'At the time of divestiture, the minister was no longer subject to '
+            'the presbytery\'s jurisdiction because he had affiliated with '
+            'another branch of the visible church under BCO 38-3(a). Standing and '
+            'jurisdiction must stand or fall together — a presbytery cannot claim '
+            'jurisdiction to divest a minister while simultaneously denying him '
+            'standing to appeal.',
+        outcome: 'Sustained',
+      ),
+      SjcReference(
+        caseNumber: '2025-12',
+        caseTitle: 'Assis & Brown v. South Florida Presbytery',
+        year: '2025',
+        pdfUrl:
+            'https://pcahistory.org/pca/sjc/cases/2025-12,-13_Assis_and_Brown_v_SFL_final.pdf',
+        summary:
+            'South Florida Presbytery erred in divesting ministers of ordination '
+            'under BCO 34-10 when the ministers were actively pastoring churches '
+            'and seeking to transfer credentials. BCO 34-10 requires a minister '
+            'truly be without a call. The divestiture was reversed and Presbytery '
+            'was instructed to either approve calls to labor out of bounds per '
+            'BCO 8-7 or pursue another course consistent with the BCO.',
         outcome: 'Sustained',
       ),
     ],
-    'bco_35-3': [
-      SjcReference(
-        caseNumber: '2007-16',
-        caseTitle: 'Appeal of Grady v. Southwest Florida',
-        year: '2007',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2007-16_Grady_v_SWFlorida.pdf',
-        summary:
-            'TE guilty at trial on three charges and indefinitely '
-                  'suspended from office. Appeal alleged seven specifications '
-                  'of error. SJC sustained convictions but vacated suspension '
-                  'and dissolution of call and remanded to P for '
-                  'reconsideration of both.',
-        outcome: 'Sustained in Part',
-      ),
-    ],
+    // ─────────────────────────────────────────────────────────────
+    // BCO Ch 35 — Evidence
+    // ─────────────────────────────────────────────────────────────
     'bco_35-5': [
       SjcReference(
         caseNumber: '2012-03',
@@ -1585,115 +1491,134 @@ class SjcData {
         pdfUrl:
             'https://pcahistory.org/pca/sjc/cases/2012-03_Tarter_v_Evangel.pdf',
         summary:
-            'Case sustained.',
+            'The SJC found multiple procedural errors: the judicial commission '
+            'improperly constituted itself as a BCO 15-1 administrative '
+            'commission rather than a judicial commission; witnesses were not '
+            'examined in the presence of the accused as required by BCO 32-13; '
+            'and the commission confused the standard of proof under BCO 35-5.',
         outcome: 'Sustained',
       ),
     ],
-    'bco_35-10': [
-      SjcReference(
-        caseNumber: '2007-16',
-        caseTitle: 'Appeal of Grady v. Southwest Florida',
-        year: '2007',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2007-16_Grady_v_SWFlorida.pdf',
-        summary:
-            'TE guilty at trial on three charges and indefinitely '
-                  'suspended from office. Appeal alleged seven specifications '
-                  'of error. SJC sustained convictions but vacated suspension '
-                  'and dissolution of call and remanded to P for '
-                  'reconsideration of both.',
-        outcome: 'Sustained in Part',
-      ),
-    ],
+    // ─────────────────────────────────────────────────────────────
+    // BCO Ch 36 — Rendering of Judgment
+    // ─────────────────────────────────────────────────────────────
     'bco_36-5': [
       SjcReference(
         caseNumber: '2007-04',
-        caseTitle: 'Engel v. Evangel',
+        caseTitle: 'Engel v. Evangel Presbytery',
         year: '2007',
         pdfUrl:
             'https://pcahistory.org/pca/sjc/cases/2007-04_Engel_v_Evangel.pdf',
         summary:
-            'Complainant filed series of complaints with S on its policy '
-                  'disallowing single or divorced men to stand for office.',
-        outcome: 'Sustained',
+            'Evangel Presbytery erred by failing to remand the case to the '
+            'Session with instructions either to initiate process or formally '
+            'dismiss all charges. The Session had suspended the complainant from '
+            'the sacraments without conducting a trial or receiving a confession, '
+            'violating BCO 36. Presbytery could not determine guilt or innocence '
+            'because no trial record existed.',
+        outcome: 'Sustained in part',
       ),
     ],
     // ─────────────────────────────────────────────────────────────
-    // BCO Ch 37-38 — Withdrawal
+    // BCO Ch 37 — Inflicting and Removing Church Censures
     // ─────────────────────────────────────────────────────────────
     'bco_37-3': [
       SjcReference(
+        caseNumber: '2023-09',
+        caseTitle: 'Myers v. Illiana Presbytery',
+        year: '2023',
+        pdfUrl:
+            'https://pcahistory.org/pca/sjc/cases/2023-09_Myers_v_Illiana.pdf',
+        summary:
+            'Suspension from the Sacraments cannot be elevated to excommunication '
+            'without additional judicial process. The court must follow due '
+            'process to find the person "incorrigible and contumacious" (BCO '
+            '30-4) before elevating censures. The mere fact that a man disagrees '
+            'with a guilty verdict is not per se evidence of being incorrigible '
+            'or contumacious.',
+        outcome: 'Reversed',
+      ),
+    ],
+    'bco_37-9': [
+      SjcReference(
+        caseNumber: '2022-23',
+        caseTitle: 'Woodham v. South Florida Presbytery',
+        year: '2022',
+        pdfUrl:
+            'https://pcahistory.org/pca/sjc/cases/2022-23_Woodham_v_SouthFL.pdf',
+        summary:
+            'While BCO 46-8 assignment of a deposed minister to a particular '
+            'church is obligatory, it specifies neither a timeframe nor '
+            'particular means. Until transferred, the deposed minister remains '
+            'under Presbytery\'s jurisdiction. BCO 37-9(a) provides that the '
+            'presbytery inflicting censures retains authority to remove them and '
+            'restore to office, even after BCO 46-8 assignment.',
+        outcome: 'Denied',
+      ),
+    ],
+    // ─────────────────────────────────────────────────────────────
+    // BCO Ch 38 — Cases Without Process
+    // ─────────────────────────────────────────────────────────────
+    'bco_38-1': [
+      SjcReference(
         caseNumber: '2007-02',
-        caseTitle: 'Malone v. Metro NY',
+        caseTitle: 'Malone v. Metropolitan New York Presbytery',
         year: '2007',
         pdfUrl:
             'https://pcahistory.org/pca/sjc/cases/2007-02_Malone_v_MetropolitanNY.pdf',
         summary:
-            'Involved interpretation of BCO 38-1 and cases without process.',
-        outcome: 'Sustained in Part',
-      ),
-    ],
-    'bco_38-1': [
-      SjcReference(
-        caseNumber: '2023-19',
-        caseTitle: 'Appeal of TE Huffman v. TN Valley',
-        year: '2023',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2023-19_Huffman_v_TNValley.pdf',
-        summary:
-            'Case remanded.',
-        outcome: 'Remanded',
+            'Metropolitan New York Presbytery\'s commission exceeded its '
+            'authority by rendering judgment when it was only authorized to '
+            'investigate under BCO 31-2. A commission may not act beyond the '
+            'powers clearly stated on the record by the presbytery (BCO 15-2, '
+            '15-3). An exchange of letters acknowledging sin does not constitute '
+            'the clear record required for a case without process under BCO 38-1.',
+        outcome: 'Sustained in part',
       ),
       SjcReference(
-        caseNumber: '2021-11',
-        caseTitle: 'Park et al. v. Korean Central Presbytery',
-        year: '2021',
+        caseNumber: '2011-18',
+        caseTitle: 'Ruff v. Nashville Presbytery (Second Complaint)',
+        year: '2011',
         pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2021-11_Park_v_KCP.pdf',
+            'https://pcahistory.org/pca/sjc/cases/2011-18_Ruff_v_Nashville.pdf',
         summary:
-            'Case not sustained.',
-        outcome: 'Not Sustained',
+            'Following remand, the SJC found that Presbytery conducted an '
+            'adequate BCO 31-2 investigation and was permitted to conclude the '
+            'matter under BCO 38-1. However, the confession was inadequate '
+            'because it was "almost entirely abstract" and did not acknowledge '
+            'particular sins against particular people. Citing WCF 15.5-6, men '
+            'ought not content themselves with general repentance but must repent '
+            'of particular sins particularly.',
+        outcome: 'Partially Sustained',
       ),
       SjcReference(
-        caseNumber: '2020-09',
-        caseTitle: 'Oxbalt et al. v. Pacific Presbytery',
-        year: '2020',
+        caseNumber: '2015-11',
+        caseTitle: 'Thompson v. South Florida Presbytery',
+        year: '2015',
         pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2020-07_Wilbourne_v_Pacific.pdf',
+            'https://pcahistory.org/pca/sjc/cases/2015-11_Thompson_v_SouthFlorida.pdf',
         summary:
-            'BCO 38-1 does not address the time at which additional '
-                  'adverse information might be presented; it prohibits the '
-                  'introduction of any information adverse to the accused to '
-                  'the court beyond the agreed upon statement of facts at any '
-                  'point prior to the decision on censure.',
+            'A BCO 30 censure cannot be imposed unless guilt is proven by a '
+            'mutually acceptable BCO 38-1 confession, a guilty plea, or '
+            'conviction at trial. The defendant\'s behavior did not constitute '
+            'the immediately censurable contumacy envisioned in BCO 32-6(b), and '
+            'the commission could not declare contumacy and excommunicate before '
+            'trial.',
         outcome: 'Sustained',
       ),
       SjcReference(
-        caseNumber: '2020-08',
-        caseTitle: 'Gendall et al. v. Pacific Presbytery',
-        year: '2020',
+        caseNumber: '2016-09',
+        caseTitle: 'Fordice v. Pacific Northwest Presbytery',
+        year: '2016',
         pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2020-07_Wilbourne_v_Pacific.pdf',
+            'https://pcahistory.org/pca/sjc/cases/2016-09_Fordice_v_PacificNW.pdf',
         summary:
-            'BCO 38-1 does not address the time at which additional '
-                  'adverse information might be presented; it prohibits the '
-                  'introduction of any information adverse to the accused to '
-                  'the court beyond the agreed upon statement of facts at any '
-                  'point prior to the decision on censure.',
-        outcome: 'Sustained',
-      ),
-      SjcReference(
-        caseNumber: '2020-07',
-        caseTitle: 'Wilbourne v. Pacific Presbytery',
-        year: '2020',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2020-07_Wilbourne_v_Pacific.pdf',
-        summary:
-            'BCO 38-1 does not address the time at which additional '
-                  'adverse information might be presented; it prohibits the '
-                  'introduction of any information adverse to the accused to '
-                  'the court beyond the agreed upon statement of facts at any '
-                  'point prior to the decision on censure.',
+            'After an investigative committee found a "strong presumption of '
+            'guilt" and unanimously recommended judicial process, the presbytery '
+            'improperly accepted the TE\'s BCO 38-1 confession but then adopted a '
+            'substitute motion commending the TE instead of imposing censure. The '
+            'SJC distinguished between deference on factual/discretionary matters '
+            'and de novo review on constitutional interpretation (BCO 39-3(4)).',
         outcome: 'Sustained',
       ),
       SjcReference(
@@ -1703,275 +1628,12 @@ class SjcData {
         pdfUrl:
             'https://pcahistory.org/pca/sjc/cases/2019-04_Williams_v_Chesapeake.pdf',
         summary:
-            'It is important to note that the reasoning and opinion above '
-                  'is applicable to this case only and should not be taken to '
-                  'be an exposition of whether a matter that begins as a case '
-                  'of process may ever be converted to a case without process '
-                  'under BCO 38-1.',
-        outcome: '',
-      ),
-      SjcReference(
-        caseNumber: '2016-09',
-        caseTitle: '2016-09 Fordice v PacificNW',
-        year: '2016',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2016-09_Fordice_v_PacificNW.pdf',
-        summary:
-            'Case dismissed.',
-        outcome: 'Dismissed',
-      ),
-      SjcReference(
-        caseNumber: '2015-11',
-        caseTitle: '2015-11 Thompson v SouthFlorida',
-        year: '2015',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2015-11_Thompson_v_SouthFlorida.pdf',
-        summary:
-            'Judgment on June 28, 2015.) While that phrase might appear '
-                  'to be subjective, its location in BCO 32-6 and the fact that '
-                  'it is immediately censurable points to it being objective '
-                  'instead.',
-        outcome: '',
-      ),
-      SjcReference(
-        caseNumber: '2011-18',
-        caseTitle: 'Ruff v. Nashville',
-        year: '2011',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2011-18_Ruff_v_Nashville.pdf',
-        summary:
-            'Alleged P erred in three ways: (1) failed to comply with SJC '
-                  'directive in Case 2009-28, (2) erred in receiving a '
-                  'confession via BCO 38-1 that was not a full statement of the '
-                  'facts, and (3) erred in administering proper censure of TE. '
-                  'SJC sustained parts 2 and 3, but not part 1.',
-        outcome: 'Sustained',
-      ),
-      SjcReference(
-        caseNumber: '2009-10',
-        caseTitle: 'Woodward v. Western Carolina Presbytery',
-        year: '2009',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2009-05-08-09-10_Payne_Linton_Lyons_Woodward_v_WesternCarolina.pdf',
-        summary:
-            'Therefore, since there is no Constitutional error, we give '
-                  'great deference to Presbytery in accordance with BCO 39-3 '
-                  'since this involves a factual matter which the lower court '
-                  'is more competent to determine, because of its proximity to '
-                  'the events in question and because of its knowledge and.',
-        outcome: '',
-      ),
-      SjcReference(
-        caseNumber: '2009-09',
-        caseTitle: 'Lyons v. Western Carolina Presbytery',
-        year: '2009',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2009-05-08-09-10_Payne_Linton_Lyons_Woodward_v_WesternCarolina.pdf',
-        summary:
-            'Therefore, since there is no Constitutional error, we give '
-                  'great deference to Presbytery in accordance with BCO 39-3 '
-                  'since this involves a factual matter which the lower court '
-                  'is more competent to determine, because of its proximity to '
-                  'the events in question and because of its knowledge and.',
-        outcome: '',
-      ),
-      SjcReference(
-        caseNumber: '2009-08',
-        caseTitle: 'Linton v. Western Carolina Presbytery',
-        year: '2009',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2009-05-08-09-10_Payne_Linton_Lyons_Woodward_v_WesternCarolina.pdf',
-        summary:
-            'Therefore, since there is no Constitutional error, we give '
-                  'great deference to Presbytery in accordance with BCO 39-3 '
-                  'since this involves a factual matter which the lower court '
-                  'is more competent to determine, because of its proximity to '
-                  'the events in question and because of its knowledge and.',
-        outcome: '',
-      ),
-      SjcReference(
-        caseNumber: '2009-05',
-        caseTitle: 'Payne v. Western Carolina Presbytery',
-        year: '2009',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2009-05-08-09-10_Payne_Linton_Lyons_Woodward_v_WesternCarolina.pdf',
-        summary:
-            'P erred procedurally in a 31-2 investigation of a TE and '
-                  'erred in not fining a strong presumption of guilt.',
-        outcome: 'Not Sustained',
-      ),
-      SjcReference(
-        caseNumber: '2008-15',
-        caseTitle: 'Morton Smith v. Western Carolina',
-        year: '2008',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2008-15_and_group_MHSmith_v_WesternCarolina.pdf',
-        summary:
-            'five errors. SJC sustained two due to an illegitimate '
-                  'congregational meeting.',
-        outcome: 'Sustained',
-      ),
-      SjcReference(
-        caseNumber: '2007-02',
-        caseTitle: 'Malone v. Metro NY',
-        year: '2007',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2007-02_Malone_v_MetropolitanNY.pdf',
-        summary:
-            'Involved interpretation of BCO 38-1 and cases without process.',
-        outcome: 'Sustained in Part',
-      ),
-    ],
-    'bco_38-3': [
-      SjcReference(
-        caseNumber: '2023-07',
-        caseTitle: 'TE Evans v. Arizona Presbytery',
-        year: '2024',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2023-07_Evans_v_Arizona.pdf',
-        summary:
-            'When a minister in good standing voluntarily affiliates with '
-                  'another branch of the visible Church, BCO 38-3.a is '
-                  'mandatory and self-executing: the presbytery must record the '
-                  'irregularity, acknowledge the new membership, and remove his '
-                  'name from the roll.',
-        outcome: 'Sustained',
-      ),
-      SjcReference(
-        caseNumber: '2021-05',
-        caseTitle: 'Eudaly et al. v. Southwest Florida Presbytery',
-        year: '2021',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2021-05_Eudaly_v_SWFlorida.pdf',
-        summary:
-            'Therefore, they lacked standing to file this Complaint.',
-        outcome: '',
-      ),
-      SjcReference(
-        caseNumber: '2020-10',
-        caseTitle: 'Eagle v. Savannah River Presbytery',
-        year: '2020',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2020-10_Eagle_v_SavannahRiver.pdf',
-        summary:
-            'PCA jurisdiction over Complainants ended on February 9, '
-                  '2020, when they affiliated with another branch of the '
-                  'visible church (see BCO 38-3).',
-        outcome: '',
-      ),
-      SjcReference(
-        caseNumber: '2019-13',
-        caseTitle: 'Gendy v. Central Florida Presbytery',
-        year: '2019',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2019-13_Gendy_v_CentralFL.pdf',
-        summary:
-            'In addition to the wording of the provision itself, the '
-                  'history of BCO 38-4 illustrates this distinction.',
-        outcome: 'Dismissed',
-      ),
-    ],
-    'bco_38-4': [
-      SjcReference(
-        caseNumber: '2019-13',
-        caseTitle: 'Gendy v. Central Florida Presbytery',
-        year: '2019',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2019-13_Gendy_v_CentralFL.pdf',
-        summary:
-            'In addition to the wording of the provision itself, the '
-                  'history of BCO 38-4 illustrates this distinction.',
-        outcome: 'Dismissed',
-      ),
-      SjcReference(
-        caseNumber: '2002-10',
-        caseTitle: 'Goerig v. Pacific Northwest Presbytery',
-        year: '2002',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2002-10_Goerig_v_PacificNorthwest.pdf',
-        summary:
-            'S removed name from roll per BCO 38-4. Complaint alleged P '
-                  'should have sustained C and remanded to S.',
-        outcome: 'Sustained',
-      ),
-    ],
-    // ─────────────────────────────────────────────────────────────
-    // BCO Ch 39-40 — Appeals / Complaints
-    // ─────────────────────────────────────────────────────────────
-    'bco_39-2': [
-      SjcReference(
-        caseNumber: '2015-08',
-        caseTitle: '2015-08 Hardie v MetroAtlanta',
-        year: '2015',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2015-08_Hardie_v_MetroAtlanta.pdf',
-        summary:
-            'therefore, to give “great deference” to MAP’s decision and '
-                  'to reverse only if there is “clear error.',
-        outcome: '',
-      ),
-      SjcReference(
-        caseNumber: '2012-05',
-        caseTitle: 'Hedman v. Pacific Northwest',
-        year: '2012',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2012-05_Hedman_v_PacificNorthwest.pdf',
-        summary:
-            'P erred by not convicting TE Leithart at trial involving '
-                  'doctrinal views.',
-        outcome: 'Not Sustained',
-      ),
-    ],
-    'bco_39-3': [
-      SjcReference(
-        caseNumber: '2023-10',
-        caseTitle: 'REs Martinez & Cook v. Pacific',
-        year: '2023',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2023-10_Martinez%26Cook_v_Pacific.pdf',
-        summary:
-            'therefore the SJC should not feel obligated to give "great '
-                  'deference" to Presbytery\'s decision per BCO 39-3.',
-        outcome: 'Not Sustained',
-      ),
-      SjcReference(
-        caseNumber: '2021-01',
-        caseTitle: 'Michelson v. Northwest Georgia Presbytery',
-        year: '2021',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2021-01_Michelson_v_NWGeorgia.pdf',
-        summary:
-            'judgment which can only be addressed by a court with '
-                  'familiar acquaintance of the events and parties (BCO '
-                  '39-3.3).',
-        outcome: '',
-      ),
-      SjcReference(
-        caseNumber: '2020-09',
-        caseTitle: 'Oxbalt et al. v. Pacific Presbytery',
-        year: '2020',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2020-07_Wilbourne_v_Pacific.pdf',
-        summary:
-            'BCO 38-1 does not address the time at which additional '
-                  'adverse information might be presented; it prohibits the '
-                  'introduction of any information adverse to the accused to '
-                  'the court beyond the agreed upon statement of facts at any '
-                  'point prior to the decision on censure.',
-        outcome: 'Sustained',
-      ),
-      SjcReference(
-        caseNumber: '2020-08',
-        caseTitle: 'Gendall et al. v. Pacific Presbytery',
-        year: '2020',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2020-07_Wilbourne_v_Pacific.pdf',
-        summary:
-            'BCO 38-1 does not address the time at which additional '
-                  'adverse information might be presented; it prohibits the '
-                  'introduction of any information adverse to the accused to '
-                  'the court beyond the agreed upon statement of facts at any '
-                  'point prior to the decision on censure.',
+            'Once an indictment is issued and a plea entered, the case is one of '
+            'process under BCO 32 and cannot be converted to BCO 38-1 (case '
+            'without process). BCO 38-1 requires the person to come forward '
+            'voluntarily as his own accuser with a full confession; a partial '
+            'plea to charges framed by a prosecutor does not satisfy this '
+            'standard.',
         outcome: 'Sustained',
       ),
       SjcReference(
@@ -1981,105 +1643,149 @@ class SjcData {
         pdfUrl:
             'https://pcahistory.org/pca/sjc/cases/2020-07_Wilbourne_v_Pacific.pdf',
         summary:
-            'BCO 38-1 does not address the time at which additional '
-                  'adverse information might be presented; it prohibits the '
-                  'introduction of any information adverse to the accused to '
-                  'the court beyond the agreed upon statement of facts at any '
-                  'point prior to the decision on censure.',
+            'In a BCO 38-1 case without process, the accused comes forward with a '
+            'mutually approved statement of facts. Reading a detailed negative '
+            'report at the presbytery meeting that was not part of the agreed '
+            'statement violated BCO 38-1 requirements. Introducing additional '
+            'prejudicial material beyond the agreed statement was '
+            'constitutionally improper.',
         outcome: 'Sustained',
       ),
       SjcReference(
-        caseNumber: '2020-06',
-        caseTitle: 'Gordon v. Southern New England Presbytery',
-        year: '2020',
+        caseNumber: '2023-19',
+        caseTitle: 'Huffman v. Tennessee Valley Presbytery',
+        year: '2023',
         pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2020-06_Gordon_v_SNEP.pdf',
+            'https://pcahistory.org/pca/sjc/cases/2023-19_Huffman_v_TNValley.pdf',
         summary:
-            'Instead, he recited the general grounds for appeal outlined '
-                  'in BCO 42-3.',
-        outcome: '',
+            'BCO amendments affecting judicial rights should not be applied '
+            'retroactively to cases already in progress under the prior rule. '
+            'When the 2023 amendment to BCO 38-1 changed the right from complaint '
+            'to appeal, a case near completion under the old rule should be '
+            'adjudicated under pre-amendment terms.',
+        outcome: 'Remanded',
+      ),
+    ],
+    'bco_38-3': [
+      SjcReference(
+        caseNumber: '2009-11',
+        caseTitle: 'Edison v. Southwest Florida Presbytery',
+        year: '2009',
+        pdfUrl:
+            'https://pcahistory.org/pca/sjc/cases/2009-11-Edison_v_SouthwestFlorida.pdf',
+        summary:
+            'Once membership was conferred and a call approved, those actions '
+            'could only be reversed through proper due process. A presbytery '
+            'cannot retroactively undo reception of a member and approval of a '
+            'call without following proper constitutional procedures. The '
+            'Presbytery\'s unilateral rescission of membership was erroneous.',
+        outcome: 'Partially Sustained',
       ),
       SjcReference(
-        caseNumber: '2019-11',
-        caseTitle: 'Crouse v. NW Georgia Presbytery',
-        year: '2019',
+        caseNumber: '2023-07',
+        caseTitle: 'Evans v. Arizona Presbytery',
+        year: '2023',
         pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2019-11_Crouse_v_NWGeorgia.pdf',
+            'https://pcahistory.org/pca/sjc/cases/2023-07_Evans_v_Arizona.pdf',
         summary:
-            'Therefore, a higher court should not reverse such a judgment '
-                  'by a lower court, unless there is clear error on the part of '
-                  'the lower court.',
+            'At the time of divestiture, the minister was no longer subject to '
+            'the presbytery\'s jurisdiction because he had affiliated with '
+            'another branch of the visible church under BCO 38-3(a). Standing and '
+            'jurisdiction must stand or fall together — a presbytery cannot claim '
+            'jurisdiction to divest a minister while simultaneously denying him '
+            'standing to appeal.',
+        outcome: 'Sustained',
+      ),
+    ],
+    'bco_38-4': [
+      SjcReference(
+        caseNumber: '2002-10',
+        caseTitle: 'Goerig v. Pacific Northwest Presbytery',
+        year: '2002',
+        pdfUrl:
+            'https://pcahistory.org/pca/sjc/cases/2002-10_Goerig_v_PacificNorthwest.pdf',
+        summary:
+            'The Session failed to follow the provisions of BCO 38-4 regarding '
+            'erasure of membership. The procedural protections in BCO 38-4 '
+            '(proper notice and waiting period) are mandatory before a name can '
+            'be erased from the rolls.',
         outcome: 'Sustained',
       ),
       SjcReference(
-        caseNumber: '2019-07',
-        caseTitle: 'Fozard v. North Texas Presbytery',
+        caseNumber: '2005-01',
+        caseTitle: 'Chastain v. Heritage Presbytery',
+        year: '2005',
+        pdfUrl:
+            'https://pcahistory.org/pca/sjc/cases/2005-01_Chastain_v_Heritage.pdf',
+        summary:
+            'The case addressed questions about membership erasure under BCO '
+            '38-4, including due process and proper notification requirements. '
+            'The decision generated significant discussion about the scope of '
+            'appellate review under BCO 42-9.',
+        outcome: 'Partially Sustained',
+      ),
+      SjcReference(
+        caseNumber: '2018-02',
+        caseTitle: 'Lewis v. Presbytery of the Mississippi Valley',
+        year: '2018',
+        pdfUrl:
+            'https://pcahistory.org/pca/sjc/cases/2018-02_Lewis_v_MSValley.pdf',
+        summary:
+            'The SJC ruled that a BCO 40-5 filing was out of order because the '
+            'SJC\'s responsibility under Chapter 40 is upon referral from the '
+            'General Assembly per RAO 16-10.c, not by direct filing. The SJC also '
+            'noted that if the Session did not provide notice of erasure per BCO '
+            '38-4, the member remains in good standing.',
+        outcome: 'Out of Order',
+      ),
+      SjcReference(
+        caseNumber: '2019-13',
+        caseTitle: 'Gendy v. Central Florida Presbytery',
         year: '2019',
         pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2019-07_Fozard_v_NorthTX.pdf',
+            'https://pcahistory.org/pca/sjc/cases/2019-13_Gendy_v_CentralFL.pdf',
         summary:
-            'Therefore, a higher court should not reverse such a judgment '
-                  'by a lower court, unless there is clear error on the part of '
-                  'the lower court.',
-        outcome: '',
+            'A person removed from membership under BCO 38-4 retains standing to '
+            'complain about that removal. BCO 38-4 erasure is explicitly "an act '
+            'of pastoral discipline," and fundamental fairness requires that a '
+            'member facing removal retains standing to challenge it; otherwise, a '
+            'Session could remove any member without recourse.',
+        outcome: 'Sustained',
+      ),
+    ],
+    // ─────────────────────────────────────────────────────────────
+    // BCO Ch 39 — General Review and Control
+    // ─────────────────────────────────────────────────────────────
+    'bco_39-3': [
+      SjcReference(
+        caseNumber: '2007-08',
+        caseTitle: 'Jones v. Louisiana Presbytery',
+        year: '2007',
+        pdfUrl:
+            'https://pcahistory.org/pca/sjc/cases/2007-08_Jones_v_Louisiana.pdf',
+        summary:
+            'Louisiana Presbytery failed to apply the correct constitutional '
+            'standard when examining TE Wilkins\' views on the Federal Vision, '
+            'and erred in its application of BCO 21-4 regarding stated '
+            'differences with the Westminster Standards. A presbytery must apply '
+            'the denomination\'s doctrinal standards, not its own, when '
+            'evaluating a minister\'s views.',
+        outcome: 'Sustained',
       ),
       SjcReference(
-        caseNumber: '2019-03',
-        caseTitle: 'Crouse v. NW Georgia Presbytery',
-        year: '2019',
+        caseNumber: '2009-28',
+        caseTitle: 'Ruff v. Nashville Presbytery',
+        year: '2009',
         pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2019-03_Crouse_v_NWGeorgia.pdf',
+            'https://pcahistory.org/pca/sjc/cases/2009-28_Ruff_v_Nashville.pdf',
         summary:
-            'judgment, the SJC doubled down on their decision by '
-                  'suggesting that if a Session desires “greater flexibility” '
-                  'in the requirements found in BCO 24-1, it should pursue a '
-                  'change to the Constitution.',
-        outcome: '',
-      ),
-      SjcReference(
-        caseNumber: '2017-01',
-        caseTitle: 'Dailey v. Heritage Presbytery',
-        year: '2017',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2017-01_Dailey_v_Heritage.pdf',
-        summary:
-            'Therefore, the higher court has the duty and authority to '
-                  'interpret the Constitution of the Church according to its '
-                  'best abilities and understanding.',
-        outcome: 'Denied',
-      ),
-      SjcReference(
-        caseNumber: '2016-14',
-        caseTitle: '2016-14 Wills v MetroAtlanta',
-        year: '2016',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2016-14_Wills_v_MetroAtlanta.pdf',
-        summary:
-            'Therefore, a higher court should not reverse such a judgment '
-                  'by a lower court, unless there is clear error on the part of '
-                  'the lower court.',
-        outcome: '',
-      ),
-      SjcReference(
-        caseNumber: '2016-09',
-        caseTitle: '2016-09 Fordice v PacificNW',
-        year: '2016',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2016-09_Fordice_v_PacificNW.pdf',
-        summary:
-            'Case dismissed.',
-        outcome: 'Dismissed',
-      ),
-      SjcReference(
-        caseNumber: '2012-05',
-        caseTitle: 'Hedman v. Pacific Northwest',
-        year: '2012',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2012-05_Hedman_v_PacificNorthwest.pdf',
-        summary:
-            'P erred by not convicting TE Leithart at trial involving '
-                  'doctrinal views.',
-        outcome: 'Not Sustained',
+            'Nashville Presbytery erred by failing to conduct an adequate BCO '
+            '31-2 investigation and by failing to find a strong presumption of '
+            'guilt. A presbytery must document the work of its investigating body '
+            'through a written report or in its minutes. The duty to proceed '
+            'pastorally does not relieve the responsibility to act judicially — '
+            'the two are parallel and complementary, not mutually exclusive.',
+        outcome: 'Sustained',
       ),
       SjcReference(
         caseNumber: '2009-07',
@@ -2088,265 +1794,234 @@ class SjcData {
         pdfUrl:
             'https://pcahistory.org/pca/sjc/cases/2009-07_Urish_v_RockyMountain.pdf',
         summary:
-            'P erred by ordaining a man who held that women could, under '
-                  'Session authority, do any teaching in a church other than '
-                  'preaching. (Interpretation of 1 Timothy 2:12)',
-        outcome: 'Not Sustained',
+            'Rocky Mountain Presbytery did not err in sustaining a candidate\'s '
+            'theological examination when the candidate would allow a woman to '
+            'teach from Scripture to men and women in non-preaching ministries '
+            'under the authority of the Session. The matter involved the '
+            'interpretation of Scripture not authoritatively exposited by the '
+            'doctrinal standards, and the presbytery\'s latitude fell within '
+            'permissible bounds under BCO 39-3.',
+        outcome: 'Denied',
       ),
       SjcReference(
-        caseNumber: '2007-08',
-        caseTitle: 'Jones v. Louisiana',
-        year: '2007',
+        caseNumber: '2011-12',
+        caseTitle: 'Appeal of Hahn v. Philadelphia Metro West Presbytery',
+        year: '2011',
         pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2007-08_Jones_v_Louisiana.pdf',
+            'https://pcahistory.org/pca/sjc/cases/2011-15_Hahn_v_PhilaMetroWest.pdf',
         summary:
-            'P erred in not finding a strong presumption of guilt RE TE '
-                  'Wilkins. Jones was joined by seven other complainants.',
+            'Under BCO 39-3(2), the higher court must defer to the lower court\'s '
+            'factual findings regarding credibility of witnesses and should not '
+            'reverse unless there is clear error. The Presbytery conducted a '
+            'thorough trial with full opportunity for cross-examination, and the '
+            'SJC found no clear error.',
+        outcome: 'Denied',
+      ),
+      SjcReference(
+        caseNumber: '2012-05',
+        caseTitle: 'Hedman v. Pacific Northwest Presbytery',
+        year: '2012',
+        pdfUrl:
+            'https://pcahistory.org/pca/sjc/cases/2012-05_Hedman_v_PacificNorthwest.pdf',
+        summary:
+            'The SJC denied the complaint against Pacific Northwest Presbytery\'s '
+            'acquittal of TE Leithart on five Federal Vision-related charges. '
+            'Under BCO 39-3, the SJC could not reverse the lower court\'s factual '
+            'findings absent clear error. The Presbytery carefully complied with '
+            'procedural requirements, and neither the prosecution nor the '
+            'complainant proved Leithart\'s views violated the system of '
+            'doctrine.',
+        outcome: 'Denied',
+      ),
+      SjcReference(
+        caseNumber: '2016-09',
+        caseTitle: 'Fordice v. Pacific Northwest Presbytery',
+        year: '2016',
+        pdfUrl:
+            'https://pcahistory.org/pca/sjc/cases/2016-09_Fordice_v_PacificNW.pdf',
+        summary:
+            'After an investigative committee found a "strong presumption of '
+            'guilt" and unanimously recommended judicial process, the presbytery '
+            'improperly accepted the TE\'s BCO 38-1 confession but then adopted a '
+            'substitute motion commending the TE instead of imposing censure. The '
+            'SJC distinguished between deference on factual/discretionary matters '
+            'and de novo review on constitutional interpretation (BCO 39-3(4)).',
         outcome: 'Sustained',
       ),
       SjcReference(
-        caseNumber: '2007-02',
-        caseTitle: 'Malone v. Metro NY',
-        year: '2007',
+        caseNumber: '2016-16',
+        caseTitle: 'Sartorius v. Siouxlands Presbytery',
+        year: '2016',
         pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2007-02_Malone_v_MetropolitanNY.pdf',
+            'https://pcahistory.org/pca/sjc/cases/2016-16_Sartorius_v_Siouxlands.pdf',
         summary:
-            'Involved interpretation of BCO 38-1 and cases without process.',
-        outcome: 'Sustained in Part',
+            'The SJC denied the complaint against Siouxlands Presbytery\'s '
+            'acquittal of TE Lawrence on Federal Vision-related charges, applying '
+            'BCO 39-3 deference to the lower court. The decision raised '
+            'significant concerns about lack of due process protections for '
+            'acquitted persons in acquittal complaints and urged the PCA to '
+            'consider amending the BCO.',
+        outcome: 'Denied',
       ),
       SjcReference(
-        caseNumber: '2005-08',
-        caseTitle: 'Appeal of Peter B. Kim v. Korean Eastern',
-        year: '2005',
+        caseNumber: '2019-07',
+        caseTitle: 'Fozard v. North Texas Presbytery',
+        year: '2019',
         pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2005-08_Kim_v_KoreanEastern.pdf',
+            'https://pcahistory.org/pca/sjc/cases/2019-07_Fozard_v_NorthTX.pdf',
         summary:
-            'Convicted of being "contumacious against the authority of '
-                  'Presbytery." Deposed and excommunicated. SJC upholds '
-                  'conviction but reduces excommunication to indefinite '
-                  'suspension from sacraments.',
-        outcome: 'Not Sustained',
+            'The SJC denied the complaint regarding a church\'s policy '
+            'restricting integration of special case felons. The Session has '
+            'discretion under BCO 11-2 over "circumstantial details" left to '
+            '"Christian prudence." The SJC deferred to the lower court\'s '
+            'discretion under BCO 39-3(3) and explicitly disclaimed endorsement '
+            'of the Session\'s arguments from the Preliminary Principles.',
+        outcome: 'Denied',
       ),
     ],
-    'bco_40-1': [
-      SjcReference(
-        caseNumber: '2017-11',
-        caseTitle: 'In re Korean Southwest Presbytery',
-        year: '2017',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2017-11_In_Re_Korean_Southwest.pdf',
-        summary:
-            'MINUTES OF THE GENERAL ASSEMBLY 588 CASE 2017-10 IN RE '
-                  'KOREAN EASTERN PRESBYTERY MARCH 1, 2018 The Commission '
-                  'recognized that Korean Eastern Presbytery complied with the '
-                  'citation from the Commission; that the Presbytery provided '
-                  'the necessary materials under BCO 40-1; and that the '
-                  'Commission refers.',
-        outcome: '',
-      ),
-      SjcReference(
-        caseNumber: '2017-10',
-        caseTitle: 'In re Korean Eastern Presbytery',
-        year: '2017',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2017-10_In_Re_Korean_Eastern.pdf',
-        summary:
-            'MINUTES OF THE GENERAL ASSEMBLY 588 CASE 2017-10 IN RE '
-                  'KOREAN EASTERN PRESBYTERY MARCH 1, 2018 The Commission '
-                  'recognized that Korean Eastern Presbytery complied with the '
-                  'citation from the Commission; that the Presbytery provided '
-                  'the necessary materials under BCO 40-1; and that the '
-                  'Commission refers.',
-        outcome: '',
-      ),
-    ],
+    // ─────────────────────────────────────────────────────────────
+    // BCO Ch 40 — General Review and Control
+    // ─────────────────────────────────────────────────────────────
     'bco_40-2': [
       SjcReference(
         caseNumber: '2007-13',
-        caseTitle: 'Kniseley v. Rocky Mountain',
+        caseTitle: 'Kniseley v. Rocky Mountain Presbytery',
         year: '2007',
         pdfUrl:
             'https://pcahistory.org/pca/sjc/cases/2007-13_Kniseley_v_RockyMountain.pdf',
         summary:
-            'P erred by allowing a church to title a female staff person '
-                  'as Minister of Church Life.',
-        outcome: 'Not Sustained',
+            'While the BCO uses "minister" synonymously with "teaching elder" and '
+            '"pastor" in its formal definitions (BCO 4-1, 4-3), the BCO is silent '
+            'on the general or colloquial use of the title "minister" for '
+            'unordained church staff. Rocky Mountain Presbytery did not err in '
+            'acknowledging this distinction.',
+        outcome: 'Denied',
       ),
     ],
     'bco_40-3': [
       SjcReference(
-        caseNumber: '2015-10',
-        caseTitle: '2015-10 Thompson v SouthFlorida',
-        year: '2015',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2015-10_Thompson_v_SouthFlorida.pdf',
-        summary:
-            'Case dismissed.',
-        outcome: 'Dismissed',
-      ),
-      SjcReference(
         caseNumber: '1983-15',
-        caseTitle: 'TE W. Ted Smith, Jr. vs. Central Carolina Presbytery',
+        caseTitle: 'Smith v. Central Carolina Presbytery',
         year: '1983',
         pdfUrl:
             'https://pcahistory.org/pca/sjc/cases/1983-15_Smith_v_CentralCarolina.pdf',
         summary:
-            '(See also Cases 27,29, 31, 33) Was Presbytery negligent '
-                  'concerning General Assembly directives and BCO '
-                  'responsibilities to exercise proper oversight of past and '
-                  'present members of a congregation.',
+            'Complaint about General Assembly directives and BCO responsibilities '
+            'regarding exercise of proper oversight over presbyteries.',
         outcome: 'Not Sustained',
       ),
     ],
     'bco_40-4': [
       SjcReference(
         caseNumber: '2022-22',
-        caseTitle: 'RE Tom Turner v. South Florida Presbytery',
+        caseTitle: 'Turner v. South Florida Presbytery',
         year: '2022',
         pdfUrl:
             'https://pcahistory.org/pca/sjc/cases/2022-22_Turner_v_SouthFL.pdf',
         summary:
-            'Case partially sustained.',
+            'A presbytery has authority to investigate a Session under BCO 31-2, '
+            'but a judicial commission cannot render judgments of guilt without '
+            'presenting specific charges and conducting a trial, even when a '
+            'Session refuses to appear. A trial is required before adjudicating '
+            'guilt.',
         outcome: 'Partially Sustained',
       ),
     ],
     'bco_40-5': [
       SjcReference(
-        caseNumber: '2018-02',
-        caseTitle: 'Lewis v. Mississippi Valley Presbytery',
-        year: '2018',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2018-02_Lewis_v_MSValley.pdf',
-        summary:
-            'judgments on the matters noted in the [Central Carolina '
-                  'letter] are properly before the SJC under BCO 13-9.f, 40-4, '
-                  '40-5 and SJCM 16.1.',
-        outcome: '',
-      ),
-      SjcReference(
-        caseNumber: '2015-10',
-        caseTitle: '2015-10 Thompson v SouthFlorida',
-        year: '2015',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2015-10_Thompson_v_SouthFlorida.pdf',
-        summary:
-            'Case dismissed.',
-        outcome: 'Dismissed',
-      ),
-      SjcReference(
-        caseNumber: '2015-07',
-        caseTitle: '2015-07 Thompson v SouthFlorida',
-        year: '2015',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2015-07_Thompson_v_SouthFlorida.pdf',
-        summary:
-            'Case dismissed.',
-        outcome: 'Dismissed',
-      ),
-      SjcReference(
-        caseNumber: '2015-05',
-        caseTitle: '2015-05 Application of Thompson v SouthFlorida',
-        year: '2015',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2015-05_Application_of_Thompson_v_SouthFlorida.pdf',
-        summary:
-            'DECISION ON BCO 40-5 APPLICATION AUGUST 12, 2015 The '
-                  'Standing Judicial Commission (SJC) finds the above-named '
-                  'Case Administratively Out of Order (OMSJC 9.1.a.) in that '
-                  'The Stated Clerk of South Florida Presbytery has advised '
-                  'that this matter is on the Docket of its August 11, 2015, '
-                  'Stated Meeting.',
-        outcome: 'Dismissed',
-      ),
-      SjcReference(
-        caseNumber: '2008-09',
-        caseTitle: 'Session of Red Mountain v. Evangel Presbytery',
-        year: '2008',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2008-09_RedMountain_v_Evangel.pdf',
-        summary:
-            'Husband complained to P that S failed to indict his wife for '
-                  'pursuing an alleged unbiblical divorce. P sustained '
-                  'complaint. Session then filed complaint to SJC.',
-        outcome: 'Sustained',
-      ),
-      SjcReference(
         caseNumber: '2006-02',
-        caseTitle: 'Memorial of Central Carolina v. Louisiana',
+        caseTitle: 'Memorial of Central Carolina Presbytery',
         year: '2006',
         pdfUrl:
             'https://pcahistory.org/pca/sjc/cases/2006-02_Memorial_of_Central_Carolina.pdf',
         summary:
-            'C.',
+            'The SJC found that Louisiana Presbytery failed to demonstrate '
+            'adequate examination of TE Wilkins\' published views on the Federal '
+            'Vision, which raised serious questions about conformity with the '
+            'Westminster Standards. The SJC directed Louisiana Presbytery to '
+            'conduct a thorough investigation under BCO 31-2 and 13-9.f.',
         outcome: 'Sustained',
+      ),
+      SjcReference(
+        caseNumber: '2007-14',
+        caseTitle: 'PCA v. Louisiana Presbytery',
+        year: '2007',
+        pdfUrl:
+            'https://pcahistory.org/pca/sjc/cases/2007-14_PCA_v_Louisiana.pdf',
+        summary:
+            'Louisiana Presbytery was charged with dereliction of duty for '
+            'failing to find a strong presumption of guilt that TE Wilkins\' '
+            'views were out of conformity with the Standards and for failing to '
+            'press forward with a trial. The Presbytery pled guilty, and the SJC '
+            'imposed a public censure of admonition under BCO 13-9 and 40-5.',
+        outcome: 'Guilty (Admonition)',
+      ),
+      SjcReference(
+        caseNumber: '2018-02',
+        caseTitle: 'Lewis v. Presbytery of the Mississippi Valley',
+        year: '2018',
+        pdfUrl:
+            'https://pcahistory.org/pca/sjc/cases/2018-02_Lewis_v_MSValley.pdf',
+        summary:
+            'The SJC ruled that a BCO 40-5 filing was out of order because the '
+            'SJC\'s responsibility under Chapter 40 is upon referral from the '
+            'General Assembly per RAO 16-10.c, not by direct filing. The SJC also '
+            'noted that if the Session did not provide notice of erasure per BCO '
+            '38-4, the member remains in good standing.',
+        outcome: 'Out of Order',
       ),
     ],
     'bco_40-6': [
       SjcReference(
         caseNumber: '2016-14',
-        caseTitle: '2016-14 Wills v MetroAtlanta',
+        caseTitle: 'Wills v. Metro Atlanta Presbytery',
         year: '2016',
         pdfUrl:
             'https://pcahistory.org/pca/sjc/cases/2016-14_Wills_v_MetroAtlanta.pdf',
         summary:
-            'Therefore, a higher court should not reverse such a judgment '
-                  'by a lower court, unless there is clear error on the part of '
-                  'the lower court.',
-        outcome: '',
-      ),
-      SjcReference(
-        caseNumber: '2006-02',
-        caseTitle: 'Memorial of Central Carolina v. Louisiana',
-        year: '2006',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2006-02_Memorial_of_Central_Carolina.pdf',
-        summary:
-            'C.',
-        outcome: 'Sustained',
+            'BCO 13-9(f) grants presbyteries the power to dissolve churches '
+            'without mandating any particular procedure. BCO 40-6 (process '
+            'against a lower court) does not apply to the dissolution authority '
+            'of BCO 13-9(f). Under BCO 39-3.3, the SJC found no clear error in '
+            'Presbytery\'s judgment, though a presbytery cannot dissolve without '
+            'sufficient justification.',
+        outcome: 'Denied',
       ),
     ],
     // ─────────────────────────────────────────────────────────────
-    // BCO Ch 41-43 — Dissents / Overtures / References
+    // BCO Ch 41-43 — Dissents / Overtures / References / Complaints / Appeals
     // ─────────────────────────────────────────────────────────────
     'bco_41-2': [
       SjcReference(
-        caseNumber: '2017-07',
-        caseTitle: 'Clements v. Blue Ridge Presbytery',
-        year: '2017',
+        caseNumber: '2022-10',
+        caseTitle: 'PCA v. Herron',
+        year: '2022',
         pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2017-06%26-07_Clements_v_BlueRidge.pdf',
+            'https://pcahistory.org/pca/sjc/cases/2022-10_PCA_v_Herron.pdf',
         summary:
-            'Case denied.',
-        outcome: 'Denied',
-      ),
-    ],
-    'bco_41-3': [
-      SjcReference(
-        caseNumber: '2017-07',
-        caseTitle: 'Clements v. Blue Ridge Presbytery',
-        year: '2017',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2017-06%26-07_Clements_v_BlueRidge.pdf',
-        summary:
-            'Case denied.',
-        outcome: 'Denied',
-      ),
-    ],
-    'bco_42-2': [
-      SjcReference(
-        caseNumber: '1997-09',
-        caseTitle: 'Appeal of Dr. Shive v. Central Carolina',
-        year: '1997',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/1997-09_Shive_v_CentralCarolina.pdf',
-        summary:
-            'errors. SJC sustained on one, ruling S erred by '
-                  'excommunicating instead of imposing a lesser censure. '
-                  'Remanded for imposition of indef susp from sacraments.',
-        outcome: 'Sustained',
+            'After a BCO 41 Reference trial accepted from Central Indiana '
+            'Presbytery on charges of sexual harassment and bullying, the SJC '
+            'conducted a 42-hour week-long trial and unanimously found the '
+            'defendant not guilty on all charges after hearing 18 prosecution '
+            'witnesses and 24 defense witnesses.',
+        outcome: 'Not Guilty',
       ),
     ],
     'bco_42-3': [
+      SjcReference(
+        caseNumber: '2015-04',
+        caseTitle: 'Thompson v. South Florida Presbytery',
+        year: '2015',
+        pdfUrl:
+            'https://pcahistory.org/pca/sjc/cases/2015-04_Thompson_v_SouthFlorida.pdf',
+        summary:
+            'A defendant in an ongoing judicial case may not use a BCO 43-1 '
+            'complaint to obtain interlocutory appellate review of pre-trial '
+            'rulings. Objections must be raised during process under BCO 32-14 or '
+            'thereafter on appeal under BCO 42-3. PCA polity does not permit '
+            'interlocutory appeals.',
+        outcome: 'Dismissed (Judicially Out of Order)',
+      ),
       SjcReference(
         caseNumber: '2020-06',
         caseTitle: 'Gordon v. Southern New England Presbytery',
@@ -2354,235 +2029,131 @@ class SjcData {
         pdfUrl:
             'https://pcahistory.org/pca/sjc/cases/2020-06_Gordon_v_SNEP.pdf',
         summary:
-            'Instead, he recited the general grounds for appeal outlined '
-                  'in BCO 42-3.',
-        outcome: '',
-      ),
-      SjcReference(
-        caseNumber: '2015-04',
-        caseTitle: '2015-04 Thompson v SouthFlorida',
-        year: '2015',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2015-04_Thompson_v_SouthFlorida.pdf',
-        summary:
-            'Case not sustained.',
-        outcome: 'Not Sustained',
-      ),
-      SjcReference(
-        caseNumber: '2015-03',
-        caseTitle: '2015-03 Flesher&Weekly v MetroAtlanta',
-        year: '2015',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2015-03_Flesher%26Weekly_v_MetroAtlanta.pdf',
-        summary:
-            'DECISION ON COMPLAINT MARCH 3, 2016 The SJC finds the '
-                  'Complaint judicially out of order as the objections raised '
-                  'in the Complaint ought to be raised by a defendant during '
-                  'process with the court of original jurisdiction (BCO 32-14), '
-                  'or thereafter, if not satisfied, by an appellant on appeal '
-                  '(BCO.',
-        outcome: '',
-      ),
-    ],
-    'bco_42-4': [
-      SjcReference(
-        caseNumber: '2016-02',
-        caseTitle: '2016-02 Robertstad v NorthTexas',
-        year: '2016',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2016-02_Robertstad_v_NorthTexas.pdf',
-        summary:
-            'Case denied.',
+            'The appellant failed to identify specific errors with particularity, '
+            'instead merely reciting the general grounds for appeal under BCO '
+            '42-3 without supporting evidence. A higher court on appeal cannot '
+            'consider evidence not presented at trial and will not speculate '
+            'about defenses not raised in lower courts per BCO 39-3(1).',
         outcome: 'Denied',
       ),
     ],
-    'bco_42-5': [
+    'bco_42-8': [
       SjcReference(
-        caseNumber: '1997-04',
-        caseTitle: 'Conrad v. Central Carolina',
+        caseNumber: '1997-06',
+        caseTitle: 'Fitzsimmons v. Evangel Presbytery',
         year: '1997',
         pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/1997-04_Conrad_v_CentralCarolina.pdf',
+            'https://pcahistory.org/pca/sjc/cases/1997-06_Fitzsimmons_v_Evangel.pdf',
         summary:
-            'S erred by removing her and others from membership roll.',
-        outcome: 'Not Sustained',
+            'The SJC found that Evangel Presbytery erred by failing to notify the '
+            'appellant of the hearing date and by rescinding its finding that the '
+            'appeal was in order rather than adjudicating it. Once an appeal is '
+            'found to be in order under BCO 42-8, the court must adjudicate it; '
+            'it cannot reverse that finding.',
+        outcome: 'Sustained',
       ),
     ],
     'bco_42-9': [
       SjcReference(
-        caseNumber: '1997-09',
-        caseTitle: 'Appeal of Dr. Shive v. Central Carolina',
+        caseNumber: '1997-06',
+        caseTitle: 'Fitzsimmons v. Evangel Presbytery',
         year: '1997',
         pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/1997-09_Shive_v_CentralCarolina.pdf',
+            'https://pcahistory.org/pca/sjc/cases/1997-06_Fitzsimmons_v_Evangel.pdf',
         summary:
-            'errors. SJC sustained on one, ruling S erred by '
-                  'excommunicating instead of imposing a lesser censure. '
-                  'Remanded for imposition of indef susp from sacraments.',
+            'The SJC found that Evangel Presbytery erred by failing to notify the '
+            'appellant of the hearing date and by rescinding its finding that the '
+            'appeal was in order rather than adjudicating it. Once an appeal is '
+            'found to be in order under BCO 42-8, the court must adjudicate it; '
+            'it cannot reverse that finding.',
         outcome: 'Sustained',
+      ),
+      SjcReference(
+        caseNumber: '2005-01',
+        caseTitle: 'Chastain v. Heritage Presbytery',
+        year: '2005',
+        pdfUrl:
+            'https://pcahistory.org/pca/sjc/cases/2005-01_Chastain_v_Heritage.pdf',
+        summary:
+            'The case addressed questions about membership erasure under BCO '
+            '38-4, including due process and proper notification requirements. '
+            'The decision generated significant discussion about the scope of '
+            'appellate review under BCO 42-9.',
+        outcome: 'Partially Sustained',
+      ),
+      SjcReference(
+        caseNumber: '2007-04',
+        caseTitle: 'Engel v. Evangel Presbytery',
+        year: '2007',
+        pdfUrl:
+            'https://pcahistory.org/pca/sjc/cases/2007-04_Engel_v_Evangel.pdf',
+        summary:
+            'Evangel Presbytery erred by failing to remand the case to the '
+            'Session with instructions either to initiate process or formally '
+            'dismiss all charges. The Session had suspended the complainant from '
+            'the sacraments without conducting a trial or receiving a confession, '
+            'violating BCO 36. Presbytery could not determine guilt or innocence '
+            'because no trial record existed.',
+        outcome: 'Sustained in part',
       ),
     ],
     'bco_43-1': [
       SjcReference(
-        caseNumber: '2019-13',
-        caseTitle: 'Gendy v. Central Florida Presbytery',
-        year: '2019',
+        caseNumber: '2009-05',
+        caseTitle: 'Payne et al. v. Western Carolina Presbytery',
+        year: '2009',
         pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2019-13_Gendy_v_CentralFL.pdf',
+            'https://pcahistory.org/pca/sjc/cases/2009-05-08-09-10_Payne_Linton_Lyons_Woodward_v_WesternCarolina.pdf',
         summary:
-            'In addition to the wording of the provision itself, the '
-                  'history of BCO 38-4 illustrates this distinction.',
-        outcome: 'Dismissed',
+            'BCO 31-2 affords presbyteries "great discretion" in how they conduct '
+            'investigations into reports affecting the Christian character of a '
+            'minister and does not prescribe particular investigation procedures. '
+            'The complaint that the investigating committee failed to interview '
+            'certain witnesses was not sustained. Complainants who are not '
+            'members of the presbytery lack standing under BCO 43-1.',
+        outcome: 'Denied',
       ),
       SjcReference(
-        caseNumber: '2016-12',
-        caseTitle: '2016-12 Harwell v Nashville',
-        year: '2016',
+        caseNumber: '2015-04',
+        caseTitle: 'Thompson v. South Florida Presbytery',
+        year: '2015',
         pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2016-12_Harwell_v_Nashville.pdf',
+            'https://pcahistory.org/pca/sjc/cases/2015-04_Thompson_v_SouthFlorida.pdf',
         summary:
-            'Case dismissed.',
-        outcome: 'Dismissed',
-      ),
-      SjcReference(
-        caseNumber: '2016-08',
-        caseTitle: '2016-08 Doty v Nashville',
-        year: '2016',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2016-08_Doty_v_Nashville.pdf',
-        summary:
-            'With respect to this filing, Complainant came under the '
-                  'jurisdiction of the Presbytery, and thus met the standards '
-                  'of BCO 43-1.',
-        outcome: '',
+            'A defendant in an ongoing judicial case may not use a BCO 43-1 '
+            'complaint to obtain interlocutory appellate review of pre-trial '
+            'rulings. Objections must be raised during process under BCO 32-14 or '
+            'thereafter on appeal under BCO 42-3. PCA polity does not permit '
+            'interlocutory appeals.',
+        outcome: 'Dismissed (Judicially Out of Order)',
       ),
       SjcReference(
         caseNumber: '2016-07',
-        caseTitle: '2016-07 Avery&Lewelling v Nashville',
+        caseTitle: 'Avery & Lewelling v. Nashville Presbytery',
         year: '2016',
         pdfUrl:
             'https://pcahistory.org/pca/sjc/cases/2016-07_Avery%26Lewelling_v_Nashville.pdf',
         summary:
-            'Case dismissed.',
-        outcome: 'Dismissed',
-      ),
-      SjcReference(
-        caseNumber: '2011-12',
-        caseTitle: 
-          'Hahn v. Philadelphia Metro West. (also Cases 2011-11 and 2011-15)',
-        year: '2011',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2011-11_Hahn_v_PhilaMetroWest.pdf',
-        summary:
-            'P erred in finding him guilty of violating the 5th and 9th '
-                  'commandments and the second great commandment.',
-        outcome: 'Not Sustained',
-      ),
-      SjcReference(
-        caseNumber: '2011-11',
-        caseTitle: 
-          'Hahn v. Philadelphia Metro West. (also Cases 2011-12 and 2011-15)',
-        year: '2011',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2011-11_Hahn_v_PhilaMetroWest.pdf',
-        summary:
-            'These three Cases all arise out of substantially the same '
-                  'set of facts (and Case 2011-16 is a duplicate of 2011-15).',
-        outcome: 'Not Sustained',
-      ),
-    ],
-    'bco_43-2': [
-      SjcReference(
-        caseNumber: '2019-14',
-        caseTitle: 'Yoo v. Korean SW Orange Presbytery',
-        year: '2019',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2019-14_Yoo_v_KoreanSWOrange.pdf',
-        summary:
-            'Case dismissed.',
-        outcome: 'Dismissed',
-      ),
-      SjcReference(
-        caseNumber: '2016-17',
-        caseTitle: '2016-17 Webster&Fowler v Heritage',
-        year: '2016',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2016-17_Webster%26Fowler_v_Heritage.pdf',
-        summary:
-            'BCO 43-2 prohibits the parties from circularizing.',
-        outcome: 'Denied',
-      ),
-      SjcReference(
-        caseNumber: '2016-16',
-        caseTitle: '2016-16 Sartorius v Siouxlands',
-        year: '2016',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2016-16_Sartorius_v_Siouxlands.pdf',
-        summary:
-            'Case denied.',
-        outcome: 'Denied',
-      ),
-      SjcReference(
-        caseNumber: '2016-12',
-        caseTitle: '2016-12 Harwell v Nashville',
-        year: '2016',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2016-12_Harwell_v_Nashville.pdf',
-        summary:
-            'Case dismissed.',
-        outcome: 'Dismissed',
+            'Actions by a committee of presbytery are not the same as actions of '
+            'the presbytery itself. A BCO 43-1 complaint must be directed at a '
+            'court action, not a committee action. The 60-day filing requirement '
+            'of BCO 43-2 is strictly applied.',
+        outcome: 'Dismissed (Judicially Out of Order)',
       ),
       SjcReference(
         caseNumber: '2016-08',
-        caseTitle: '2016-08 Doty v Nashville',
+        caseTitle: 'Doty v. Nashville Presbytery',
         year: '2016',
         pdfUrl:
             'https://pcahistory.org/pca/sjc/cases/2016-08_Doty_v_Nashville.pdf',
         summary:
-            'With respect to this filing, Complainant came under the '
-                  'jurisdiction of the Presbytery, and thus met the standards '
-                  'of BCO 43-1.',
-        outcome: '',
+            'A church member not under presbytery jurisdiction lacks standing '
+            'under BCO 43-1 to complain against a presbytery\'s action. When a '
+            'presbytery treats allegations as reports under BCO 31-2 and 34-1 '
+            'rather than a formal complaint, only members subject to the '
+            'presbytery\'s jurisdiction may complain.',
+        outcome: 'Dismissed (Judicially Out of Order)',
       ),
-      SjcReference(
-        caseNumber: '2015-12',
-        caseTitle: '2015-12 Wills v MetroAtlanta',
-        year: '2015',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2015-12_Wills_v_MetroAtlanta.pdf',
-        summary:
-            'BCO 43-2 states that “A complaint shall first be made to the '
-                  'court whose act or decision is alleged to be in error.” MAP '
-                  'has not had the opportunity to respond to the Complaint '
-                  'regarding their action on 9/15/15, to wit: declaring the '
-                  'July 16, 2015 Complaint to be Administratively Out of Order.',
-        outcome: '',
-      ),
-      SjcReference(
-        caseNumber: '2015-07',
-        caseTitle: '2015-07 Thompson v SouthFlorida',
-        year: '2015',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2015-07_Thompson_v_SouthFlorida.pdf',
-        summary:
-            'Case dismissed.',
-        outcome: 'Dismissed',
-      ),
-      SjcReference(
-        caseNumber: '2005-09',
-        caseTitle: 'Peter B. Kim v. Korean Eastern',
-        year: '2005',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2005-09_Kim_v_KoreanEastern.pdf',
-        summary:
-            'SJC agreed P erred in denying his complaint, but that did '
-                  'not justify his refusal to obey P\'s directive. And in '
-                  'light of the deposition and failed appeal in 2005-08, no '
-                  'remedy is necessary or possible.',
-        outcome: 'Not Sustained',
-      ),
-    ],
-    'bco_43-3': [
       SjcReference(
         caseNumber: '2017-01',
         caseTitle: 'Dailey v. Heritage Presbytery',
@@ -2590,82 +2161,139 @@ class SjcData {
         pdfUrl:
             'https://pcahistory.org/pca/sjc/cases/2017-01_Dailey_v_Heritage.pdf',
         summary:
-            'Therefore, the higher court has the duty and authority to '
-                  'interpret the Constitution of the Church according to its '
-                  'best abilities and understanding.',
+            'BCO 43-3 permits elevation to a higher court only when the lower '
+            'court denies the complaint or fails to consider it by the next '
+            'stated meeting. When a Session ruled a document did not meet BCO '
+            '43-1 complaint criteria (rather than denying the complaint), the '
+            'proper course was a new complaint against the Session\'s procedural '
+            'ruling, not direct elevation under BCO 43-3.',
+        outcome: 'Sustained',
+      ),
+      SjcReference(
+        caseNumber: '2019-13',
+        caseTitle: 'Gendy v. Central Florida Presbytery',
+        year: '2019',
+        pdfUrl:
+            'https://pcahistory.org/pca/sjc/cases/2019-13_Gendy_v_CentralFL.pdf',
+        summary:
+            'A person removed from membership under BCO 38-4 retains standing to '
+            'complain about that removal. BCO 38-4 erasure is explicitly "an act '
+            'of pastoral discipline," and fundamental fairness requires that a '
+            'member facing removal retains standing to challenge it; otherwise, a '
+            'Session could remove any member without recourse.',
+        outcome: 'Sustained',
+      ),
+    ],
+    'bco_43-2': [
+      SjcReference(
+        caseNumber: '2007-16',
+        caseTitle: 'Appeal of Grady v. Southwest Florida Presbytery',
+        year: '2007',
+        pdfUrl:
+            'https://pcahistory.org/pca/sjc/cases/2007-16_Grady_v_SWFlorida.pdf',
+        summary:
+            'The SJC affirmed the guilty verdicts on three charges but found that '
+            'Presbytery\'s misapplication of BCO 13-9.c was so significant that '
+            'it materially prejudiced the censure outcome. BCO 13-9 does not give '
+            'a presbytery the power to direct a TE to resign. A complaint about '
+            'an administrative BCO 31-10 suspension must be filed within 30 days '
+            'under BCO 43-2 and cannot be raised for the first time on appeal.',
+        outcome: 'Affirmed in part, reversed in part',
+      ),
+      SjcReference(
+        caseNumber: '2016-07',
+        caseTitle: 'Avery & Lewelling v. Nashville Presbytery',
+        year: '2016',
+        pdfUrl:
+            'https://pcahistory.org/pca/sjc/cases/2016-07_Avery%26Lewelling_v_Nashville.pdf',
+        summary:
+            'Actions by a committee of presbytery are not the same as actions of '
+            'the presbytery itself. A BCO 43-1 complaint must be directed at a '
+            'court action, not a committee action. The 60-day filing requirement '
+            'of BCO 43-2 is strictly applied.',
+        outcome: 'Dismissed (Judicially Out of Order)',
+      ),
+      SjcReference(
+        caseNumber: '2016-17',
+        caseTitle: 'Webster & Fowler v. Heritage Presbytery',
+        year: '2016',
+        pdfUrl:
+            'https://pcahistory.org/pca/sjc/cases/2016-17_Webster%26Fowler_v_Heritage.pdf',
+        summary:
+            'Heritage Presbytery did not err when it passed a motion advising a '
+            'Session to postpone the election of a deacon candidate who might be '
+            'unqualified. The motion constituted advice and counsel, not a '
+            'binding directive that usurped Session authority under BCO 13-9. BCO '
+            '43-2\'s anti-circularization provision applies to parties in a '
+            'complaint, not general discussions among presbyters.',
         outcome: 'Denied',
       ),
       SjcReference(
+        caseNumber: '2023-19',
+        caseTitle: 'Huffman v. Tennessee Valley Presbytery',
+        year: '2023',
+        pdfUrl:
+            'https://pcahistory.org/pca/sjc/cases/2023-19_Huffman_v_TNValley.pdf',
+        summary:
+            'BCO amendments affecting judicial rights should not be applied '
+            'retroactively to cases already in progress under the prior rule. '
+            'When the 2023 amendment to BCO 38-1 changed the right from complaint '
+            'to appeal, a case near completion under the old rule should be '
+            'adjudicated under pre-amendment terms.',
+        outcome: 'Remanded',
+      ),
+    ],
+    'bco_43-3': [
+      SjcReference(
         caseNumber: '2016-02',
-        caseTitle: '2016-02 Robertstad v NorthTexas',
+        caseTitle: 'Robertstad v. North Texas Presbytery',
         year: '2016',
         pdfUrl:
             'https://pcahistory.org/pca/sjc/cases/2016-02_Robertstad_v_NorthTexas.pdf',
         summary:
-            'Case denied.',
-        outcome: 'Denied',
-      ),
-    ],
-    'bco_43-9': [
-      SjcReference(
-        caseNumber: '2022-10',
-        caseTitle: 'PCA v. Herron (trial)',
-        year: '2022',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2022-10_PCA_v_Herron.pdf',
-        summary:
-            'Case not guilty.',
-        outcome: 'Not Guilty',
+            'A complaint filed via email does not satisfy BCO 43-3 filing '
+            'requirements. The reference to email in BCO 43-3 applies only to the '
+            'lower court\'s notification of its decision to the complainant, not '
+            'to parties filing cases with a higher court.',
+        outcome: 'Dismissed',
       ),
       SjcReference(
-        caseNumber: '2016-16',
-        caseTitle: '2016-16 Sartorius v Siouxlands',
-        year: '2016',
+        caseNumber: '2017-01',
+        caseTitle: 'Dailey v. Heritage Presbytery',
+        year: '2017',
         pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2016-16_Sartorius_v_Siouxlands.pdf',
+            'https://pcahistory.org/pca/sjc/cases/2017-01_Dailey_v_Heritage.pdf',
         summary:
-            'Case denied.',
-        outcome: 'Denied',
+            'BCO 43-3 permits elevation to a higher court only when the lower '
+            'court denies the complaint or fails to consider it by the next '
+            'stated meeting. When a Session ruled a document did not meet BCO '
+            '43-1 complaint criteria (rather than denying the complaint), the '
+            'proper course was a new complaint against the Session\'s procedural '
+            'ruling, not direct elevation under BCO 43-3.',
+        outcome: 'Sustained',
       ),
     ],
     'bco_43-10': [
       SjcReference(
-        caseNumber: '2022-10',
-        caseTitle: 'PCA v. Herron (trial)',
-        year: '2022',
+        caseNumber: '2008-09',
+        caseTitle: 'Red Mountain v. Evangel Presbytery',
+        year: '2008',
         pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2022-10_PCA_v_Herron.pdf',
+            'https://pcahistory.org/pca/sjc/cases/2008-09_RedMountain_v_Evangel.pdf',
         summary:
-            'Case not guilty.',
-        outcome: 'Not Guilty',
-      ),
-      SjcReference(
-        caseNumber: '2009-28',
-        caseTitle: 'Ruff v. Nashville',
-        year: '2009',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2009-28_Ruff_v_Nashville.pdf',
-        summary:
-            'P did an inadequate BCO 31-2 investigation of a TE and erred '
-                  'in declining to indict.',
-        outcome: 'Sustained',
-      ),
-      SjcReference(
-        caseNumber: '2009-11',
-        caseTitle: 'Edison v. Southwest Florida Presbytery',
-        year: '2009',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2009-11-Edison_v_SouthwestFlorida.pdf',
-        summary:
-            'P sustained transfer exam of TE. Complaint filed against '
-                  'that action, and it was sustained. The TE was reexamined, '
-                  'but he did not pass. This new Complaint alleged the '
-                  'reexamination was unconstitutional.',
+            'The SJC sustained all four specifications of error against Evangel '
+            'Presbytery in its handling of a divorce case. Evangel Presbytery '
+            'erred by improperly overturning the Session\'s findings, by '
+            'mishandling its judicial commission report, and by incorrectly '
+            'finding that the complainant did not have biblical grounds for '
+            'divorce. The case established important principles about the proper '
+            'relationship between session-level pastoral judgments and '
+            'presbytery-level oversight.',
         outcome: 'Sustained',
       ),
     ],
     // ─────────────────────────────────────────────────────────────
-    // BCO Ch 44-57 — Commissions / Amendments
+    // BCO Ch 46 — Jurisdiction
     // ─────────────────────────────────────────────────────────────
     'bco_46-3': [
       SjcReference(
@@ -2675,40 +2303,78 @@ class SjcData {
         pdfUrl:
             'https://pcahistory.org/pca/sjc/cases/2002-10_Goerig_v_PacificNorthwest.pdf',
         summary:
-            'S removed name from roll per BCO 38-4. Complaint alleged P '
-                  'should have sustained C and remanded to S.',
+            'The Session failed to follow the provisions of BCO 38-4 regarding '
+            'erasure of membership. The procedural protections in BCO 38-4 '
+            '(proper notice and waiting period) are mandatory before a name can '
+            'be erased from the rolls.',
         outcome: 'Sustained',
+      ),
+    ],
+    'bco_46-5': [
+      SjcReference(
+        caseNumber: '2009-11',
+        caseTitle: 'Edison v. Southwest Florida Presbytery',
+        year: '2009',
+        pdfUrl:
+            'https://pcahistory.org/pca/sjc/cases/2009-11-Edison_v_SouthwestFlorida.pdf',
+        summary:
+            'Once membership was conferred and a call approved, those actions '
+            'could only be reversed through proper due process. A presbytery '
+            'cannot retroactively undo reception of a member and approval of a '
+            'call without following proper constitutional procedures. The '
+            'Presbytery\'s unilateral rescission of membership was erroneous.',
+        outcome: 'Partially Sustained',
       ),
     ],
     'bco_46-8': [
       SjcReference(
         caseNumber: '2022-23',
-        caseTitle: 'TE Michael Woodham v. South Florida',
+        caseTitle: 'Woodham v. South Florida Presbytery',
         year: '2022',
         pdfUrl:
             'https://pcahistory.org/pca/sjc/cases/2022-23_Woodham_v_SouthFL.pdf',
         summary:
-            'The Decision’s deference would apparently grant '
-                  'discretionary power to Presbytery to indefinitely augment '
-                  'its jurisdictional power over the minister by deciding to '
-                  'delay exercising its BCO 46-8 obligation to assign the '
-                  'deposed minister to a Session, the only proper judicatory '
-                  'for the governance of.',
-        outcome: 'Not Sustained',
+            'While BCO 46-8 assignment of a deposed minister to a particular '
+            'church is obligatory, it specifies neither a timeframe nor '
+            'particular means. Until transferred, the deposed minister remains '
+            'under Presbytery\'s jurisdiction. BCO 37-9(a) provides that the '
+            'presbytery inflicting censures retains authority to remove them and '
+            'restore to office, even after BCO 46-8 assignment.',
+        outcome: 'Denied',
       ),
     ],
+    // ─────────────────────────────────────────────────────────────
+    // BCO Ch 57 — Amendments
+    // ─────────────────────────────────────────────────────────────
     'bco_57-5': [
       SjcReference(
         caseNumber: '2006-06',
-        caseTitle: 'Ehrlich v. North Georgia',
+        caseTitle: 'Ehrlich v. North Georgia Presbytery',
         year: '2006',
         pdfUrl:
             'https://pcahistory.org/pca/sjc/cases/2006-06_Ehrlich_v_NorthGeorgia.pdf',
         summary:
-            'Complaint by two members against their Session\'s warning '
-                  'and instruction that the members not distribute a letter to '
-                  'the church critical of the pastor and Presbytery.',
-        outcome: 'Not Sustained',
+            'The Session of Intown Community Church acted within its authority '
+            'under BCO 12-5 when it instructed members not to distribute an "open '
+            'letter" to the congregation. The Session has jurisdiction to '
+            'maintain order and peace within the congregation, and this did not '
+            'unconstitutionally restrict the members\' rights under BCO 57-5 or '
+            'WCF 20.2.',
+        outcome: 'Denied',
+      ),
+      SjcReference(
+        caseNumber: '2022-07',
+        caseTitle: 'Appeal of Harrell et al. v. Covenant Presbytery',
+        year: '2022',
+        pdfUrl:
+            'https://pcahistory.org/pca/sjc/cases/2022-07_Harrell_v_Covenant.pdf',
+        summary:
+            'Members expressing disagreement about a pastoral candidate to the '
+            'Session did not constitute chargeable offenses under BCO 57-5 or '
+            'violations of the fifth and ninth commandments. The Session '
+            'improperly tried and censured members for communicating their '
+            'concerns about the organizing pastor.',
+        outcome: 'Sustained',
       ),
     ],
     // ─────────────────────────────────────────────────────────────
@@ -2722,11 +2388,13 @@ class SjcData {
         pdfUrl:
             'https://pcahistory.org/pca/sjc/cases/2006-06_Ehrlich_v_NorthGeorgia.pdf',
         summary:
-            'Members complained that their Session erred by warning them not '
-            'to distribute a letter critical of the pastor. The SJC did not '
-            'sustain the complaint, finding the Session acted within its '
-            'authority under WCF 20.2 regarding liberty of conscience.',
-        outcome: 'Not Sustained',
+            'The Session of Intown Community Church acted within its authority '
+            'under BCO 12-5 when it instructed members not to distribute an "open '
+            'letter" to the congregation. The Session has jurisdiction to '
+            'maintain order and peace within the congregation, and this did not '
+            'unconstitutionally restrict the members\' rights under BCO 57-5 or '
+            'WCF 20.2.',
+        outcome: 'Denied',
       ),
     ],
     'wcf_28.4': [
@@ -2737,9 +2405,11 @@ class SjcData {
         pdfUrl:
             'https://pcahistory.org/pca/sjc/cases/1990-08_Bowen_v_EasternCarolina.pdf',
         summary:
-            'The SJC ruled that Eastern Carolina Presbytery erred in '
-            'suspending a ruling elder. The case involved questions about '
-            'infant baptism and limited atonement in connection with WCF 28.4.',
+            'The SJC ruled that Eastern Carolina Presbytery erred in suspending a '
+            'ruling elder. The case involved questions about infant baptism and '
+            'limited atonement, establishing that these doctrines are '
+            'fundamentals of the PCA\'s system of doctrine as defined in the '
+            'Westminster Standards.',
         outcome: 'Sustained',
       ),
     ],
@@ -2749,33 +2419,34 @@ class SjcData {
     'wlc_129': [
       SjcReference(
         caseNumber: '2008-15',
-        caseTitle: 'Morton Smith v. Western Carolina Presbytery',
+        caseTitle: 'Smith v. Western Carolina Presbytery',
         year: '2008',
         pdfUrl:
             'https://pcahistory.org/pca/sjc/cases/2008-15_and_group_MHSmith_v_WesternCarolina.pdf',
         summary:
-            'The SJC sustained two of five alleged errors relating to an '
-            'illegitimate congregational meeting. WLC Q. 129 (duties of '
-            'superiors) was cited regarding the obligations of church courts '
-            'in exercising authority over congregational proceedings.',
-        outcome: 'Sustained',
+            'WLC Q. 129 (duties of superiors) and Q. 145 (sins forbidden in the '
+            'ninth commandment) were cited regarding charges of bearing false '
+            'witness and abuse of authority during congregational proceedings in '
+            'the dispute over Presbytery\'s handling of a local church matter.',
+        outcome: 'Sustained in part',
       ),
     ],
     'wlc_145': [
       SjcReference(
         caseNumber: '2008-15',
-        caseTitle: 'Morton Smith v. Western Carolina Presbytery',
+        caseTitle: 'Smith v. Western Carolina Presbytery',
         year: '2008',
         pdfUrl:
             'https://pcahistory.org/pca/sjc/cases/2008-15_and_group_MHSmith_v_WesternCarolina.pdf',
         summary:
-            'WLC Q. 145 (sins forbidden in the ninth commandment) was cited '
-            'in relation to charges of bearing false witness during '
-            'congregational proceedings in the dispute over Presbytery\'s '
-            'handling of a local church matter.',
-        outcome: 'Sustained',
+            'WLC Q. 129 (duties of superiors) and Q. 145 (sins forbidden in the '
+            'ninth commandment) were cited regarding charges of bearing false '
+            'witness and abuse of authority during congregational proceedings in '
+            'the dispute over Presbytery\'s handling of a local church matter.',
+        outcome: 'Sustained in part',
       ),
     ],
+
   };
 
   /// Get all references for a given section key, or empty list if none.
