@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import '../data/studies_structure.dart';
+import '../data/study_text_toc.dart';
 import '../widgets/shared_actions.dart';
 import 'pdf_viewer_screen.dart';
+import 'study_text_screen.dart';
 
 class StudiesScreen extends StatelessWidget {
   const StudiesScreen({super.key});
@@ -64,6 +66,34 @@ class StudiesScreen extends StatelessWidget {
     );
   }
 
+  void _navigateToStudy(BuildContext context, StudyDocument doc) {
+    // Check if this document has a text version available
+    final textConfig = studyTextVersions[doc.filename];
+    if (textConfig != null) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (_) => StudyTextScreen(
+            title: doc.title,
+            htmlAssetPath: textConfig.htmlAssetPath,
+            pdfAssetPath: doc.assetPath,
+            toc: textConfig.toc,
+          ),
+        ),
+      );
+    } else {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (_) => PdfViewerScreen(
+            title: doc.title,
+            assetPath: doc.assetPath,
+          ),
+        ),
+      );
+    }
+  }
+
   Widget _buildCategoryTile(
     BuildContext context,
     ThemeData theme,
@@ -72,19 +102,15 @@ class StudiesScreen extends StatelessWidget {
     // If only one document, navigate directly to it
     if (category.documents.length == 1) {
       final doc = category.documents.first;
+      final hasText = studyTextVersions.containsKey(doc.filename);
       return ListTile(
-        leading: const Icon(Icons.picture_as_pdf_rounded, size: 20),
+        leading: Icon(
+          hasText ? Icons.article_rounded : Icons.picture_as_pdf_rounded,
+          size: 20,
+        ),
         title: Text(category.title),
         trailing: const Icon(Icons.chevron_right_rounded),
-        onTap: () => Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (_) => PdfViewerScreen(
-              title: doc.title,
-              assetPath: doc.assetPath,
-            ),
-          ),
-        ),
+        onTap: () => _navigateToStudy(context, doc),
       );
     }
 
@@ -93,23 +119,19 @@ class StudiesScreen extends StatelessWidget {
       leading: const Icon(Icons.folder_rounded, size: 20),
       title: Text(category.title),
       children: category.documents.map((doc) {
+        final hasText = studyTextVersions.containsKey(doc.filename);
         return ListTile(
           contentPadding: const EdgeInsets.only(left: 56, right: 16),
-          leading: const Icon(Icons.picture_as_pdf_rounded, size: 18),
+          leading: Icon(
+            hasText ? Icons.article_rounded : Icons.picture_as_pdf_rounded,
+            size: 18,
+          ),
           title: Text(
             doc.title,
             style: theme.textTheme.bodyMedium,
           ),
           trailing: const Icon(Icons.chevron_right_rounded, size: 20),
-          onTap: () => Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (_) => PdfViewerScreen(
-                title: doc.title,
-                assetPath: doc.assetPath,
-              ),
-            ),
-          ),
+          onTap: () => _navigateToStudy(context, doc),
         );
       }).toList(),
     );
