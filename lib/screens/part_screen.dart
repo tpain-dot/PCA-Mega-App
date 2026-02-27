@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import '../models/bco_models.dart';
 import '../providers/app_state.dart';
 import '../theme/bco_design.dart';
+import '../widgets/shared_actions.dart';
 import 'chapter_screen.dart';
 
 class PartScreen extends StatefulWidget {
@@ -39,6 +40,7 @@ class _PartScreenState extends State<PartScreen> {
                 ? sectionColor.withAlpha(25)
                 : sectionColor.withAlpha(12),
             foregroundColor: theme.colorScheme.onSurface,
+            actions: sharedAppBarActions(context),
             title: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

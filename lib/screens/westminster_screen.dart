@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../data/westminster_structure.dart';
 import '../models/bco_models.dart';
 import '../theme/bco_design.dart';
+import '../widgets/shared_actions.dart';
 import 'part_screen.dart';
 
 class WestminsterScreen extends StatelessWidget {
@@ -20,6 +21,7 @@ class WestminsterScreen extends StatelessWidget {
             backgroundColor:
                 isDark ? color.withAlpha(25) : color.withAlpha(12),
             foregroundColor: theme.colorScheme.onSurface,
+            actions: sharedAppBarActions(context),
             title: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

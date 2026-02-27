@@ -8,6 +8,7 @@ import '../models/bco_models.dart';
 import '../providers/app_state.dart';
 import '../services/commentary_injection_service.dart';
 import '../services/sjc_injection_service.dart';
+import '../widgets/shared_actions.dart';
 
 class ChapterScreen extends StatefulWidget {
   final BcoChapter chapter;
@@ -93,6 +94,7 @@ class _ChapterScreenState extends State<ChapterScreen> {
           style: const TextStyle(fontSize: 16),
         ),
         actions: [
+          ...sharedAppBarActions(context),
           IconButton(
             icon: Icon(
               isBookmarked

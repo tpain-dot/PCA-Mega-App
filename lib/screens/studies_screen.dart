@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../data/studies_structure.dart';
+import '../widgets/shared_actions.dart';
 import 'pdf_viewer_screen.dart';
 
 class StudiesScreen extends StatelessWidget {
@@ -12,6 +13,7 @@ class StudiesScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Studies & Reports'),
+        actions: sharedAppBarActions(context),
       ),
       body: ListView(
         children: [

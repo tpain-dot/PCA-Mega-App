@@ -5,6 +5,7 @@ import '../data/westminster_structure.dart';
 import '../models/bco_models.dart';
 import '../providers/app_state.dart';
 import '../theme/bco_design.dart';
+import '../widgets/shared_actions.dart';
 import 'chapter_screen.dart';
 
 class BookmarksScreen extends StatelessWidget {
@@ -19,6 +20,7 @@ class BookmarksScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Bookmarks'),
+        actions: sharedAppBarActions(context),
       ),
       body: bookmarked.isEmpty
           ? Center(

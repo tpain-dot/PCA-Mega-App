@@ -6,6 +6,7 @@ import '../data/westminster_structure.dart';
 import '../models/bco_models.dart';
 import '../providers/app_state.dart';
 import '../theme/bco_design.dart';
+import '../widgets/shared_actions.dart';
 import 'chapter_screen.dart';
 
 class SearchScreen extends StatefulWidget {
@@ -105,6 +106,7 @@ class _SearchScreenState extends State<SearchScreen> {
                 _focusNode.requestFocus();
               },
             ),
+          ...sharedAppBarActions(context, showSearch: false),
         ],
       ),
       body: _buildBody(theme),
