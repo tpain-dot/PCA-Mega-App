@@ -35,20 +35,27 @@ class SjcData {
   SjcData._();
 
   static const Map<String, List<SjcReference>> references = {
-        // ─────────────────────────────────────────────────────────────
+    // ═════════════════════════════════════════════════════════════
+    // PART I — FORM OF GOVERNMENT (BCO Chapters 1–24)
+    // ═════════════════════════════════════════════════════════════
+
+    // ─────────────────────────────────────────────────────────────
     // BCO Ch 1-4 — Preliminary Principles
     // ─────────────────────────────────────────────────────────────
-    'bco_1-5': [
+    'bco_1-4': [
       SjcReference(
-        caseNumber: '1983-08',
-        caseTitle: 'TE Jack Eubanks, et al. vs. Central Carolina Presbytery',
-        year: '1983',
+        caseNumber: '2007-13',
+        caseTitle: 'Kniseley v. Rocky Mountain Presbytery',
+        year: '2007',
         pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/1983-08_Eubanks_v_CentralCarolina.pdf',
+            'https://pcahistory.org/pca/sjc/cases/2007-13_Kniseley_v_RockyMountain.pdf',
         summary:
-            'Regarding the legality of dissolving and reconstituting the '
-                  'Presbytery\'s judicial commission and the power of the '
-                  'Presbytery to determine local church membership.',
+            'While the BCO uses "minister" synonymously with "teaching elder" '
+            'and "pastor" in its technical definitions, the BCO is silent on '
+            'the general use of the title "minister" for non-ordained church '
+            'staff. However, any such title must make the generic, '
+            'non-ordained sense plain to a competent observer so as not to '
+            'suggest ordained authority.',
         outcome: 'Not Sustained',
       ),
     ],
@@ -63,86 +70,18 @@ class SjcData {
         pdfUrl:
             'https://pcahistory.org/pca/sjc/cases/2023-11_Psiaki_v_PacificNW.pdf',
         summary:
-            'All communicant members, including those under 18, have a '
-                  'constitutional right to vote in congregational elections. A '
-                  'church\'s bylaws cannot impose a minimum voting age because '
-                  'BCO 6-4 grants "all the rights and privileges of the church" '
-                  'to communicant members.',
+            'All communicant members, including those under age eighteen, have '
+            'a constitutional right to vote in congregational elections. Under '
+            'BCO 6-4, all who have professed faith, been baptized, and '
+            'admitted to the Lord\'s Table are entitled to "all the rights and '
+            'privileges of the Church," which includes the right to vote. '
+            'Local church bylaws cannot set aside the Constitution.',
         outcome: 'Sustained',
       ),
     ],
     // ─────────────────────────────────────────────────────────────
-    // BCO Ch 7-8 — Communicant Members / Non-Communicant Members
+    // BCO Ch 11-12 — The Church Session
     // ─────────────────────────────────────────────────────────────
-    'bco_8-3': [
-      SjcReference(
-        caseNumber: '1983-13',
-        caseTitle: 'TE Donald A. Codling, et al. vs. Eastern Canada Presbytery',
-        year: '1983',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/1983-13_Codling_v_ECanada.pdf',
-        summary:
-            'Presbytery action in denying licensure to a candidate.',
-        outcome: '',
-      ),
-    ],
-    // ─────────────────────────────────────────────────────────────
-    // BCO Ch 9-10 — Organized Congregation / Mission Churches
-    // ─────────────────────────────────────────────────────────────
-    'bco_10-2': [
-      SjcReference(
-        caseNumber: '1983-08',
-        caseTitle: 'TE Jack Eubanks, et al. vs. Central Carolina Presbytery',
-        year: '1983',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/1983-08_Eubanks_v_CentralCarolina.pdf',
-        summary:
-            'Regarding the legality of dissolving and reconstituting the '
-                  'Presbytery\'s judicial commission and the power of the '
-                  'Presbytery to determine local church membership.',
-        outcome: 'Not Sustained',
-      ),
-    ],
-    'bco_10-5': [
-      SjcReference(
-        caseNumber: '1978-01',
-        caseTitle: 'RE James H. Campbell vs. Mid-Atlantic Presbytery',
-        year: '1978',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/1978-01_Campbell_v_Mid-Atlantic.pdf',
-        summary:
-            'Receiving a commission report regarding alleged errors of a '
-                  'minister.',
-        outcome: '',
-      ),
-    ],
-    // ─────────────────────────────────────────────────────────────
-    // BCO Ch 11-12 — Presbytery / Organizing New Churches
-    // ─────────────────────────────────────────────────────────────
-    'bco_11-1': [
-      SjcReference(
-        caseNumber: '2007-10',
-        caseTitle: 'Eliot Lee v. Korean Eastern',
-        year: '2007',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2007-09%2610_Lee_v_KoreanEastern.pdf',
-        summary:
-            'Case dismissed.',
-        outcome: 'Dismissed',
-      ),
-      SjcReference(
-        caseNumber: '2007-09',
-        caseTitle: 'Eliot Lee v. Korean Eastern',
-        year: '2007',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2007-09%2610_Lee_v_KoreanEastern.pdf',
-        summary:
-            'P erred by authorizing P commission to act on behalf of S '
-                  'and erred by approving actions of committee that filed civil '
-                  'action, including restraining order, against Complainant.',
-        outcome: 'Sustained',
-      ),
-    ],
     'bco_11-2': [
       SjcReference(
         caseNumber: '2019-07',
@@ -151,125 +90,49 @@ class SjcData {
         pdfUrl:
             'https://pcahistory.org/pca/sjc/cases/2019-07_Fozard_v_NorthTX.pdf',
         summary:
-            'Therefore, a higher court should not reverse such a judgment '
-                  'by a lower court, unless there is clear error on the part of '
-                  'the lower court.',
-        outcome: '',
-      ),
-      SjcReference(
-        caseNumber: '2007-10',
-        caseTitle: 'Eliot Lee v. Korean Eastern',
-        year: '2007',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2007-09%2610_Lee_v_KoreanEastern.pdf',
-        summary:
-            'Case dismissed.',
-        outcome: 'Dismissed',
-      ),
-      SjcReference(
-        caseNumber: '2007-09',
-        caseTitle: 'Eliot Lee v. Korean Eastern',
-        year: '2007',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2007-09%2610_Lee_v_KoreanEastern.pdf',
-        summary:
-            'P erred by authorizing P commission to act on behalf of S '
-                  'and erred by approving actions of committee that filed civil '
-                  'action, including restraining order, against Complainant.',
-        outcome: 'Sustained',
-      ),
-      SjcReference(
-        caseNumber: '2004-07',
-        caseTitle: 
-          'Session of First Presbyterian Augusta v. Savannah River Presbytery',
-        year: '2004',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2004-07_FPCAugusta_v_SavannahRiver.pdf',
-        summary:
-            'P erred when it sustained a C alleging, (1) S erred by '
-                  'adding items to docket of congregational meeting and (2) S '
-                  'erred by recommending a course of action to congregation.',
-        outcome: 'Sustained',
-      ),
-    ],
-    'bco_11-3': [
-      SjcReference(
-        caseNumber: '2020-05',
-        caseTitle: 'Speck v. Missouri Presbytery',
-        year: '2020',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2020-05_Speck_v_Missouri.pdf',
-        summary:
-            'Case sustained.',
-        outcome: 'Sustained',
+            'A Session\'s policy for integrating special-case felons into the '
+            'congregation was within its discretion under BCO 11-2, and the '
+            'complainant failed to demonstrate a violation of Scripture or the '
+            'Constitution.',
+        outcome: 'Denied',
       ),
     ],
     'bco_11-4': [
       SjcReference(
-        caseNumber: '2023-06',
-        caseTitle: 'TE Knox Baird et al. v. Grace',
-        year: '2023',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2023-06_Baird_v_Grace.pdf',
-        summary:
-            'Case sustained.',
-        outcome: 'Sustained',
-      ),
-      SjcReference(
         caseNumber: '2020-05',
         caseTitle: 'Speck v. Missouri Presbytery',
         year: '2020',
         pdfUrl:
             'https://pcahistory.org/pca/sjc/cases/2020-05_Speck_v_Missouri.pdf',
         summary:
-            'Case sustained.',
-        outcome: 'Sustained',
+            'Missouri Presbytery erred in approving theological judgments '
+            'regarding the Revoice 2018 conference because it applied '
+            'incorrect criteria (conflating BCO 34-5\'s standard for process '
+            'against a minister with BCO 40-5\'s standard for reviewing court '
+            'actions). The proper criteria were BCO 11-4 and 13-9(f), which '
+            'allow condemning erroneous opinions that injure the purity or '
+            'peace of the Church.',
+        outcome: 'Sustained in Part',
       ),
     ],
     'bco_12-1': [
       SjcReference(
         caseNumber: '2018-01',
-        caseTitle: 'Mapes v. Metropolitan New York (Appeal)',
+        caseTitle: 'Mapes v. Metropolitan New York Presbytery',
         year: '2018',
         pdfUrl:
             'https://pcahistory.org/pca/sjc/cases/2018-01_Mapes_v_MetropolitanNY.pdf',
         summary:
-            'Therefore, it appears Mapes’ official functions should have '
-                  'been restored, thereby triggering the application of BCO '
-                  '12-1, which states that where there is no pastor and only '
-                  'one ruling elder, “he does not constitute a Session, but he '
-                  'should take spiritual oversight of the church, should '
-                  'represent.',
-        outcome: '',
+            'The SJC reversed the censures of indefinite suspension from the '
+            'sacraments and deposition from office as excessive for appearing '
+            'uninvited at a closed session meeting for approximately five '
+            'minutes followed by an apology, substituting the censure of '
+            'admonition. The evidence did not support findings of sedition, '
+            'riot, or dereliction of duty.',
+        outcome: 'Reversed in Part',
       ),
     ],
     'bco_12-5': [
-      SjcReference(
-        caseNumber: '2021-03',
-        caseTitle: 'DeJong v. Session of Village Seven Presbyterian Church',
-        year: '2021',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2021-03_DeJong_v_V7PC_Session.pdf',
-        summary:
-            'The third motion (adopted with amendments) was to erect a '
-                  '“Governance Commission (per BCO chapter 15) to oversee the '
-                  'governance of Village Seven Presbyterian Church (as '
-                  'described in BCO 12-5) in accord with the document called '
-                  '‘Village Seven Governance Commission.',
-        outcome: '',
-      ),
-      SjcReference(
-        caseNumber: '2006-06',
-        caseTitle: 'Ehrlich v. North Georgia',
-        year: '2006',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2006-06_Ehrlich_v_NorthGeorgia.pdf',
-        summary:
-            'Complaint by two members against their Session\'s warning '
-                  'and instruction that the members not distribute a letter to '
-                  'the church critical of the pastor and Presbytery.',
-        outcome: 'Not Sustained',
-      ),
       SjcReference(
         caseNumber: '2004-03',
         caseTitle: 'Harris v. Heritage Presbytery',
@@ -277,143 +140,128 @@ class SjcData {
         pdfUrl:
             'https://pcahistory.org/pca/sjc/cases/2004-03_Harris_v_Heritage.pdf',
         summary:
-            'S erred by not publishing each minister\'s salary in the '
-                  'budget and not asking the congregation to approve all '
-                  'changes in terms of call.',
-        outcome: 'Not Sustained',
-      ),
-      SjcReference(
-        caseNumber: '2002-10',
-        caseTitle: 'Goerig v. Pacific Northwest Presbytery',
-        year: '2002',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2002-10_Goerig_v_PacificNorthwest.pdf',
-        summary:
-            'S removed name from roll per BCO 38-4. Complaint alleged P '
-                  'should have sustained C and remanded to S.',
-        outcome: 'Sustained',
-      ),
-    ],
-    'bco_12-7': [
-      SjcReference(
-        caseNumber: '2023-06',
-        caseTitle: 'TE Knox Baird et al. v. Grace',
-        year: '2023',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2023-06_Baird_v_Grace.pdf',
-        summary:
-            'Case sustained.',
-        outcome: 'Sustained',
-      ),
-    ],
-    // ─────────────────────────────────────────────────────────────
-    // BCO Ch 13-14 — Church Orders / Ministers
-    // ─────────────────────────────────────────────────────────────
-    'bco_13-1': [
-      SjcReference(
-        caseNumber: '1983-15',
-        caseTitle: 'TE W. Ted Smith, Jr. vs. Central Carolina Presbytery',
-        year: '1983',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/1983-15_Smith_v_CentralCarolina.pdf',
-        summary:
-            '(See also Cases 27,29, 31, 33) Was Presbytery negligent '
-                  'concerning General Assembly directives and BCO '
-                  'responsibilities to exercise proper oversight of past and '
-                  'present members of a congregation.',
+            'Once a pastoral call is approved by the congregation and '
+            'Presbytery, subsequent changes in terms become a budgetary matter '
+            'under the authority of the Session per BCO 12-5b. The BCO does '
+            'not require that budget details be publicized to the '
+            'congregation, though the SJC counseled it would be prudent to do '
+            'so.',
         outcome: 'Not Sustained',
       ),
     ],
-    'bco_13-2': [
-      SjcReference(
-        caseNumber: '2025-12',
-        caseTitle: 'TE Assis & TE Brown v. South Florida Presbytery',
-        year: '2025',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2025-12,%20-13_Assis_and_Brown_v_SFL_final.pdf',
-        summary:
-            'Ministers do not automatically become "without call" when '
-                  'their churches leave the PCA. A pastoral call requires '
-                  'formal presbytery action to dissolve; without that action, '
-                  'the minister retains his called status.',
-        outcome: 'Sustained',
-      ),
-    ],
+    // ─────────────────────────────────────────────────────────────
+    // BCO Ch 13-14 — The Presbytery
+    // ─────────────────────────────────────────────────────────────
     'bco_13-6': [
       SjcReference(
-        caseNumber: '2022-21',
-        caseTitle: 'TE David Senters v. Savannah River Presbytery',
-        year: '2022',
+        caseNumber: '2009-11',
+        caseTitle: 'Edison v. Southwest Florida Presbytery',
+        year: '2009',
         pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2022-21_Senters_v_Savannah_River.pdf',
+            'https://pcahistory.org/pca/sjc/cases/2009-11-Edison_v_SouthwestFlorida.pdf',
         summary:
-            'Case partially sustained.',
-        outcome: 'Partially Sustained',
-      ),
-      SjcReference(
-        caseNumber: '2022-03',
-        caseTitle: 'Klett et al. v. Philadelphia',
-        year: '2022',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2022-03_Klett_v_Philadelphia.pdf',
-        summary:
-            'Case decided.',
-        outcome: 'Decided',
+            'Once a presbytery receives a teaching elder into membership, it '
+            'cannot undo that membership by rescission, because Robert\'s '
+            'Rules prohibit rescinding actions when a person has been elected '
+            'to membership and notified. Membership rights can only be removed '
+            'through the disciplinary processes of the BCO.',
+        outcome: 'Sustained in Part',
       ),
       SjcReference(
         caseNumber: '2019-02',
-        caseTitle: 'Schrock et al. v. Philadelphia Presbytery',
+        caseTitle: 'Schrock v. Philadelphia Presbytery',
         year: '2019',
         pdfUrl:
             'https://pcahistory.org/pca/sjc/cases/2019-02_Schrock_v_Philadelphia.pdf',
         summary:
-            'Case sustained.',
+            'BCO 13-6 requires a presbytery to judge and record the nature of '
+            'a transferring minister\'s differences with the Standards when '
+            'receiving him from another denomination. This is a substantive '
+            'constitutional duty.',
         outcome: 'Sustained',
       ),
       SjcReference(
-        caseNumber: '2016-01',
-        caseTitle: 'Aven v. Ohio Valley Presbytery',
-        year: '2016',
+        caseNumber: '2022-03',
+        caseTitle: 'Klett v. Philadelphia Presbytery',
+        year: '2022',
         pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2016-01_Aven_v_OhioValley.pdf',
+            'https://pcahistory.org/pca/sjc/cases/2022-03_Klett_v_Philadelphia.pdf',
         summary:
-            'Therefore, the Commission sends the matter back to OVP to '
-                  'hear further from TE Hickey regarding his stated difference '
-                  'in order to create a more comprehensive Record.',
-        outcome: '',
+            'A presbytery erred when it judged that a teaching elder\'s views '
+            'affirming continuing gifts of prophecy and tongues for corporate '
+            'worship were not out of accord with the fundamentals of the '
+            'system of doctrine.',
+        outcome: 'Sustained',
+      ),
+      SjcReference(
+        caseNumber: '2022-21',
+        caseTitle: 'Senters v. Savannah River Presbytery',
+        year: '2022',
+        pdfUrl:
+            'https://pcahistory.org/pca/sjc/cases/2022-21_Senters_v_Savannah_River.pdf',
+        summary:
+            'A transfer candidate\'s view that tongues continue until '
+            'Christ\'s return constitutes a real difference with the '
+            'Westminster Standards (WCF 1.1 and 1.6), and a presbytery erred '
+            'by judging it as "not a difference." The proper BCO 13-6 / 21-4 '
+            'process must be followed.',
+        outcome: 'Partially Sustained',
+      ),
+      SjcReference(
+        caseNumber: '2025-12',
+        caseTitle: 'Assis & Brown v. South Florida Presbytery',
+        year: '2025',
+        pdfUrl:
+            'https://pcahistory.org/pca/sjc/cases/2025-12,%20-13_Assis_and_Brown_v_SFL_final.pdf',
+        summary:
+            'Ministers do not automatically become "without call" when their '
+            'churches leave the PCA. A pastoral call requires formal '
+            'presbytery action to dissolve under BCO 23-1; without that '
+            'action, the minister retains his called status and BCO 34-10 '
+            'divestiture is inapplicable.',
+        outcome: 'Sustained',
       ),
     ],
     'bco_13-9': [
       SjcReference(
-        caseNumber: '2016-16',
-        caseTitle: '2016-16 Sartorius v Siouxlands',
-        year: '2016',
+        caseNumber: '2006-02',
+        caseTitle: 'Memorial of Central Carolina v. Louisiana Presbytery',
+        year: '2006',
         pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2016-16_Sartorius_v_Siouxlands.pdf',
+            'https://pcahistory.org/pca/sjc/cases/2006-02_Memorial_of_Central_Carolina.pdf',
         summary:
-            'Case denied.',
-        outcome: 'Denied',
+            'Louisiana Presbytery failed to conduct an adequate investigation '
+            'of TE Wilkins\' Federal Vision theology under BCO 31-2 and then '
+            'reached a substantively erroneous decision in exonerating him, '
+            'failing in its duty under BCO 13-9.f to condemn erroneous '
+            'opinions injuring the purity or peace of the Church.',
+        outcome: 'Sustained',
       ),
       SjcReference(
-        caseNumber: '2015-06',
-        caseTitle: '2015-06 PCA v SouthFlorida',
-        year: '2015',
+        caseNumber: '2007-08',
+        caseTitle: 'Jones v. Louisiana Presbytery',
+        year: '2007',
         pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2015-06_PCA_v_SouthFlorida.pdf',
+            'https://pcahistory.org/pca/sjc/cases/2007-08_Jones_v_Louisiana.pdf',
         summary:
-            'Case dismissed.',
-        outcome: 'Dismissed',
+            'Louisiana Presbytery failed in its duty under BCO 13-9.f to '
+            'condemn erroneous opinions that injure the purity or peace of the '
+            'Church, applying an incorrect constitutional standard for '
+            'evaluating TE Wilkins\' Federal Vision views.',
+        outcome: 'Sustained',
       ),
       SjcReference(
-        caseNumber: '2010-14',
-        caseTitle: 'Sartorius v. Siouxlands Presbytery',
-        year: '2010',
+        caseNumber: '2007-09',
+        caseTitle: 'Lee v. Korean Eastern Presbytery',
+        year: '2007',
         pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2010-04_Sartorius_v_Siouxlands.pdf',
+            'https://pcahistory.org/pca/sjc/cases/2007-09%2610_Lee_v_KoreanEastern.pdf',
         summary:
-            'P erred in BCO 31-2 investigation of a TE and in failing to '
-                  'find a strong presumption of guilt.',
-        outcome: 'Not Sustained',
+            'A presbytery erred in filing a civil lawsuit to adjudicate '
+            'ecclesiastical matters (such as who was the rightful pastor), as '
+            'these matters fall within the jurisdiction of PCA church courts '
+            'under BCO 13-9, not civil courts.',
+        outcome: 'Sustained',
       ),
       SjcReference(
         caseNumber: '2009-06',
@@ -422,103 +270,42 @@ class SjcData {
         pdfUrl:
             'https://pcahistory.org/pca/sjc/cases/2009-06_Bordwine_v_PacificNW.pdf',
         summary:
-            'P erred by declining to indict TE Peter Leithart after '
-                  'investigation into the views he expressed related to the '
-                  'Nine Declarations adopted by the 37th GA in Orlando, '
-                  'recommended by the study committee on federal vision.',
+            'A presbytery cannot, without formal judicial process, render a '
+            'definitive judgment on whether a teaching elder\'s views (here, '
+            'Federal Vision theology of TE Leithart) strike at the vitals of '
+            'religion. The SJC directed the presbytery to either counsel the '
+            'elder to recant or institute process under BCO 31-2.',
         outcome: 'Sustained',
       ),
       SjcReference(
-        caseNumber: '2007-10',
-        caseTitle: 'Eliot Lee v. Korean Eastern',
-        year: '2007',
+        caseNumber: '2020-05',
+        caseTitle: 'Speck v. Missouri Presbytery',
+        year: '2020',
         pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2007-09%2610_Lee_v_KoreanEastern.pdf',
+            'https://pcahistory.org/pca/sjc/cases/2020-05_Speck_v_Missouri.pdf',
         summary:
-            'Case dismissed.',
-        outcome: 'Dismissed',
-      ),
-      SjcReference(
-        caseNumber: '2007-09',
-        caseTitle: 'Eliot Lee v. Korean Eastern',
-        year: '2007',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2007-09%2610_Lee_v_KoreanEastern.pdf',
-        summary:
-            'P erred by authorizing P commission to act on behalf of S '
-                  'and erred by approving actions of committee that filed civil '
-                  'action, including restraining order, against Complainant.',
-        outcome: 'Sustained',
-      ),
-      SjcReference(
-        caseNumber: '2007-08',
-        caseTitle: 'Jones v. Louisiana',
-        year: '2007',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2007-08_Jones_v_Louisiana.pdf',
-        summary:
-            'P erred in not finding a strong presumption of guilt RE TE '
-                  'Wilkins. Jones was joined by seven other complainants.',
-        outcome: 'Sustained',
-      ),
-      SjcReference(
-        caseNumber: '2006-02',
-        caseTitle: 'Memorial of Central Carolina v. Louisiana',
-        year: '2006',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2006-02_Memorial_of_Central_Carolina.pdf',
-        summary:
-            'C.',
-        outcome: 'Sustained',
-      ),
-      SjcReference(
-        caseNumber: '1990-08',
-        caseTitle: 'Bowen v. Eastern Carolina Presbytery',
-        year: '1990',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/1990-08_Bowen_v_EasternCarolina.pdf',
-        summary:
-            'we conclude that ECP erred in taking this action to suspend '
-                  'a ruling elder of a local church.',
-        outcome: '',
+            'The proper criteria for reviewing a lower court\'s theological '
+            'judgments are BCO 11-4 and 13-9(f), which allow condemning '
+            'erroneous opinions that injure the purity or peace of the Church, '
+            'not BCO 34-5\'s standard for process against an individual '
+            'minister.',
+        outcome: 'Sustained in Part',
       ),
     ],
     'bco_13-10': [
       SjcReference(
         caseNumber: '1983-08',
-        caseTitle: 'TE Jack Eubanks, et al. vs. Central Carolina Presbytery',
+        caseTitle: 'Eubanks v. Central Carolina Presbytery',
         year: '1983',
         pdfUrl:
             'https://pcahistory.org/pca/sjc/cases/1983-08_Eubanks_v_CentralCarolina.pdf',
         summary:
-            'Regarding the legality of dissolving and reconstituting the '
-                  'Presbytery\'s judicial commission and the power of the '
-                  'Presbytery to determine local church membership.',
-        outcome: 'Not Sustained',
-      ),
-    ],
-    'bco_14-6': [
-      SjcReference(
-        caseNumber: '2023-04',
-        caseTitle: 'TE Ryan Biese et al. v. TN Valley',
-        year: '2023',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2023-04_Biese_v_TNValley.pdf',
-        summary:
-            'Case not sustained.',
-        outcome: 'Not Sustained',
-      ),
-      SjcReference(
-        caseNumber: '2016-01',
-        caseTitle: 'Aven v. Ohio Valley Presbytery',
-        year: '2016',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2016-01_Aven_v_OhioValley.pdf',
-        summary:
-            'Therefore, the Commission sends the matter back to OVP to '
-                  'hear further from TE Hickey regarding his stated difference '
-                  'in order to create a more comprehensive Record.',
-        outcome: '',
+            'The dissolution of a presbytery\'s judicial commission by a '
+            'simple majority vote was ruled illegal because Robert\'s Rules '
+            'requires a two-thirds vote to dismiss a commission, and the '
+            'moderator may not order a dissolved commission to reassemble and '
+            'retake a vote.',
+        outcome: 'Sustained in Part',
       ),
     ],
     'bco_14-7': [
@@ -529,67 +316,45 @@ class SjcData {
         pdfUrl:
             'https://pcahistory.org/pca/sjc/cases/2021-13_Dudt_v_NWGA.pdf',
         summary:
-            'Case denied.',
-        outcome: 'Denied',
-      ),
-      SjcReference(
-        caseNumber: '2009-11',
-        caseTitle: 'Edison v. Southwest Florida Presbytery',
-        year: '2009',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2009-11-Edison_v_SouthwestFlorida.pdf',
-        summary:
-            'P sustained transfer exam of TE. Complaint filed against '
-                  'that action, and it was sustained. The TE was reexamined, '
-                  'but he did not pass. This new Complaint alleged the '
-                  'reexamination was unconstitutional.',
+            'A Session\'s decision not to distribute a document does not '
+            'prohibit a member from doing so. The promise of subjection to '
+            'brethren in ordination vow 5 is limited to lawful commands (WLC '
+            '127), and distributing an SJC decision to the congregation is not '
+            'contumacy. RE Dudt was found not guilty and restored to full '
+            'exercise of his office.',
         outcome: 'Sustained',
-      ),
-      SjcReference(
-        caseNumber: '1995-11',
-        caseTitle: 'Landrum v. Mississippi Valley',
-        year: '1995',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/1995-11_Landrum_v_MississippiValley.pdf',
-        summary:
-            'MVP erred by ordaining a man holding certain views on '
-                  '"tongues" & "prophecy.',
-        outcome: 'Sustained in Part',
       ),
     ],
     // ─────────────────────────────────────────────────────────────
-    // BCO Ch 15-16 — Calls / Ministerial Relations
+    // BCO Ch 15-18 — Committees & Commissions / Church Orders
     // ─────────────────────────────────────────────────────────────
     'bco_15-1': [
       SjcReference(
-        caseNumber: '2022-21',
-        caseTitle: 'TE David Senters v. Savannah River Presbytery',
-        year: '2022',
+        caseNumber: '2005-09',
+        caseTitle: 'Kim v. Korean Eastern Presbytery',
+        year: '2005',
         pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2022-21_Senters_v_Savannah_River.pdf',
+            'https://pcahistory.org/pca/sjc/cases/2005-09_Kim_v_KoreanEastern.pdf',
         summary:
-            'Case partially sustained.',
-        outcome: 'Partially Sustained',
+            'An administrative commission under BCO 15-1 may not handle '
+            'judicial business such as hearing and adjudicating complaints, '
+            'and may not dissolve a pastoral relationship without the '
+            'Session\'s or congregation\'s request.',
+        outcome: 'Sustained',
       ),
       SjcReference(
-        caseNumber: '2021-13',
-        caseTitle: 'Dudt v. Northwest Georgia Presbytery',
-        year: '2021',
+        caseNumber: '2008-15',
+        caseTitle: 'Morton Smith v. Western Carolina Presbytery',
+        year: '2008',
         pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2021-13_Dudt_v_NWGA.pdf',
+            'https://pcahistory.org/pca/sjc/cases/2008-15_and_group_MHSmith_v_WesternCarolina.pdf',
         summary:
-            'Case denied.',
-        outcome: 'Denied',
-      ),
-      SjcReference(
-        caseNumber: '2017-02',
-        caseTitle: 'Postles et al. v. Heritage Presbytery',
-        year: '2017',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2017-02_Postles_v_Heritage.pdf',
-        summary:
-            'Case denied.',
-        outcome: 'Denied',
+            'A Session minority (the pastor alone) may not convene a '
+            'congregational meeting that the Session majority voted to cancel. '
+            'All actions flowing from that illegitimate congregational meeting '
+            'were voided, including dissolution of ruling elders\' calls and '
+            'commission appointments.',
+        outcome: 'Sustained in Part',
       ),
       SjcReference(
         caseNumber: '2012-03',
@@ -598,224 +363,120 @@ class SjcData {
         pdfUrl:
             'https://pcahistory.org/pca/sjc/cases/2012-03_Tarter_v_Evangel.pdf',
         summary:
-            'Case sustained.',
-        outcome: 'Sustained',
-      ),
-      SjcReference(
-        caseNumber: '2009-10',
-        caseTitle: 'Woodward v. Western Carolina Presbytery',
-        year: '2009',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2009-05-08-09-10_Payne_Linton_Lyons_Woodward_v_WesternCarolina.pdf',
-        summary:
-            'Therefore, since there is no Constitutional error, we give '
-                  'great deference to Presbytery in accordance with BCO 39-3 '
-                  'since this involves a factual matter which the lower court '
-                  'is more competent to determine, because of its proximity to '
-                  'the events in question and because of its knowledge and.',
-        outcome: '',
-      ),
-      SjcReference(
-        caseNumber: '2009-09',
-        caseTitle: 'Lyons v. Western Carolina Presbytery',
-        year: '2009',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2009-05-08-09-10_Payne_Linton_Lyons_Woodward_v_WesternCarolina.pdf',
-        summary:
-            'Therefore, since there is no Constitutional error, we give '
-                  'great deference to Presbytery in accordance with BCO 39-3 '
-                  'since this involves a factual matter which the lower court '
-                  'is more competent to determine, because of its proximity to '
-                  'the events in question and because of its knowledge and.',
-        outcome: '',
-      ),
-      SjcReference(
-        caseNumber: '2009-08',
-        caseTitle: 'Linton v. Western Carolina Presbytery',
-        year: '2009',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2009-05-08-09-10_Payne_Linton_Lyons_Woodward_v_WesternCarolina.pdf',
-        summary:
-            'Therefore, since there is no Constitutional error, we give '
-                  'great deference to Presbytery in accordance with BCO 39-3 '
-                  'since this involves a factual matter which the lower court '
-                  'is more competent to determine, because of its proximity to '
-                  'the events in question and because of its knowledge and.',
-        outcome: '',
-      ),
-      SjcReference(
-        caseNumber: '2009-05',
-        caseTitle: 'Payne v. Western Carolina Presbytery',
-        year: '2009',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2009-05-08-09-10_Payne_Linton_Lyons_Woodward_v_WesternCarolina.pdf',
-        summary:
-            'P erred procedurally in a 31-2 investigation of a TE and '
-                  'erred in not fining a strong presumption of guilt.',
-        outcome: 'Not Sustained',
-      ),
-      SjcReference(
-        caseNumber: '2008-15',
-        caseTitle: 'Morton Smith v. Western Carolina',
-        year: '2008',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2008-15_and_group_MHSmith_v_WesternCarolina.pdf',
-        summary:
-            'five errors. SJC sustained two due to an illegitimate '
-                  'congregational meeting.',
-        outcome: 'Sustained',
-      ),
-      SjcReference(
-        caseNumber: '2005-09',
-        caseTitle: 'Peter B. Kim v. Korean Eastern',
-        year: '2005',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2005-09_Kim_v_KoreanEastern.pdf',
-        summary:
-            'SJC agreed P erred in denying his complaint, but that did '
-                  'not justify his refusal to obey P\'s directive. And in '
-                  'light of the deposition and failed appeal in 2005-08, no '
-                  'remedy is necessary or possible.',
-        outcome: 'Not Sustained',
-      ),
-    ],
-    'bco_15-3': [
-      SjcReference(
-        caseNumber: '2019-05',
-        caseTitle: 'Goggan v. Missouri Presbytery',
-        year: '2019',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2019-05_Goggan_v_Missouri.pdf',
-        summary:
-            'Case sustained.',
+            'A presbytery committee exceeded its authority by directing a '
+            'minister to restructure an independent mission board and attend a '
+            'particular church, as committees under BCO 15-1 may only examine, '
+            'consider, and report — they may not render judgments or direct '
+            'compliance.',
         outcome: 'Sustained',
       ),
       SjcReference(
         caseNumber: '2017-02',
-        caseTitle: 'Postles et al. v. Heritage Presbytery',
+        caseTitle: 'Postles v. Heritage Presbytery',
         year: '2017',
         pdfUrl:
             'https://pcahistory.org/pca/sjc/cases/2017-02_Postles_v_Heritage.pdf',
         summary:
-            'Case denied.',
+            'A committee appointed to investigate under BCO 15-1 may recommend '
+            'judicial action (such as instituting process under BCO 31-2) '
+            'without special authorization, because BCO 15-1 allows committees '
+            'to examine, consider, and report — and a recommendation is not '
+            'the equivalent of rendering a judgment or censure.',
         outcome: 'Denied',
       ),
       SjcReference(
+        caseNumber: '2021-03',
+        caseTitle: 'DeJong v. Session of Village Seven Presbyterian Church',
+        year: '2021',
+        pdfUrl:
+            'https://pcahistory.org/pca/sjc/cases/2021-03_DeJong_v_V7PC_Session.pdf',
+        summary:
+            'A Governance Commission whose governing document was so broad '
+            'that it permitted the commission to function as the Session '
+            'itself violated BCO 15-1\'s requirement that commissions be '
+            'limited to the particular business referred to them.',
+        outcome: 'Sustained in Part',
+      ),
+      SjcReference(
+        caseNumber: '2023-06',
+        caseTitle: 'Baird v. Grace Presbytery',
+        year: '2023',
+        pdfUrl:
+            'https://pcahistory.org/pca/sjc/cases/2023-06_Baird_v_Grace.pdf',
+        summary:
+            'A presbytery commission erred in hearing a complaint that was '
+            'never formally filed and had become moot, in directing a Session '
+            'Clerk to produce personal communications beyond the scope of the '
+            'Record (as no court may compel submission of personal '
+            'correspondence), and in staying pending trials without first '
+            'citing the lower court to appear as required by BCO 40-5.',
+        outcome: 'Sustained in Part',
+      ),
+    ],
+    'bco_15-3': [
+      SjcReference(
         caseNumber: '2008-09',
-        caseTitle: 'Session of Red Mountain v. Evangel Presbytery',
+        caseTitle: 'Red Mountain v. Evangel Presbytery',
         year: '2008',
         pdfUrl:
             'https://pcahistory.org/pca/sjc/cases/2008-09_RedMountain_v_Evangel.pdf',
         summary:
-            'Husband complained to P that S failed to indict his wife for '
-                  'pursuing an alleged unbiblical divorce. P sustained '
-                  'complaint. Session then filed complaint to SJC.',
+            'A presbytery erred under BCO 15-3 by allowing its judicial '
+            'commission to amend its report during a recess rather than having '
+            'the report approved or disapproved without debate. The presbytery '
+            'also erred by effectively judging a member as being in sin '
+            'without due process.',
         outcome: 'Sustained',
-      ),
-    ],
-    'bco_15-4': [
-      SjcReference(
-        caseNumber: '2023-04',
-        caseTitle: 'TE Ryan Biese et al. v. TN Valley',
-        year: '2023',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2023-04_Biese_v_TNValley.pdf',
-        summary:
-            'Case not sustained.',
-        outcome: 'Not Sustained',
-      ),
-      SjcReference(
-        caseNumber: '2018-02',
-        caseTitle: 'Lewis v. Mississippi Valley Presbytery',
-        year: '2018',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2018-02_Lewis_v_MSValley.pdf',
-        summary:
-            'judgments on the matters noted in the [Central Carolina '
-                  'letter] are properly before the SJC under BCO 13-9.f, 40-4, '
-                  '40-5 and SJCM 16.1.',
-        outcome: '',
-      ),
-      SjcReference(
-        caseNumber: '1995-11',
-        caseTitle: 'Landrum v. Mississippi Valley',
-        year: '1995',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/1995-11_Landrum_v_MississippiValley.pdf',
-        summary:
-            'MVP erred by ordaining a man holding certain views on '
-                  '"tongues" & "prophecy.',
-        outcome: 'Sustained in Part',
       ),
     ],
     'bco_16-1': [
       SjcReference(
         caseNumber: '2004-08',
-        caseTitle: 'Thornton v. Westminster',
+        caseTitle: 'Thornton v. Westminster Presbytery',
         year: '2004',
         pdfUrl:
             'https://pcahistory.org/pca/sjc/cases/2004-08_Thornton_v_Westminster.pdf',
         summary:
-            'Presbytery erred by not approving a congregation\'s call '
-                  'to a TE who had been w/o call (BCO 20-10) and instead began '
-                  'divestiture process of BCO 34-10.',
+            'The administrative remedy of BCO 34-10 (divestiture) cannot be '
+            'invoked against a minister who has received a legitimate call '
+            'from a church session, because a valid call demonstrates the '
+            '"manifest approbation of God\'s people" required by BCO 16-1.',
+        outcome: 'Sustained',
+      ),
+    ],
+    'bco_16-2': [
+      SjcReference(
+        caseNumber: '2007-09',
+        caseTitle: 'Lee v. Korean Eastern Presbytery',
+        year: '2007',
+        pdfUrl:
+            'https://pcahistory.org/pca/sjc/cases/2007-09%2610_Lee_v_KoreanEastern.pdf',
+        summary:
+            'A presbytery may not authorize a commission to act on behalf of a '
+            'local church session without the session\'s or congregation\'s '
+            'request or consent, violating BCO 16-2\'s principle that no man '
+            'can be placed over a church without the election or consent of '
+            'that church.',
         outcome: 'Sustained',
       ),
     ],
     // ─────────────────────────────────────────────────────────────
-    // BCO Ch 19-20 — Ruling Elders and Deacons
+    // BCO Ch 19-20 — Licensing Candidates / Ordination
     // ─────────────────────────────────────────────────────────────
     'bco_19-2': [
       SjcReference(
-        caseNumber: '2008-10',
-        caseTitle: 'Grasso v. Philadelphia',
-        year: '2008',
+        caseNumber: '1983-13',
+        caseTitle: 'Codling v. Eastern Canada Presbytery',
+        year: '1983',
         pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2008-01_Crossroads_v_Philadelphia.pdf',
+            'https://pcahistory.org/pca/sjc/cases/1983-13_Codling_v_ECanada.pdf',
         summary:
-            'Case sustained.',
-        outcome: 'Sustained',
-      ),
-      SjcReference(
-        caseNumber: '2008-01',
-        caseTitle: 'Session of Crossroads Community v. Philadelphia',
-        year: '2008',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2008-01_Crossroads_v_Philadelphia.pdf',
-        summary:
-            'P erred by licensing a man with his view that women can '
-                  'serve as deacons (but would not practice or implement his '
-                  'view). Also alleged P erred by later ordaining him.',
-        outcome: 'Not Sustained',
-      ),
-    ],
-    'bco_19-6': [
-      SjcReference(
-        caseNumber: '2009-11',
-        caseTitle: 'Edison v. Southwest Florida Presbytery',
-        year: '2009',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2009-11-Edison_v_SouthwestFlorida.pdf',
-        summary:
-            'P sustained transfer exam of TE. Complaint filed against '
-                  'that action, and it was sustained. The TE was reexamined, '
-                  'but he did not pass. This new Complaint alleged the '
-                  'reexamination was unconstitutional.',
-        outcome: 'Sustained',
-      ),
-    ],
-    'bco_20-1': [
-      SjcReference(
-        caseNumber: '2004-03',
-        caseTitle: 'Harris v. Heritage Presbytery',
-        year: '2004',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2004-03_Harris_v_Heritage.pdf',
-        summary:
-            'S erred by not publishing each minister\'s salary in the '
-                  'budget and not asking the congregation to approve all '
-                  'changes in terms of call.',
-        outcome: 'Not Sustained',
+            'A presbytery illegally changed its standing rules to require a '
+            'two-thirds majority for licensure at the same meeting where the '
+            'vote was taken, contrary to Robert\'s Rules of Order. Objections '
+            'to a candidate\'s ministry emphasis did not justify denial of '
+            'licensure.',
+        outcome: 'Sustained in Part',
       ),
     ],
     'bco_20-6': [
@@ -826,91 +487,178 @@ class SjcData {
         pdfUrl:
             'https://pcahistory.org/pca/sjc/cases/2004-03_Harris_v_Heritage.pdf',
         summary:
-            'S erred by not publishing each minister\'s salary in the '
-                  'budget and not asking the congregation to approve all '
-                  'changes in terms of call.',
+            'There is nothing explicit or implicit in the BCO requiring '
+            'congregational approval of changes to the terms of a pastor\'s '
+            'call after the initial call is approved.',
         outcome: 'Not Sustained',
       ),
     ],
-    'bco_20-10': [
-      SjcReference(
-        caseNumber: '2011-14',
-        caseTitle: 'Reese & Bech v. Philadelphia Presbytery',
-        year: '2011',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2011-14_Reese%26Bech_v_Philadelphia.pdf',
-        summary:
-            'Two REs alleged P erred by declaring their C out of order, '
-                  'which alleged P erred by not allowing questions to be raised '
-                  'when considering a minister\'s new call. BCO 21-1, 21-10 '
-                  'See also 2008-01 and -10.',
-        outcome: 'Sustained',
-      ),
-    ],
     // ─────────────────────────────────────────────────────────────
-    // BCO Ch 21-22 — The Session / The Session Meetings
+    // BCO Ch 21-22 — Election & Installation / Resignation
     // ─────────────────────────────────────────────────────────────
     'bco_21-1': [
       SjcReference(
+        caseNumber: '2004-08',
+        caseTitle: 'Thornton v. Westminster Presbytery',
+        year: '2004',
+        pdfUrl:
+            'https://pcahistory.org/pca/sjc/cases/2004-08_Thornton_v_Westminster.pdf',
+        summary:
+            'A presbytery erred in declining to place a valid pastoral call in '
+            'a minister\'s hands and citing BCO 20-10 (which applies to '
+            'ministers serving another congregation) rather than BCO 21-1.',
+        outcome: 'Sustained',
+      ),
+      SjcReference(
         caseNumber: '2011-14',
         caseTitle: 'Reese & Bech v. Philadelphia Presbytery',
         year: '2011',
         pdfUrl:
             'https://pcahistory.org/pca/sjc/cases/2011-14_Reese%26Bech_v_Philadelphia.pdf',
         summary:
-            'Two REs alleged P erred by declaring their C out of order, '
-                  'which alleged P erred by not allowing questions to be raised '
-                  'when considering a minister\'s new call. BCO 21-1, 21-10 '
-                  'See also 2008-01 and -10.',
+            'While there is no constitutional obligation to re-examine a '
+            'minister transferring within a presbytery, there is no '
+            'prohibition against asking pertinent questions related to whether '
+            'a call is for the good of the church under BCO 21-1. Deeming '
+            'parts of a complaint objectionable is not sufficient grounds to '
+            'declare the whole complaint out of order.',
         outcome: 'Sustained',
       ),
     ],
     'bco_21-4': [
       SjcReference(
-        caseNumber: '2019-02',
-        caseTitle: 'Schrock et al. v. Philadelphia Presbytery',
-        year: '2019',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2019-02_Schrock_v_Philadelphia.pdf',
-        summary:
-            'Case sustained.',
-        outcome: 'Sustained',
-      ),
-      SjcReference(
-        caseNumber: '2008-10',
-        caseTitle: 'Grasso v. Philadelphia',
-        year: '2008',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2008-01_Crossroads_v_Philadelphia.pdf',
-        summary:
-            'Case sustained.',
-        outcome: 'Sustained',
-      ),
-      SjcReference(
-        caseNumber: '2008-01',
-        caseTitle: 'Session of Crossroads Community v. Philadelphia',
-        year: '2008',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2008-01_Crossroads_v_Philadelphia.pdf',
-        summary:
-            'P erred by licensing a man with his view that women can '
-                  'serve as deacons (but would not practice or implement his '
-                  'view). Also alleged P erred by later ordaining him.',
-        outcome: 'Not Sustained',
-      ),
-      SjcReference(
         caseNumber: '2007-08',
-        caseTitle: 'Jones v. Louisiana',
+        caseTitle: 'Jones v. Louisiana Presbytery',
         year: '2007',
         pdfUrl:
             'https://pcahistory.org/pca/sjc/cases/2007-08_Jones_v_Louisiana.pdf',
         summary:
-            'P erred in not finding a strong presumption of guilt RE TE '
-                  'Wilkins. Jones was joined by seven other complainants.',
+            'A "difference" with the Westminster Standards under BCO 21-4 does '
+            'not require an overt denial or contradiction; it includes '
+            'redefining confessional terms, describing the Standards as '
+            'incomplete or inaccurate, or asserting positions that differ from '
+            'the Standards. The case involved Federal Vision views of TE '
+            'Wilkins.',
+        outcome: 'Sustained',
+      ),
+      SjcReference(
+        caseNumber: '2016-01',
+        caseTitle: 'Aven v. Ohio Valley Presbytery',
+        year: '2016',
+        pdfUrl:
+            'https://pcahistory.org/pca/sjc/cases/2016-01_Aven_v_OhioValley.pdf',
+        summary:
+            'A presbytery adequately complied with a prior SJC directive to '
+            'hear further from a teaching elder regarding his stated '
+            'difference with Larger Catechism 177 on admission to the Lord\'s '
+            'Supper by receiving supplemental written materials. The SJC did '
+            'not dictate any particular procedure for the follow-up '
+            'examination.',
+        outcome: 'Denied',
+      ),
+      SjcReference(
+        caseNumber: '2019-02',
+        caseTitle: 'Schrock v. Philadelphia Presbytery',
+        year: '2019',
+        pdfUrl:
+            'https://pcahistory.org/pca/sjc/cases/2019-02_Schrock_v_Philadelphia.pdf',
+        summary:
+            'A presbytery must require a minister transferring from another '
+            'denomination to state his differences with the Standards in his '
+            'own words, and must categorize each stated difference as required '
+            'by BCO 21-4 and RAO 16-3.e.5. Failure to judge and record the '
+            'nature of a transferee\'s views is a failure of constitutional '
+            'duty, not merely a record-keeping error.',
+        outcome: 'Sustained',
+      ),
+      SjcReference(
+        caseNumber: '2022-03',
+        caseTitle: 'Klett v. Philadelphia Presbytery',
+        year: '2022',
+        pdfUrl:
+            'https://pcahistory.org/pca/sjc/cases/2022-03_Klett_v_Philadelphia.pdf',
+        summary:
+            'Views affirming continuing gifts of prophecy and tongues as '
+            'appropriate elements of corporate worship are hostile to the '
+            'Westminster system of doctrine because they conflict with WCF 1.1 '
+            'and 1.6 regarding the cessation of revelation, which is '
+            'foundational to the system.',
         outcome: 'Sustained',
       ),
     ],
     'bco_21-5': [
+      SjcReference(
+        caseNumber: '1990-08',
+        caseTitle: 'Bowen v. Eastern Carolina Presbytery',
+        year: '1990',
+        pdfUrl:
+            'https://pcahistory.org/pca/sjc/cases/1990-08_Bowen_v_EasternCarolina.pdf',
+        summary:
+            'Infant Baptism and Limited Atonement are fundamentals of the '
+            'system of doctrine under BCO 21-5-2 and 24-5-2, and no exceptions '
+            'to these doctrines may be given for officers in the church.',
+        outcome: 'Sustained in Part',
+      ),
+      SjcReference(
+        caseNumber: '1995-11',
+        caseTitle: 'Landrum v. Mississippi Valley Presbytery',
+        year: '1995',
+        pdfUrl:
+            'https://pcahistory.org/pca/sjc/cases/1995-11_Landrum_v_MississippiValley.pdf',
+        summary:
+            'A private prayer language view of tongues was found within the '
+            'bounds of the 1974 Pastoral Letter, but a candidate\'s view of '
+            'prophecy that left the door open to continuing verbal revelation '
+            'failed to maintain the finality and sufficiency of Scripture (WCF '
+            '1.1, 1.6). Presbytery was instructed to note his view as an '
+            'exception and to instruct him not to teach or preach it.',
+        outcome: 'Sustained in Part',
+      ),
+      SjcReference(
+        caseNumber: '2005-01',
+        caseTitle: 'Chastain v. Heritage Presbytery',
+        year: '2005',
+        pdfUrl:
+            'https://pcahistory.org/pca/sjc/cases/2005-01_Chastain_v_Heritage.pdf',
+        summary:
+            'A minister\'s letter-writing campaign to the congregation against '
+            'Session decisions violated his ordination vows under BCO 21-5 to '
+            'be subject to his brethren and maintain the peace and unity of '
+            'the Church. The proper remedy for a minister who disagrees with a '
+            'Session action is to file a complaint under BCO 43, not to '
+            'publicly campaign against the decision.',
+        outcome: 'Not Sustained',
+      ),
+      SjcReference(
+        caseNumber: '2005-08',
+        caseTitle: 'Kim v. Korean Eastern Presbytery',
+        year: '2005',
+        pdfUrl:
+            'https://pcahistory.org/pca/sjc/cases/2005-08_Kim_v_KoreanEastern.pdf',
+        summary:
+            'Contumacy under BCO 32-6 can be broadly defined as failure to be '
+            'subject to the brethren per the fourth ordination vow of BCO '
+            '21-5, not limited to the narrow sense of refusal to appear before '
+            'a court. TE Kim\'s conviction was sustained but excommunication '
+            'was reduced to indefinite suspension from the sacraments.',
+        outcome: 'Sustained in Part',
+      ),
+      SjcReference(
+        caseNumber: '2008-01',
+        caseTitle: 'Crossroads Community v. Philadelphia Presbytery',
+        year: '2008',
+        pdfUrl:
+            'https://pcahistory.org/pca/sjc/cases/2008-01_Crossroads_v_Philadelphia.pdf',
+        summary:
+            'A candidate who stated a personal difference with the BCO '
+            'regarding women deacons but affirmed he would conduct his '
+            'ministry in conformity with BCO requirements was properly '
+            'approved. BCO 21-5 distinguishes between subscription to '
+            'doctrinal standards (judged by whether a view strikes at '
+            'fundamentals) and approval of the form of government (judged by '
+            'credibility of commitment to the third ordination vow).',
+        outcome: 'Not Sustained',
+      ),
       SjcReference(
         caseNumber: '2009-07',
         caseTitle: 'Urish v. Rocky Mountain Presbytery',
@@ -918,147 +666,49 @@ class SjcData {
         pdfUrl:
             'https://pcahistory.org/pca/sjc/cases/2009-07_Urish_v_RockyMountain.pdf',
         summary:
-            'P erred by ordaining a man who held that women could, under '
-                  'Session authority, do any teaching in a church other than '
-                  'preaching. (Interpretation of 1 Timothy 2:12)',
-        outcome: 'Not Sustained',
-      ),
-      SjcReference(
-        caseNumber: '2008-10',
-        caseTitle: 'Grasso v. Philadelphia',
-        year: '2008',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2008-01_Crossroads_v_Philadelphia.pdf',
-        summary:
-            'Case sustained.',
-        outcome: 'Sustained',
-      ),
-      SjcReference(
-        caseNumber: '2008-01',
-        caseTitle: 'Session of Crossroads Community v. Philadelphia',
-        year: '2008',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2008-01_Crossroads_v_Philadelphia.pdf',
-        summary:
-            'P erred by licensing a man with his view that women can '
-                  'serve as deacons (but would not practice or implement his '
-                  'view). Also alleged P erred by later ordaining him.',
-        outcome: 'Not Sustained',
-      ),
-      SjcReference(
-        caseNumber: '2005-08',
-        caseTitle: 'Appeal of Peter B. Kim v. Korean Eastern',
-        year: '2005',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2005-08_Kim_v_KoreanEastern.pdf',
-        summary:
-            'Convicted of being "contumacious against the authority of '
-                  'Presbytery." Deposed and excommunicated. SJC upholds '
-                  'conviction but reduces excommunication to indefinite '
-                  'suspension from sacraments.',
-        outcome: 'Not Sustained',
-      ),
-      SjcReference(
-        caseNumber: '2005-01',
-        caseTitle: 'Appeal of Chastain v. Heritage',
-        year: '2005',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2005-01_Chastain_v_Heritage.pdf',
-        summary:
-            'charge was unlawful, verdict was wrong, censure was unjust, '
-                  'and reversible errors in process. After SJC Decision, an '
-                  'Objection was filed by the TE who assisted in TE '
-                  'Chastain\'s defense. Protest filed by 8 TEs and 1 RE, from '
-                  '8 Presbyteries.',
-        outcome: 'Not Sustained',
-      ),
-      SjcReference(
-        caseNumber: '1990-08',
-        caseTitle: 'Bowen v. Eastern Carolina Presbytery',
-        year: '1990',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/1990-08_Bowen_v_EasternCarolina.pdf',
-        summary:
-            'we conclude that ECP erred in taking this action to suspend '
-                  'a ruling elder of a local church.',
-        outcome: '',
-      ),
-    ],
-    'bco_22-3': [
-      SjcReference(
-        caseNumber: '2007-13',
-        caseTitle: 'Kniseley v. Rocky Mountain',
-        year: '2007',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2007-13_Kniseley_v_RockyMountain.pdf',
-        summary:
-            'P erred by allowing a church to title a female staff person '
-                  'as Minister of Church Life.',
+            'A presbytery did not commit clear error in approving a candidate '
+            'who held that 1 Timothy 2:12 prohibits women from "authoritative '
+            'teaching" (preaching) but not from all other forms of teaching '
+            'under Session oversight, since neither the Westminster Standards '
+            'nor the BCO explicitly address this specific question.',
         outcome: 'Not Sustained',
       ),
     ],
     // ─────────────────────────────────────────────────────────────
-    // BCO Ch 23-26 — Pastoral Relationships / Congregational Meetings
+    // BCO Ch 23-24 — Pastoral Relationships / Elections
     // ─────────────────────────────────────────────────────────────
     'bco_23-1': [
       SjcReference(
         caseNumber: '2025-12',
-        caseTitle: 'TE Assis & TE Brown v. South Florida Presbytery',
+        caseTitle: 'Assis & Brown v. South Florida Presbytery',
         year: '2025',
         pdfUrl:
             'https://pcahistory.org/pca/sjc/cases/2025-12,%20-13_Assis_and_Brown_v_SFL_final.pdf',
         summary:
-            'A pastoral call is a three-way agreement (minister, calling '
-                  'body, and presbytery) whose dissolution requires formal '
-                  'presbytery action under BCO 23-1. A church\'s departure from '
-                  'the PCA does not automatically dissolve the call.',
+            'A pastoral call is a three-way agreement (minister, calling body, '
+            'and presbytery) whose dissolution requires formal presbytery '
+            'action under BCO 23-1. A church\'s departure from the PCA does '
+            'not automatically dissolve the call.',
         outcome: 'Sustained',
       ),
     ],
     'bco_24-1': [
       SjcReference(
         caseNumber: '2019-03',
-        caseTitle: 'Crouse v. NW Georgia Presbytery',
+        caseTitle: 'Crouse v. Northwest Georgia Presbytery',
         year: '2019',
         pdfUrl:
             'https://pcahistory.org/pca/sjc/cases/2019-03_Crouse_v_NWGeorgia.pdf',
         summary:
-            'judgment, the SJC doubled down on their decision by '
-                  'suggesting that if a Session desires “greater flexibility” '
-                  'in the requirements found in BCO 24-1, it should pursue a '
-                  'change to the Constitution.',
-        outcome: '',
-      ),
-    ],
-    'bco_24-3': [
-      SjcReference(
-        caseNumber: '2023-11',
-        caseTitle: 'Psiaki v. Pacific Northwest Presbytery',
-        year: '2024',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2023-11_Psiaki_v_PacificNW.pdf',
-        summary:
-            'The phrase "good and regular standing" in BCO 24-3 refers '
-                  'only to whether a member is under censure, not to age. '
-                  'Sessions may not impose additional voting restrictions '
-                  'beyond those in the BCO.',
+            'BCO 24-1 establishes a mandatory sequence of nomination, '
+            'instruction, and examination for ruling elder candidates. A '
+            'session may not add a peremptory "vetting" or prescreening step '
+            'that eliminates nominees before they have received the required '
+            'instruction and examination.',
         outcome: 'Sustained',
       ),
     ],
     'bco_24-6': [
-      SjcReference(
-        caseNumber: '2004-07',
-        caseTitle: 
-          'Session of First Presbyterian Augusta v. Savannah River Presbytery',
-        year: '2004',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2004-07_FPCAugusta_v_SavannahRiver.pdf',
-        summary:
-            'P erred when it sustained a C alleging, (1) S erred by '
-                  'adding items to docket of congregational meeting and (2) S '
-                  'erred by recommending a course of action to congregation.',
-        outcome: 'Sustained',
-      ),
       SjcReference(
         caseNumber: '1990-08',
         caseTitle: 'Bowen v. Eastern Carolina Presbytery',
@@ -1066,66 +716,56 @@ class SjcData {
         pdfUrl:
             'https://pcahistory.org/pca/sjc/cases/1990-08_Bowen_v_EasternCarolina.pdf',
         summary:
-            'we conclude that ECP erred in taking this action to suspend '
-                  'a ruling elder of a local church.',
-        outcome: '',
-      ),
-    ],
-    'bco_24-7': [
-      SjcReference(
-        caseNumber: '2019-11',
-        caseTitle: 'Crouse v. NW Georgia Presbytery',
-        year: '2019',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2019-11_Crouse_v_NWGeorgia.pdf',
-        summary:
-            'Therefore, a higher court should not reverse such a judgment '
-                  'by a lower court, unless there is clear error on the part of '
-                  'the lower court.',
-        outcome: 'Sustained',
-      ),
-    ],
-    'bco_25-1': [
-      SjcReference(
-        caseNumber: '2023-11',
-        caseTitle: 'Psiaki v. Pacific Northwest Presbytery',
-        year: '2024',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2023-11_Psiaki_v_PacificNW.pdf',
-        summary:
-            'BCO 25-1 confirms that "all communing members" of a '
-                  'particular church are entitled to vote, reinforcing that no '
-                  'age-based restrictions may be imposed beyond communicant '
-                  'member status.',
-        outcome: 'Sustained',
-      ),
-    ],
-    'bco_25-2': [
-      SjcReference(
-        caseNumber: '2005-09',
-        caseTitle: 'Peter B. Kim v. Korean Eastern',
-        year: '2005',
-        pdfUrl:
-            'https://pcahistory.org/pca/sjc/cases/2005-09_Kim_v_KoreanEastern.pdf',
-        summary:
-            'SJC agreed P erred in denying his complaint, but that did '
-                  'not justify his refusal to obey P\'s directive. And in '
-                  'light of the deposition and failed appeal in 2005-08, no '
-                  'remedy is necessary or possible.',
-        outcome: 'Not Sustained',
+            'BCO 24-6 makes ordination perpetual, and a presbytery may not '
+            'annul the election, ordination, and installation of church '
+            'officers years after the fact without a trial. Removal from '
+            'office requires due process.',
+        outcome: 'Sustained in Part',
       ),
       SjcReference(
         caseNumber: '2004-07',
-        caseTitle: 
-          'Session of First Presbyterian Augusta v. Savannah River Presbytery',
+        caseTitle: 'First Presbyterian Augusta v. Savannah River Presbytery',
         year: '2004',
         pdfUrl:
             'https://pcahistory.org/pca/sjc/cases/2004-07_FPCAugusta_v_SavannahRiver.pdf',
         summary:
-            'P erred when it sustained a C alleging, (1) S erred by '
-                  'adding items to docket of congregational meeting and (2) S '
-                  'erred by recommending a course of action to congregation.',
+            'BCO 24-6 does not prohibit a Session from informing the '
+            'congregation of its right to seek dissolution of its official '
+            'relationship with ruling elders and recommending that the '
+            'congregation exercise those rights. A presbytery erred in '
+            'annulling the Session\'s actions after the congregation voted to '
+            'invoke BCO 24-6 proceedings.',
         outcome: 'Sustained',
+      ),
+    ],
+    'bco_24-7': [
+      SjcReference(
+        caseNumber: '2008-15',
+        caseTitle: 'Morton Smith v. Western Carolina Presbytery',
+        year: '2008',
+        pdfUrl:
+            'https://pcahistory.org/pca/sjc/cases/2008-15_and_group_MHSmith_v_WesternCarolina.pdf',
+        summary:
+            'A congregational meeting is illegitimate when convened by a '
+            'pastor acting alone after the Session majority voted to cancel '
+            'it, and all proceedings at such a meeting (including elections '
+            'and calls to ruling elders) are void.',
+        outcome: 'Sustained in Part',
+      ),
+      SjcReference(
+        caseNumber: '2019-11',
+        caseTitle: 'Crouse v. Northwest Georgia Presbytery',
+        year: '2019',
+        pdfUrl:
+            'https://pcahistory.org/pca/sjc/cases/2019-11_Crouse_v_NWGeorgia.pdf',
+        summary:
+            'A Session has discretion to determine a deacon\'s eligibility for '
+            're-election and may decline to advance a nomination without '
+            'bringing formal charges, as no sitting officer is guaranteed '
+            're-election at the end of a term. The filing of a complaint or '
+            'appeal may never, standing alone, constitute proper grounds to '
+            'deny any privilege of membership or office.',
+        outcome: 'Denied',
       ),
     ],
     // ─────────────────────────────────────────────────────────────
