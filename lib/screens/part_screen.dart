@@ -36,9 +36,11 @@ class _PartScreenState extends State<PartScreen> {
       body: CustomScrollView(
         slivers: [
           SliverAppBar.medium(
-            backgroundColor: isDark
-                ? sectionColor.withAlpha(25)
-                : sectionColor.withAlpha(12),
+            backgroundColor: Color.lerp(
+              theme.colorScheme.surface,
+              sectionColor,
+              isDark ? 0.10 : 0.05,
+            ),
             foregroundColor: theme.colorScheme.onSurface,
             actions: sharedAppBarActions(context),
             title: Column(

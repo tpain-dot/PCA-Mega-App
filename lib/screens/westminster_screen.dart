@@ -18,8 +18,11 @@ class WestminsterScreen extends StatelessWidget {
       body: CustomScrollView(
         slivers: [
           SliverAppBar.medium(
-            backgroundColor:
-                isDark ? color.withAlpha(25) : color.withAlpha(12),
+            backgroundColor: Color.lerp(
+              theme.colorScheme.surface,
+              color,
+              isDark ? 0.10 : 0.05,
+            ),
             foregroundColor: theme.colorScheme.onSurface,
             actions: sharedAppBarActions(context),
             title: Column(
