@@ -9,6 +9,7 @@ import '../models/bco_models.dart';
 import '../providers/app_state.dart';
 import '../services/commentary_injection_service.dart';
 import '../services/sjc_injection_service.dart';
+import '../widgets/icon_tap_target_extension.dart';
 import '../widgets/shared_actions.dart';
 
 class ChapterScreen extends StatefulWidget {
@@ -296,6 +297,10 @@ class _ChapterScreenState extends State<ChapterScreen> {
         };
 
     void onLinkTap(String? url, Map<String, String> attributes, dynamic element) {
+      // Note: sjc:// and commentary:// URLs are no longer injected into HTML.
+      // Those icons are now rendered via IconTapTargetExtension (custom tags),
+      // which fires its own callbacks directly. These branches are kept as a
+      // defensive fallback in case any legacy HTML still uses the old scheme.
       if (url != null && url.startsWith('sjc://')) {
         final sectionKey = url.replaceFirst('sjc://', '');
         _showSjcBottomSheet(context, sectionKey);
@@ -306,6 +311,16 @@ class _ChapterScreenState extends State<ChapterScreen> {
         launchUrl(Uri.parse(url), mode: LaunchMode.externalApplication);
       }
     }
+
+    // Extension that renders <sjc-icon> and <commentary-icon> custom tags
+    // as 44×44 tap targets. Injection services now emit these tags instead
+    // of raw <a><sup> links so we can control the hit area via a Flutter
+    // widget rather than a TextSpan.recognizer (which is bounded by text size).
+    final iconExtension = IconTapTargetExtension(
+      onSjcTap: (key) => _showSjcBottomSheet(context, key),
+      onCommentaryTap: (key) => _showCommentaryBottomSheet(context, key),
+      fontSize: state.fontSize,
+    );
 
     Widget buildChapterHeader() => Column(
           children: [
@@ -396,6 +411,7 @@ class _ChapterScreenState extends State<ChapterScreen> {
                       html: highlighted,
                       styles: styles,
                       onLinkTap: onLinkTap,
+                      extensions: [iconExtension],
                     );
                   }
                   // Subsequent matches: highlight but don't split
@@ -409,6 +425,7 @@ class _ChapterScreenState extends State<ChapterScreen> {
                   data: html,
                   style: styles,
                   onLinkTap: onLinkTap,
+                  extensions: [iconExtension],
                 ),
               );
             }),
@@ -437,12 +454,14 @@ class _ChapterScreenState extends State<ChapterScreen> {
               html: html,
               styles: styles,
               onLinkTap: onLinkTap,
+              extensions: [iconExtension],
             )
           else
             Html(
               data: html,
               style: styles,
               onLinkTap: onLinkTap,
+              extensions: [iconExtension],
             ),
           const SizedBox(height: 60),
         ],
@@ -652,6 +671,7 @@ class _ChapterScreenState extends State<ChapterScreen> {
     required String html,
     required Map<String, Style> styles,
     required void Function(String?, Map<String, String>, dynamic) onLinkTap,
+    required List<HtmlExtension> extensions,
   }) {
     final parts = _splitAtFirstMark(html);
 
@@ -661,17 +681,28 @@ class _ChapterScreenState extends State<ChapterScreen> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           if (parts.before.trim().isNotEmpty)
-            Html(data: parts.before, style: styles, onLinkTap: onLinkTap),
+            Html(
+              data: parts.before,
+              style: styles,
+              onLinkTap: onLinkTap,
+              extensions: extensions,
+            ),
           Container(
             key: _matchParagraphKey,
             child: Html(
               data: parts.matchBlock.isNotEmpty ? parts.matchBlock : html,
               style: styles,
               onLinkTap: onLinkTap,
+              extensions: extensions,
             ),
           ),
           if (parts.after.trim().isNotEmpty)
-            Html(data: parts.after, style: styles, onLinkTap: onLinkTap),
+            Html(
+              data: parts.after,
+              style: styles,
+              onLinkTap: onLinkTap,
+              extensions: extensions,
+            ),
         ],
       ),
     );

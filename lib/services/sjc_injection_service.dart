@@ -14,7 +14,7 @@ class SjcInjectionService {
   /// [html] is the raw HTML content from the bundled asset.
   /// [chapterId] identifies which chapter this is (e.g., "ch34", "wcf_ch24").
   ///
-  /// Returns modified HTML with `<a>` superscript tags appended after
+  /// Returns modified HTML with `<sjc-icon>` custom tags appended after
   /// section markers that have SJC references.
   static String injectReferences(String html, String chapterId) {
     if (_isBcoChapter(chapterId)) {
@@ -36,12 +36,13 @@ class SjcInjectionService {
         id.startsWith('app');
   }
 
-  /// Build the superscript HTML snippet.
+  /// Build the custom tag HTML snippet for SJC references.
+  ///
+  /// Emits a `<sjc-icon>` custom tag instead of a raw `<a><sup>` link so that
+  /// the IconTapTargetExtension in chapter_screen can render it with a
+  /// proper 44×44 tap target rather than the tiny visual text bounds.
   static String _buildSup(String key, int count) {
-    return '<a href="sjc://$key">'
-        '<sup style="color: #8B5E3C; font-size: 0.7em; '
-        'font-weight: bold;">'
-        '\u2009\u2696$count</sup></a>';
+    return '<sjc-icon key="$key" count="$count"></sjc-icon>';
   }
 
   // ─────────────────────────────────────────────────────────────

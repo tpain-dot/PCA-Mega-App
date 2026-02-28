@@ -13,7 +13,7 @@ class CommentaryInjectionService {
   /// [html] is the raw HTML content from the bundled asset.
   /// [chapterId] identifies which chapter this is (e.g., "ch1", "ch34").
   ///
-  /// Returns modified HTML with `<a>` superscript tags appended after
+  /// Returns modified HTML with `<commentary-icon>` custom tags appended after
   /// section markers that have commentary entries.
   static String injectCommentary(String html, String chapterId) {
     if (!_isBcoChapter(chapterId)) return html;
@@ -26,12 +26,13 @@ class CommentaryInjectionService {
         id.startsWith('app');
   }
 
-  /// Build the commentary superscript HTML snippet.
+  /// Build the custom tag HTML snippet for commentary references.
+  ///
+  /// Emits a `<commentary-icon>` custom tag instead of a raw `<a><sup>` link so
+  /// that the IconTapTargetExtension in chapter_screen can render it with a
+  /// proper 44×44 tap target rather than the tiny visual text bounds.
   static String _buildSup(String key) {
-    return '<a href="commentary://$key">'
-        '<sup style="color: #5C7A8A; font-size: 0.7em; '
-        'font-weight: bold;">'
-        '\u2009\uD83D\uDCDD</sup></a>';
+    return '<commentary-icon key="$key"></commentary-icon>';
   }
 
   /// BCO section markers appear in three HTML format variants

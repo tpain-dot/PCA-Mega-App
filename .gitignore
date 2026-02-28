@@ -44,6 +44,11 @@ app.*.map.json
 /android/app/profile
 /android/app/release
 
+# Playwright / Node
+node_modules/
+test-results/
+playwright-report/
+
 # Claude local settings
 .claude/settings.local.json
 
