@@ -1,45 +1,105 @@
 import 'dart:async';
-import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import '../data/bco_structure.dart';
-import '../data/westminster_structure.dart';
-import '../models/bco_models.dart';
-import '../providers/app_state.dart';
-import '../theme/bco_design.dart';
-import '../widgets/shared_actions.dart';
-import 'chapter_screen.dart';
 
-class SearchScreen extends StatefulWidget {
-  const SearchScreen({super.key});
+import 'package:flutter/material.dart';
+import 'package:html/parser.dart' as html_parser;
+import '../widgets/shared_actions.dart';
+import 'study_text_screen.dart';
+
+/// A search screen that searches within a single study's HTML content.
+/// Returns the section ID of the selected result via Navigator.pop.
+class StudySearchScreen extends StatefulWidget {
+  final String title;
+  final String htmlContent;
+  final List<StudyTocEntry> toc;
+
+  const StudySearchScreen({
+    super.key,
+    required this.title,
+    required this.htmlContent,
+    required this.toc,
+  });
 
   @override
-  State<SearchScreen> createState() => _SearchScreenState();
+  State<StudySearchScreen> createState() => _StudySearchScreenState();
 }
 
-class _SearchScreenState extends State<SearchScreen> {
+class _StudySearchScreenState extends State<StudySearchScreen> {
   final _controller = TextEditingController();
   final _focusNode = FocusNode();
-  List<SearchResult> _results = [];
+  List<_StudySearchResult> _results = [];
   bool _isSearching = false;
-  bool _contentLoading = false;
   Timer? _debounce;
+
+  /// Parsed sections: each has an id, title, and plain text.
+  late final List<_SearchableSection> _sections;
 
   @override
   void initState() {
     super.initState();
+    _sections = _buildSearchableSections();
     WidgetsBinding.instance.addPostFrameCallback((_) {
       _focusNode.requestFocus();
-      _loadContent();
     });
   }
 
-  Future<void> _loadContent() async {
-    final state = context.read<AppState>();
-    if (!state.contentLoaded) {
-      setState(() => _contentLoading = true);
-      await state.loadAllContent();
-      if (mounted) setState(() => _contentLoading = false);
+  @override
+  void dispose() {
+    _controller.dispose();
+    _focusNode.dispose();
+    _debounce?.cancel();
+    super.dispose();
+  }
+
+  /// Split the HTML by <div id="sec-X"> boundaries and strip each to plain text.
+  List<_SearchableSection> _buildSearchableSections() {
+    final divPattern = RegExp(r'<div id="([^"]+)">');
+    final matches = divPattern.allMatches(widget.htmlContent).toList();
+
+    if (matches.isEmpty) {
+      return [
+        _SearchableSection(
+          id: 'all',
+          title: widget.title,
+          plainText: _stripHtml(widget.htmlContent),
+        ),
+      ];
     }
+
+    // Build a map from section id → title from the TOC
+    final tocTitles = <String, String>{};
+    for (final entry in _flattenToc(widget.toc)) {
+      tocTitles[entry.sectionId] = entry.title;
+    }
+
+    final sections = <_SearchableSection>[];
+    for (int i = 0; i < matches.length; i++) {
+      final match = matches[i];
+      final id = match.group(1)!;
+      final start = match.start;
+      final end =
+          i + 1 < matches.length ? matches[i + 1].start : widget.htmlContent.length;
+      final sectionHtml = widget.htmlContent.substring(start, end);
+      sections.add(_SearchableSection(
+        id: id,
+        title: tocTitles[id] ?? id,
+        plainText: _stripHtml(sectionHtml),
+      ));
+    }
+    return sections;
+  }
+
+  List<StudyTocEntry> _flattenToc(List<StudyTocEntry> entries) {
+    final flat = <StudyTocEntry>[];
+    for (final entry in entries) {
+      flat.add(entry);
+      flat.addAll(_flattenToc(entry.children));
+    }
+    return flat;
+  }
+
+  String _stripHtml(String html) {
+    final doc = html_parser.parse(html);
+    return doc.body?.text ?? '';
   }
 
   void _onSearchChanged(String query) {
@@ -60,21 +120,41 @@ class _SearchScreenState extends State<SearchScreen> {
 
     setState(() => _isSearching = true);
 
-    final state = context.read<AppState>();
-    final results = state.search(query.trim());
+    final results = <_StudySearchResult>[];
+    final lowerQuery = query.trim().toLowerCase();
+
+    for (final section in _sections) {
+      final lowerText = section.plainText.toLowerCase();
+      var searchFrom = 0;
+      var matchCount = 0;
+
+      while (matchCount < 3) {
+        final idx = lowerText.indexOf(lowerQuery, searchFrom);
+        if (idx == -1) break;
+
+        final snippetStart = (idx - 60).clamp(0, section.plainText.length);
+        final snippetEnd =
+            (idx + query.trim().length + 60).clamp(0, section.plainText.length);
+        var snippet =
+            section.plainText.substring(snippetStart, snippetEnd).trim();
+        if (snippetStart > 0) snippet = '...$snippet';
+        if (snippetEnd < section.plainText.length) snippet = '$snippet...';
+
+        results.add(_StudySearchResult(
+          sectionId: section.id,
+          sectionTitle: section.title,
+          snippet: snippet,
+        ));
+
+        searchFrom = idx + query.trim().length;
+        matchCount++;
+      }
+    }
 
     setState(() {
       _results = results;
       _isSearching = false;
     });
-  }
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    _focusNode.dispose();
-    _debounce?.cancel();
-    super.dispose();
   }
 
   @override
@@ -88,7 +168,7 @@ class _SearchScreenState extends State<SearchScreen> {
           focusNode: _focusNode,
           onChanged: _onSearchChanged,
           decoration: InputDecoration(
-            hintText: 'Search...',
+            hintText: 'Search in study...',
             border: InputBorder.none,
             hintStyle: TextStyle(
               color: theme.colorScheme.onSurfaceVariant.withAlpha(150),
@@ -114,24 +194,6 @@ class _SearchScreenState extends State<SearchScreen> {
   }
 
   Widget _buildBody(ThemeData theme) {
-    if (_contentLoading) {
-      return Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const CircularProgressIndicator(),
-            const SizedBox(height: 16),
-            Text(
-              'Loading content for search...',
-              style: theme.textTheme.bodyMedium?.copyWith(
-                color: theme.colorScheme.onSurfaceVariant,
-              ),
-            ),
-          ],
-        ),
-      );
-    }
-
     if (_controller.text.isEmpty) {
       return Center(
         child: Column(
@@ -141,7 +203,7 @@ class _SearchScreenState extends State<SearchScreen> {
               alignment: Alignment.center,
               children: [
                 Icon(
-                  Icons.menu_book_rounded,
+                  Icons.description_rounded,
                   size: 64,
                   color: theme.colorScheme.primary.withAlpha(35),
                 ),
@@ -165,17 +227,23 @@ class _SearchScreenState extends State<SearchScreen> {
             ),
             const SizedBox(height: 20),
             Text(
-              'Search All Content',
+              'Search in Study',
               style: theme.textTheme.titleSmall?.copyWith(
                 color: theme.colorScheme.onSurfaceVariant,
                 fontWeight: FontWeight.w600,
               ),
             ),
             const SizedBox(height: 6),
-            Text(
-              'Find text across the BCO and Westminster Standards',
-              style: theme.textTheme.bodySmall?.copyWith(
-                color: theme.colorScheme.onSurfaceVariant.withAlpha(140),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 40),
+              child: Text(
+                widget.title,
+                style: theme.textTheme.bodySmall?.copyWith(
+                  color: theme.colorScheme.onSurfaceVariant.withAlpha(140),
+                ),
+                textAlign: TextAlign.center,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
               ),
             ),
           ],
@@ -215,29 +283,18 @@ class _SearchScreenState extends State<SearchScreen> {
       separatorBuilder: (context, index) => const Divider(height: 1),
       itemBuilder: (context, index) {
         final result = _results[index];
-        final chapter = result.chapter;
-        final section = BcoStructure.findSection(chapter.sectionId) ??
-            WestminsterStructure.standards
-                .cast<BcoSection?>()
-                .firstWhere((s) => s?.id == chapter.sectionId,
-                    orElse: () => null);
-        final sectionColor =
-            BcoDesign.sectionColors[chapter.sectionId] ??
-                theme.colorScheme.primary;
 
         return ListTile(
           leading: Container(
             width: 4,
             height: 40,
             decoration: BoxDecoration(
-              color: sectionColor.withAlpha(150),
+              color: theme.colorScheme.primary.withAlpha(150),
               borderRadius: BorderRadius.circular(2),
             ),
           ),
           title: Text(
-            chapter.number != null
-                ? 'Chapter ${chapter.number}: ${chapter.title}'
-                : chapter.title,
+            result.sectionTitle,
             style: theme.textTheme.bodyMedium?.copyWith(
               fontWeight: FontWeight.w600,
             ),
@@ -251,18 +308,13 @@ class _SearchScreenState extends State<SearchScreen> {
             ),
           ),
           onTap: () {
-            if (section != null) {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (_) => ChapterScreen(
-                    chapter: chapter,
-                    section: section,
-                    searchQuery: _controller.text.trim(),
-                  ),
-                ),
-              );
-            }
+            Navigator.pop(
+              context,
+              StudySearchReturnValue(
+                sectionId: result.sectionId,
+                searchQuery: _controller.text.trim(),
+              ),
+            );
           },
         );
       },
@@ -308,4 +360,37 @@ class _SearchScreenState extends State<SearchScreen> {
       ),
     );
   }
+}
+
+class _SearchableSection {
+  final String id;
+  final String title;
+  final String plainText;
+  const _SearchableSection({
+    required this.id,
+    required this.title,
+    required this.plainText,
+  });
+}
+
+class _StudySearchResult {
+  final String sectionId;
+  final String sectionTitle;
+  final String snippet;
+  const _StudySearchResult({
+    required this.sectionId,
+    required this.sectionTitle,
+    required this.snippet,
+  });
+}
+
+/// Result returned from StudySearchScreen to the caller,
+/// containing both the section ID and the search query for precise scrolling.
+class StudySearchReturnValue {
+  final String sectionId;
+  final String searchQuery;
+  const StudySearchReturnValue({
+    required this.sectionId,
+    required this.searchQuery,
+  });
 }

@@ -77,6 +77,7 @@ class StudiesScreen extends StatelessWidget {
             title: doc.title,
             htmlAssetPath: textConfig.htmlAssetPath,
             pdfAssetPath: doc.assetPath,
+            footnotesAssetPath: textConfig.footnotesAssetPath,
             toc: textConfig.toc,
           ),
         ),

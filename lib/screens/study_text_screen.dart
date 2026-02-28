@@ -1,11 +1,15 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter_html/flutter_html.dart';
+import 'package:flutter_html_table/flutter_html_table.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../providers/app_state.dart';
 import '../widgets/shared_actions.dart';
 import 'pdf_viewer_screen.dart';
+import 'study_search_screen.dart';
 
 /// A screen that renders a study/report as readable HTML text
 /// with a table of contents drawer for section navigation.
@@ -13,14 +17,20 @@ class StudyTextScreen extends StatefulWidget {
   final String title;
   final String htmlAssetPath;
   final String pdfAssetPath;
+  final String? footnotesAssetPath;
   final List<StudyTocEntry> toc;
+  final String? initialSectionId;
+  final String? initialSearchQuery;
 
   const StudyTextScreen({
     super.key,
     required this.title,
     required this.htmlAssetPath,
     required this.pdfAssetPath,
+    this.footnotesAssetPath,
     required this.toc,
+    this.initialSectionId,
+    this.initialSearchQuery,
   });
 
   @override
@@ -31,11 +41,18 @@ class _StudyTextScreenState extends State<StudyTextScreen> {
   final _scaffoldKey = GlobalKey<ScaffoldState>();
   final _scrollController = ScrollController();
   String? _htmlContent;
+  Map<String, String> _footnotes = {};
   bool _isLoading = true;
   String? _error;
 
+  /// Active search query for highlighting matched text.
+  String? _searchQuery;
+
   // Section positions for TOC navigation
   final Map<String, GlobalKey> _sectionKeys = {};
+
+  /// Key for the paragraph containing the search match, for precise scrolling.
+  final _matchParagraphKey = GlobalKey();
 
   @override
   void initState() {
@@ -52,11 +69,40 @@ class _StudyTextScreenState extends State<StudyTextScreen> {
   Future<void> _loadHtml() async {
     try {
       final html = await rootBundle.loadString(widget.htmlAssetPath);
+
+      // Load footnotes JSON if available
+      Map<String, String> footnotes = {};
+      if (widget.footnotesAssetPath != null) {
+        try {
+          final jsonStr =
+              await rootBundle.loadString(widget.footnotesAssetPath!);
+          final Map<String, dynamic> parsed = json.decode(jsonStr);
+          footnotes = parsed.map((k, v) => MapEntry(k, v.toString()));
+        } catch (_) {
+          // Footnotes are optional; continue without them
+        }
+      }
+
       if (mounted) {
         setState(() {
           _htmlContent = html;
+          _footnotes = footnotes;
           _isLoading = false;
         });
+        // Set search query if provided (for highlighting + precise scroll)
+        if (widget.initialSearchQuery != null) {
+          _searchQuery = widget.initialSearchQuery;
+        }
+        // Scroll to initial section/match if provided (e.g. from search result)
+        if (widget.initialSectionId != null) {
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            if (_searchQuery != null) {
+              _scrollToMatch(widget.initialSectionId!);
+            } else {
+              _scrollToSection(widget.initialSectionId!);
+            }
+          });
+        }
       }
     } catch (e) {
       if (mounted) {
@@ -80,6 +126,125 @@ class _StudyTextScreenState extends State<StudyTextScreen> {
     }
     // Close the drawer
     _scaffoldKey.currentState?.closeEndDrawer();
+  }
+
+  /// Scroll to the paragraph containing the search match within a section.
+  void _scrollToMatch(String sectionId) {
+    // Try the precise match paragraph key first
+    if (_matchParagraphKey.currentContext != null) {
+      Scrollable.ensureVisible(
+        _matchParagraphKey.currentContext!,
+        duration: const Duration(milliseconds: 400),
+        curve: Curves.easeOutCubic,
+        alignment: 0.15, // Position near top with some context above
+      );
+    } else {
+      // Fall back to section-level scroll
+      _scrollToSection(sectionId);
+    }
+    _scaffoldKey.currentState?.closeEndDrawer();
+  }
+
+  void _showFootnoteBottomSheet(BuildContext context, String footnoteNum) {
+    final text = _footnotes[footnoteNum];
+    if (text == null || text.isEmpty) return;
+
+    final theme = Theme.of(context);
+    const accentColor = Color(0xFF6B4C3B);
+
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+      ),
+      builder: (context) {
+        return DraggableScrollableSheet(
+          initialChildSize: 0.3,
+          minChildSize: 0.15,
+          maxChildSize: 0.6,
+          expand: false,
+          builder: (context, scrollController) {
+            return Padding(
+              padding: const EdgeInsets.fromLTRB(20, 12, 20, 20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  // Drag handle
+                  Center(
+                    child: Container(
+                      width: 36,
+                      height: 4,
+                      decoration: BoxDecoration(
+                        color: theme.colorScheme.onSurfaceVariant
+                            .withAlpha(60),
+                        borderRadius: BorderRadius.circular(2),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+                  // Header
+                  Row(
+                    children: [
+                      const Icon(Icons.format_quote_rounded,
+                          color: accentColor, size: 22),
+                      const SizedBox(width: 10),
+                      Text(
+                        'Footnote $footnoteNum',
+                        style: theme.textTheme.titleMedium?.copyWith(
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Divider(
+                    height: 24,
+                    color:
+                        theme.colorScheme.outlineVariant.withAlpha(80),
+                  ),
+                  // Footnote text
+                  Expanded(
+                    child: SingleChildScrollView(
+                      controller: scrollController,
+                      child: Text(
+                        text,
+                        style: theme.textTheme.bodyMedium?.copyWith(
+                          height: 1.6,
+                          color: theme.colorScheme.onSurface,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            );
+          },
+        );
+      },
+    );
+  }
+
+  Future<void> _openStudySearch() async {
+    if (_htmlContent == null) return;
+
+    final result = await Navigator.push<StudySearchReturnValue>(
+      context,
+      MaterialPageRoute(
+        builder: (_) => StudySearchScreen(
+          title: widget.title,
+          htmlContent: _htmlContent!,
+          toc: widget.toc,
+        ),
+      ),
+    );
+
+    if (result != null && mounted) {
+      setState(() => _searchQuery = result.searchQuery);
+      // Wait for rebuild with highlights, then scroll to match
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        _scrollToMatch(result.sectionId);
+      });
+    }
   }
 
   void _switchToPdf() {
@@ -107,7 +272,13 @@ class _StudyTextScreenState extends State<StudyTextScreen> {
           style: const TextStyle(fontSize: 16),
         ),
         actions: [
-          ...sharedAppBarActions(context),
+          // In-study search
+          IconButton(
+            icon: const Icon(Icons.search_rounded),
+            tooltip: 'Search in study',
+            onPressed: _openStudySearch,
+          ),
+          ...sharedAppBarActions(context, showSearch: false),
           // TOC button
           IconButton(
             icon: const Icon(Icons.toc_rounded),
@@ -373,71 +544,204 @@ class _StudyTextScreenState extends State<StudyTextScreen> {
     );
   }
 
+  Map<String, Style> _htmlStyles(ThemeData theme, AppState state, String fontFamily) => {
+    'body': Style(
+      fontSize: FontSize(state.fontSize),
+      fontFamily: fontFamily,
+      lineHeight: const LineHeight(1.7),
+      color: theme.colorScheme.onSurface,
+      padding: HtmlPaddings.zero,
+      margin: Margins.zero,
+    ),
+    'p': Style(
+      margin: Margins.only(bottom: 12),
+    ),
+    'h2': Style(
+      fontSize: FontSize(state.fontSize + 5),
+      fontWeight: FontWeight.bold,
+      margin: Margins.only(top: 32, bottom: 14),
+      color: theme.colorScheme.primary,
+    ),
+    'h3': Style(
+      fontSize: FontSize(state.fontSize + 3),
+      fontWeight: FontWeight.bold,
+      margin: Margins.only(top: 24, bottom: 10),
+      color: theme.colorScheme.primary.withAlpha(200),
+    ),
+    'h4': Style(
+      fontSize: FontSize(state.fontSize + 1),
+      fontWeight: FontWeight.w600,
+      fontStyle: FontStyle.italic,
+      margin: Margins.only(top: 20, bottom: 8),
+    ),
+    'strong': Style(
+      fontWeight: FontWeight.bold,
+    ),
+    'em': Style(
+      fontStyle: FontStyle.italic,
+    ),
+    'sup': Style(
+      fontSize: FontSize(state.fontSize * 0.65),
+      lineHeight: const LineHeight(1.0),
+      verticalAlign: VerticalAlign.sup,
+    ),
+    'mark': Style(
+      backgroundColor: const Color(0xFFFFF3B0),
+      color: Colors.black87,
+      padding: HtmlPaddings.symmetric(horizontal: 2),
+    ),
+    'table': Style(
+      margin: Margins.only(top: 16, bottom: 16),
+    ),
+    'td': Style(
+      padding: HtmlPaddings.only(top: 6, bottom: 6, right: 12),
+      verticalAlign: VerticalAlign.top,
+      fontSize: FontSize(state.fontSize - 1),
+      lineHeight: const LineHeight(1.5),
+    ),
+  };
+
+  void _onLinkTap(String? url, Map<String, String> attributes, dynamic element) {
+    if (url != null && url.startsWith('footnote://')) {
+      final fnNum = url.replaceFirst('footnote://', '');
+      _showFootnoteBottomSheet(context, fnNum);
+    } else if (url != null) {
+      launchUrl(Uri.parse(url), mode: LaunchMode.externalApplication);
+    }
+  }
+
   Widget _buildHtmlWithAnchors(
       ThemeData theme, AppState state, String fontFamily) {
-    // Parse the HTML into sections and render each with a key
-    // so we can scroll to them via the TOC
     final sections = _splitHtmlBySections(_htmlContent!);
+    final styles = _htmlStyles(theme, state, fontFamily);
+    // Track whether we've already assigned _matchParagraphKey to avoid
+    // using the same GlobalKey on multiple widgets (which crashes Flutter).
+    bool matchKeyUsed = false;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: sections.map((section) {
         final key = _sectionKeys[section.id];
+        var html = section.html;
+
+        // If there's an active search query, inject <mark> highlights
+        if (_searchQuery != null && _searchQuery!.isNotEmpty) {
+          final highlighted = _injectHighlights(html, _searchQuery!);
+          if (highlighted != html) {
+            // This section contains a match
+            if (!matchKeyUsed) {
+              // First matching section: split for precise scroll positioning
+              matchKeyUsed = true;
+              return _buildSectionWithMatchParagraphs(
+                key: key,
+                html: highlighted,
+                styles: styles,
+              );
+            }
+            // Subsequent matching sections: just show highlights, no split
+            html = highlighted;
+          }
+        }
+
         return Container(
           key: key,
           child: Html(
-            data: section.html,
-            style: {
-              'body': Style(
-                fontSize: FontSize(state.fontSize),
-                fontFamily: fontFamily,
-                lineHeight: const LineHeight(1.7),
-                color: theme.colorScheme.onSurface,
-                padding: HtmlPaddings.zero,
-                margin: Margins.zero,
-              ),
-              'p': Style(
-                margin: Margins.only(bottom: 12),
-              ),
-              'h2': Style(
-                fontSize: FontSize(state.fontSize + 5),
-                fontWeight: FontWeight.bold,
-                margin: Margins.only(top: 32, bottom: 14),
-                color: theme.colorScheme.primary,
-              ),
-              'h3': Style(
-                fontSize: FontSize(state.fontSize + 3),
-                fontWeight: FontWeight.bold,
-                margin: Margins.only(top: 24, bottom: 10),
-                color: theme.colorScheme.primary.withAlpha(200),
-              ),
-              'h4': Style(
-                fontSize: FontSize(state.fontSize + 1),
-                fontWeight: FontWeight.w600,
-                fontStyle: FontStyle.italic,
-                margin: Margins.only(top: 20, bottom: 8),
-              ),
-              'strong': Style(
-                fontWeight: FontWeight.bold,
-              ),
-              'em': Style(
-                fontStyle: FontStyle.italic,
-              ),
-              'sup': Style(
-                fontSize: FontSize(state.fontSize * 0.65),
-                lineHeight: const LineHeight(1.0),
-                verticalAlign: VerticalAlign.sup,
-              ),
-            },
-            onLinkTap: (url, attributes, element) {
-              if (url != null) {
-                launchUrl(
-                    Uri.parse(url), mode: LaunchMode.externalApplication);
-              }
-            },
+            data: html,
+            extensions: const [TableHtmlExtension()],
+            style: styles,
+            onLinkTap: _onLinkTap,
           ),
         );
       }).toList(),
+    );
+  }
+
+  /// Build a section that contains a search match, split into at most 3 parts
+  /// (before match block, match block with GlobalKey, after match block)
+  /// so we can scroll to the exact block element containing the first match.
+  Widget _buildSectionWithMatchParagraphs({
+    required GlobalKey? key,
+    required String html,
+    required Map<String, Style> styles,
+  }) {
+    final parts = _splitAtFirstMark(html);
+
+    return Container(
+      key: key,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          if (parts.before.trim().isNotEmpty)
+            Html(
+              data: parts.before,
+              extensions: const [TableHtmlExtension()],
+              style: styles,
+              onLinkTap: _onLinkTap,
+            ),
+          Container(
+            key: _matchParagraphKey,
+            child: Html(
+              data: parts.matchBlock.isNotEmpty ? parts.matchBlock : html,
+              extensions: const [TableHtmlExtension()],
+              style: styles,
+              onLinkTap: _onLinkTap,
+            ),
+          ),
+          if (parts.after.trim().isNotEmpty)
+            Html(
+              data: parts.after,
+              extensions: const [TableHtmlExtension()],
+              style: styles,
+              onLinkTap: _onLinkTap,
+            ),
+        ],
+      ),
+    );
+  }
+
+  /// Inject <mark> tags around all case-insensitive occurrences of [query] in [html],
+  /// only in text content (not inside HTML tags).
+  String _injectHighlights(String html, String query) {
+    if (query.isEmpty) return html;
+    final escaped = RegExp.escape(query);
+    final pattern = RegExp('(?<=>)([^<]*?)($escaped)', caseSensitive: false);
+    return html.replaceAllMapped(pattern, (m) {
+      return '${m.group(1)}<mark>${m.group(2)}</mark>';
+    });
+  }
+
+  /// Split HTML into 3 parts around the first <mark> tag:
+  /// the content before the enclosing block element, the block element
+  /// containing the mark, and the content after it.
+  ({String before, String matchBlock, String after}) _splitAtFirstMark(String html) {
+    final markIdx = html.indexOf('<mark>');
+    if (markIdx == -1) return (before: html, matchBlock: '', after: '');
+
+    // Search backwards from the mark to find the nearest block-level opening tag
+    final openTagPattern = RegExp(r'<(p|h[1-6]|ul|ol|li|table|blockquote)[\s>]');
+    int blockStart = 0;
+    String? tagName;
+    for (final m in openTagPattern.allMatches(html)) {
+      if (m.start > markIdx) break;
+      blockStart = m.start;
+      tagName = m.group(1);
+    }
+
+    if (tagName == null) return (before: html, matchBlock: '', after: '');
+
+    // Find the matching closing tag after the mark
+    final closeTag = '</$tagName>';
+    int blockEnd = html.indexOf(closeTag, markIdx);
+    if (blockEnd == -1) {
+      blockEnd = html.length;
+    } else {
+      blockEnd += closeTag.length;
+    }
+
+    return (
+      before: html.substring(0, blockStart),
+      matchBlock: html.substring(blockStart, blockEnd),
+      after: html.substring(blockEnd),
     );
   }
 

@@ -3,6 +3,7 @@ import 'package:flutter_html/flutter_html.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../data/bco_commentary.dart';
+import '../data/chapter_toc.dart';
 import '../data/sjc_references.dart';
 import '../models/bco_models.dart';
 import '../providers/app_state.dart';
@@ -13,11 +14,13 @@ import '../widgets/shared_actions.dart';
 class ChapterScreen extends StatefulWidget {
   final BcoChapter chapter;
   final BcoSection section;
+  final String? searchQuery;
 
   const ChapterScreen({
     super.key,
     required this.chapter,
     required this.section,
+    this.searchQuery,
   });
 
   @override
@@ -25,11 +28,43 @@ class ChapterScreen extends StatefulWidget {
 }
 
 class _ChapterScreenState extends State<ChapterScreen> {
+  final _scaffoldKey = GlobalKey<ScaffoldState>();
+  final Map<String, GlobalKey> _sectionKeys = {};
+
+  /// Key for the paragraph containing the search match, for precise scrolling.
+  final _matchParagraphKey = GlobalKey();
+
+  List<ChapterTocEntry>? get _tocEntries =>
+      chapterTocEntries[widget.chapter.id];
+  bool get _hasToc => _tocEntries != null && _tocEntries!.isNotEmpty;
+
   @override
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
       context.read<AppState>().loadChapterContent(widget.chapter);
+      // Scroll to search match after content loads
+      if (widget.searchQuery != null) {
+        _waitAndScrollToMatch();
+      }
+    });
+  }
+
+  /// Wait for content to load, then scroll to the matching paragraph.
+  void _waitAndScrollToMatch() {
+    // Schedule a post-frame callback to let the HTML render
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (_matchParagraphKey.currentContext != null) {
+        Scrollable.ensureVisible(
+          _matchParagraphKey.currentContext!,
+          duration: const Duration(milliseconds: 400),
+          curve: Curves.easeOutCubic,
+          alignment: 0.15,
+        );
+      } else if (widget.chapter.htmlContent == null) {
+        // Content still loading — try again
+        _waitAndScrollToMatch();
+      }
     });
   }
 
@@ -86,6 +121,8 @@ class _ChapterScreenState extends State<ChapterScreen> {
     final isBookmarked = state.isBookmarked(widget.chapter.id);
 
     return Scaffold(
+      key: _scaffoldKey,
+      endDrawer: _hasToc ? Drawer(child: _buildTocPanel(theme)) : null,
       appBar: AppBar(
         title: Text(
           widget.chapter.number != null
@@ -95,6 +132,14 @@ class _ChapterScreenState extends State<ChapterScreen> {
         ),
         actions: [
           ...sharedAppBarActions(context),
+          if (_hasToc)
+            IconButton(
+              icon: const Icon(Icons.toc_rounded),
+              tooltip: 'Table of Contents',
+              onPressed: () {
+                _scaffoldKey.currentState?.openEndDrawer();
+              },
+            ),
           IconButton(
             icon: Icon(
               isBookmarked
@@ -212,110 +257,421 @@ class _ChapterScreenState extends State<ChapterScreen> {
 
     final fontFamily = state.isSerifFont ? 'serif' : 'sans-serif';
 
+    Map<String, Style> htmlStyles() => {
+          'body': Style(
+            fontSize: FontSize(state.fontSize),
+            fontFamily: fontFamily,
+            lineHeight: const LineHeight(1.7),
+            color: theme.colorScheme.onSurface,
+          ),
+          'p': Style(
+            margin: Margins.only(bottom: 12),
+          ),
+          'h2': Style(
+            fontSize: FontSize(state.fontSize + 4),
+            fontWeight: FontWeight.bold,
+            margin: Margins.only(top: 24, bottom: 12),
+          ),
+          'h3': Style(
+            fontSize: FontSize(state.fontSize + 2),
+            fontWeight: FontWeight.bold,
+            margin: Margins.only(top: 20, bottom: 8),
+          ),
+          'strong': Style(
+            fontWeight: FontWeight.bold,
+          ),
+          'em': Style(
+            fontStyle: FontStyle.italic,
+          ),
+          'sup': Style(
+            fontSize: FontSize(state.fontSize * 0.65),
+            lineHeight: const LineHeight(1.0),
+            verticalAlign: VerticalAlign.sup,
+          ),
+          'mark': Style(
+            backgroundColor: const Color(0xFFFFF3B0),
+            color: Colors.black87,
+            padding: HtmlPaddings.symmetric(horizontal: 2),
+          ),
+        };
+
+    void onLinkTap(String? url, Map<String, String> attributes, dynamic element) {
+      if (url != null && url.startsWith('sjc://')) {
+        final sectionKey = url.replaceFirst('sjc://', '');
+        _showSjcBottomSheet(context, sectionKey);
+      } else if (url != null && url.startsWith('commentary://')) {
+        final sectionKey = url.replaceFirst('commentary://', '');
+        _showCommentaryBottomSheet(context, sectionKey);
+      } else if (url != null) {
+        launchUrl(Uri.parse(url), mode: LaunchMode.externalApplication);
+      }
+    }
+
+    Widget buildChapterHeader() => Column(
+          children: [
+            if (widget.chapter.number != null) ...[
+              const SizedBox(height: 8),
+              Text(
+                'CHAPTER',
+                style: theme.textTheme.labelSmall?.copyWith(
+                  color: theme.colorScheme.primary.withAlpha(140),
+                  letterSpacing: 4.0,
+                  fontSize: 10,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              const SizedBox(height: 2),
+              Text(
+                '${widget.chapter.number}',
+                style: theme.textTheme.displayMedium?.copyWith(
+                  color: theme.colorScheme.primary.withAlpha(70),
+                  fontWeight: FontWeight.w300,
+                  fontSize: 52,
+                ),
+              ),
+              const SizedBox(height: 8),
+              SizedBox(
+                width: 40,
+                child: Divider(
+                  color: theme.colorScheme.primary.withAlpha(50),
+                  thickness: 1.5,
+                ),
+              ),
+              const SizedBox(height: 16),
+            ],
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8),
+              child: Text(
+                widget.chapter.title,
+                style: theme.textTheme.titleLarge?.copyWith(
+                  fontWeight: FontWeight.w700,
+                  height: 1.3,
+                  fontSize: 21,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ),
+            const SizedBox(height: 16),
+            SizedBox(
+              width: 80,
+              child: Divider(
+                color: theme.colorScheme.outlineVariant,
+                thickness: 0.5,
+              ),
+            ),
+            const SizedBox(height: 24),
+          ],
+        );
+
+    final query = widget.searchQuery;
+    final styles = htmlStyles();
+
+    if (_hasToc) {
+      // Pre-create GlobalKeys for section anchors
+      for (final entry in _flattenToc(_tocEntries!)) {
+        _sectionKeys.putIfAbsent(entry.sectionId, () => GlobalKey());
+      }
+      final sections = _splitHtmlBySections(_prepareHtml(state));
+      // Track whether _matchParagraphKey has been used to avoid duplicate GlobalKey crash
+      bool matchKeyUsed = false;
+
+      return SingleChildScrollView(
+        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            buildChapterHeader(),
+            ...sections.map((section) {
+              final key = _sectionKeys[section.id];
+              var html = section.html;
+
+              // Inject highlights and split for precise scrolling
+              if (query != null && query.isNotEmpty) {
+                final highlighted = _injectHighlights(html, query);
+                if (highlighted != html) {
+                  if (!matchKeyUsed) {
+                    matchKeyUsed = true;
+                    return _buildParagraphsWithMatchKey(
+                      key: key,
+                      html: highlighted,
+                      styles: styles,
+                      onLinkTap: onLinkTap,
+                    );
+                  }
+                  // Subsequent matches: highlight but don't split
+                  html = highlighted;
+                }
+              }
+
+              return Container(
+                key: key,
+                child: Html(
+                  data: html,
+                  style: styles,
+                  onLinkTap: onLinkTap,
+                ),
+              );
+            }),
+            const SizedBox(height: 60),
+          ],
+        ),
+      );
+    }
+
+    // Non-TOC path: single HTML block, split into paragraphs if searching
+    var html = _prepareHtml(state);
+    if (query != null && query.isNotEmpty) {
+      html = _injectHighlights(html, query);
+    }
+    final hasMark = html.contains('<mark>');
+
     return SingleChildScrollView(
       padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          if (widget.chapter.number != null) ...[
-            const SizedBox(height: 8),
-            Text(
-              'CHAPTER',
-              style: theme.textTheme.labelSmall?.copyWith(
-                color: theme.colorScheme.primary.withAlpha(140),
-                letterSpacing: 4.0,
-                fontSize: 10,
-                fontWeight: FontWeight.w600,
-              ),
+          buildChapterHeader(),
+          if (hasMark)
+            _buildParagraphsWithMatchKey(
+              key: null,
+              html: html,
+              styles: styles,
+              onLinkTap: onLinkTap,
+            )
+          else
+            Html(
+              data: html,
+              style: styles,
+              onLinkTap: onLinkTap,
             ),
-            const SizedBox(height: 2),
-            Text(
-              '${widget.chapter.number}',
-              style: theme.textTheme.displayMedium?.copyWith(
-                color: theme.colorScheme.primary.withAlpha(70),
-                fontWeight: FontWeight.w300,
-                fontSize: 52,
-              ),
-            ),
-            const SizedBox(height: 8),
-            SizedBox(
-              width: 40,
-              child: Divider(
-                color: theme.colorScheme.primary.withAlpha(50),
-                thickness: 1.5,
-              ),
-            ),
-            const SizedBox(height: 16),
-          ],
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8),
-            child: Text(
-              widget.chapter.title,
-              style: theme.textTheme.titleLarge?.copyWith(
-                fontWeight: FontWeight.w700,
-                height: 1.3,
-                fontSize: 21,
-              ),
-              textAlign: TextAlign.center,
-            ),
-          ),
-          const SizedBox(height: 16),
-          SizedBox(
-            width: 80,
-            child: Divider(
-              color: theme.colorScheme.outlineVariant,
-              thickness: 0.5,
-            ),
-          ),
-          const SizedBox(height: 24),
-          Html(
-            data: _prepareHtml(state),
-            style: {
-              'body': Style(
-                fontSize: FontSize(state.fontSize),
-                fontFamily: fontFamily,
-                lineHeight: const LineHeight(1.7),
-                color: theme.colorScheme.onSurface,
-              ),
-              'p': Style(
-                margin: Margins.only(bottom: 12),
-              ),
-              'h2': Style(
-                fontSize: FontSize(state.fontSize + 4),
-                fontWeight: FontWeight.bold,
-                margin: Margins.only(top: 24, bottom: 12),
-              ),
-              'h3': Style(
-                fontSize: FontSize(state.fontSize + 2),
-                fontWeight: FontWeight.bold,
-                margin: Margins.only(top: 20, bottom: 8),
-              ),
-              'strong': Style(
-                fontWeight: FontWeight.bold,
-              ),
-              'em': Style(
-                fontStyle: FontStyle.italic,
-              ),
-              'sup': Style(
-                fontSize: FontSize(state.fontSize * 0.65),
-                lineHeight: const LineHeight(1.0),
-                verticalAlign: VerticalAlign.sup,
-              ),
-            },
-            onLinkTap: (url, attributes, element) {
-              if (url != null && url.startsWith('sjc://')) {
-                final sectionKey = url.replaceFirst('sjc://', '');
-                _showSjcBottomSheet(context, sectionKey);
-              } else if (url != null && url.startsWith('commentary://')) {
-                final sectionKey = url.replaceFirst('commentary://', '');
-                _showCommentaryBottomSheet(context, sectionKey);
-              } else if (url != null) {
-                launchUrl(
-                    Uri.parse(url), mode: LaunchMode.externalApplication);
-              }
-            },
-          ),
           const SizedBox(height: 60),
+        ],
+      ),
+    );
+  }
+
+  // --- TOC navigation ---
+
+  Widget _buildTocPanel(ThemeData theme) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Container(
+          padding: EdgeInsets.fromLTRB(
+            16,
+            MediaQuery.of(context).padding.top + 16,
+            16,
+            12,
+          ),
+          child: Row(
+            children: [
+              Icon(
+                Icons.toc_rounded,
+                size: 20,
+                color: theme.colorScheme.primary,
+              ),
+              const SizedBox(width: 8),
+              Text(
+                'TABLE OF CONTENTS',
+                style: theme.textTheme.labelMedium?.copyWith(
+                  color: theme.colorScheme.primary,
+                  letterSpacing: 1.5,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ],
+          ),
+        ),
+        Divider(
+          height: 1,
+          color: theme.colorScheme.outlineVariant.withAlpha(80),
+        ),
+        Expanded(
+          child: ListView(
+            padding: const EdgeInsets.symmetric(vertical: 8),
+            children: _tocEntries!.map((entry) {
+              return _buildTocItem(theme, entry, 0);
+            }).toList(),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildTocItem(ThemeData theme, ChapterTocEntry entry, int depth) {
+    if (entry.children.isEmpty) {
+      return ListTile(
+        contentPadding: EdgeInsets.only(
+          left: 16.0 + (depth * 16.0),
+          right: 16,
+        ),
+        title: Text(
+          entry.title,
+          style: theme.textTheme.bodyMedium?.copyWith(height: 1.3),
+        ),
+        dense: true,
+        visualDensity: VisualDensity.compact,
+        onTap: () => _scrollToSection(entry.sectionId),
+      );
+    }
+
+    return ExpansionTile(
+      tilePadding: EdgeInsets.only(
+        left: 16.0 + (depth * 16.0),
+        right: 16,
+      ),
+      title: Text(
+        entry.title,
+        style: theme.textTheme.bodyMedium?.copyWith(
+          fontWeight: FontWeight.w600,
+          height: 1.3,
+        ),
+      ),
+      dense: true,
+      visualDensity: VisualDensity.compact,
+      initiallyExpanded: depth == 0,
+      children: [
+        ListTile(
+          contentPadding: EdgeInsets.only(
+            left: 16.0 + ((depth + 1) * 16.0),
+            right: 16,
+          ),
+          title: Text(
+            'Go to section',
+            style: theme.textTheme.bodySmall?.copyWith(
+              color: theme.colorScheme.primary,
+              fontStyle: FontStyle.italic,
+            ),
+          ),
+          dense: true,
+          visualDensity: VisualDensity.compact,
+          onTap: () => _scrollToSection(entry.sectionId),
+        ),
+        ...entry.children.map(
+          (child) => _buildTocItem(theme, child, depth + 1),
+        ),
+      ],
+    );
+  }
+
+  void _scrollToSection(String sectionId) {
+    final key = _sectionKeys[sectionId];
+    if (key?.currentContext != null) {
+      Scrollable.ensureVisible(
+        key!.currentContext!,
+        duration: const Duration(milliseconds: 400),
+        curve: Curves.easeOutCubic,
+        alignment: 0.0,
+      );
+    }
+    _scaffoldKey.currentState?.closeEndDrawer();
+  }
+
+  List<ChapterTocEntry> _flattenToc(List<ChapterTocEntry> entries) {
+    final flat = <ChapterTocEntry>[];
+    for (final entry in entries) {
+      flat.add(entry);
+      flat.addAll(_flattenToc(entry.children));
+    }
+    return flat;
+  }
+
+  List<_HtmlSection> _splitHtmlBySections(String html) {
+    final divPattern = RegExp(r'<div id="([^"]+)">');
+    final matches = divPattern.allMatches(html).toList();
+    if (matches.isEmpty) return [_HtmlSection(id: 'all', html: html)];
+
+    final sections = <_HtmlSection>[];
+    // Include any preamble content before the first section
+    if (matches.first.start > 0) {
+      sections.add(
+        _HtmlSection(id: 'preamble', html: html.substring(0, matches.first.start)),
+      );
+    }
+    for (int i = 0; i < matches.length; i++) {
+      final match = matches[i];
+      final id = match.group(1)!;
+      final start = match.end;
+      final end = i + 1 < matches.length ? matches[i + 1].start : html.length;
+      var sectionHtml = html.substring(start, end);
+      // Remove trailing </div> from each section
+      sectionHtml = sectionHtml.replaceFirst(RegExp(r'</div>\s*$'), '');
+      sections.add(_HtmlSection(id: id, html: sectionHtml.trim()));
+    }
+    return sections;
+  }
+
+  /// Inject <mark> tags around case-insensitive occurrences of [query] in [html],
+  /// only within text content (not inside HTML tags).
+  String _injectHighlights(String html, String query) {
+    if (query.isEmpty) return html;
+    final escaped = RegExp.escape(query);
+    final pattern = RegExp('(?<=>)([^<]*?)($escaped)', caseSensitive: false);
+    return html.replaceAllMapped(pattern, (m) {
+      return '${m.group(1)}<mark>${m.group(2)}</mark>';
+    });
+  }
+
+  /// Split HTML into 3 parts around the first <mark> tag:
+  /// the content before the enclosing block element, the block element
+  /// containing the mark, and the content after it.
+  ({String before, String matchBlock, String after}) _splitAtFirstMark(String html) {
+    final markIdx = html.indexOf('<mark>');
+    if (markIdx == -1) return (before: html, matchBlock: '', after: '');
+
+    final openTagPattern = RegExp(r'<(p|h[1-6]|ul|ol|li|table|blockquote)[\s>]');
+    int blockStart = 0;
+    String? tagName;
+    for (final m in openTagPattern.allMatches(html)) {
+      if (m.start > markIdx) break;
+      blockStart = m.start;
+      tagName = m.group(1);
+    }
+
+    if (tagName == null) return (before: html, matchBlock: '', after: '');
+
+    final closeTag = '</$tagName>';
+    int blockEnd = html.indexOf(closeTag, markIdx);
+    if (blockEnd == -1) {
+      blockEnd = html.length;
+    } else {
+      blockEnd += closeTag.length;
+    }
+
+    return (
+      before: html.substring(0, blockStart),
+      matchBlock: html.substring(blockStart, blockEnd),
+      after: html.substring(blockEnd),
+    );
+  }
+
+  /// Build HTML split into at most 3 parts around the first <mark> tag,
+  /// attaching [_matchParagraphKey] to the block element containing the match.
+  Widget _buildParagraphsWithMatchKey({
+    required GlobalKey? key,
+    required String html,
+    required Map<String, Style> styles,
+    required void Function(String?, Map<String, String>, dynamic) onLinkTap,
+  }) {
+    final parts = _splitAtFirstMark(html);
+
+    return Container(
+      key: key,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          if (parts.before.trim().isNotEmpty)
+            Html(data: parts.before, style: styles, onLinkTap: onLinkTap),
+          Container(
+            key: _matchParagraphKey,
+            child: Html(
+              data: parts.matchBlock.isNotEmpty ? parts.matchBlock : html,
+              style: styles,
+              onLinkTap: onLinkTap,
+            ),
+          ),
+          if (parts.after.trim().isNotEmpty)
+            Html(data: parts.after, style: styles, onLinkTap: onLinkTap),
         ],
       ),
     );
@@ -716,4 +1072,10 @@ class _ChapterScreenState extends State<ChapterScreen> {
       ),
     );
   }
+}
+
+class _HtmlSection {
+  final String id;
+  final String html;
+  const _HtmlSection({required this.id, required this.html});
 }
