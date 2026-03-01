@@ -16,6 +16,8 @@ class AppState extends ChangeNotifier {
   bool _isLoading = false;
   String? _error;
   bool _contentLoaded = false;
+  // The scope applied to global search queries (all, bco, or standards).
+  SearchScope _searchScope = SearchScope.all;
 
   BcoRepository get repository => _repository;
   Set<String> get bookmarks => _bookmarks;
@@ -27,6 +29,7 @@ class AppState extends ChangeNotifier {
   bool get isLoading => _isLoading;
   String? get error => _error;
   bool get contentLoaded => _contentLoaded;
+  SearchScope get searchScope => _searchScope;
 
   AppState() {
     _loadPreferences();
@@ -43,6 +46,13 @@ class AppState extends ChangeNotifier {
     final bookmarksJson = prefs.getStringList('bookmarks') ?? [];
     _bookmarks.addAll(bookmarksJson);
 
+    // Load persisted search scope; fall back to 'all' for missing/invalid values.
+    final scopeStr = prefs.getString('searchScope') ?? 'all';
+    _searchScope = SearchScope.values.firstWhere(
+      (s) => s.name == scopeStr,
+      orElse: () => SearchScope.all,
+    );
+
     notifyListeners();
   }
 
@@ -54,6 +64,7 @@ class AppState extends ChangeNotifier {
     await prefs.setBool('showSjcReferences', _showSjcReferences);
     await prefs.setBool('showBcoCommentary', _showBcoCommentary);
     await prefs.setStringList('bookmarks', _bookmarks.toList());
+    await prefs.setString('searchScope', _searchScope.name);
   }
 
   void setFontSize(double size) {
@@ -82,6 +93,12 @@ class AppState extends ChangeNotifier {
 
   void toggleBcoCommentary() {
     _showBcoCommentary = !_showBcoCommentary;
+    _savePreferences();
+    notifyListeners();
+  }
+
+  void setSearchScope(SearchScope scope) {
+    _searchScope = scope;
     _savePreferences();
     notifyListeners();
   }
@@ -163,7 +180,7 @@ class AppState extends ChangeNotifier {
   }
 
   List<SearchResult> search(String query) {
-    return _repository.search(query);
+    return _repository.search(query, scope: _searchScope);
   }
 
 }

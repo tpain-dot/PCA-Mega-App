@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../data/bco_repository.dart';
 import '../data/bco_structure.dart';
 import '../data/westminster_structure.dart';
 import '../models/bco_models.dart';
@@ -80,21 +81,32 @@ class _SearchScreenState extends State<SearchScreen> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    // Watch AppState so this widget rebuilds whenever searchScope changes.
+    final state = context.watch<AppState>();
 
     return Scaffold(
       appBar: AppBar(
-        title: TextField(
-          controller: _controller,
-          focusNode: _focusNode,
-          onChanged: _onSearchChanged,
-          decoration: InputDecoration(
-            hintText: 'Search...',
-            border: InputBorder.none,
-            hintStyle: TextStyle(
-              color: theme.colorScheme.onSurfaceVariant.withAlpha(150),
+        title: Row(
+          children: [
+            // Scope dropdown to the left of the search field.
+            _buildScopeDropdown(theme, state),
+            const SizedBox(width: 8),
+            Expanded(
+              child: TextField(
+                controller: _controller,
+                focusNode: _focusNode,
+                onChanged: _onSearchChanged,
+                decoration: InputDecoration(
+                  hintText: _scopeHintText(state.searchScope),
+                  border: InputBorder.none,
+                  hintStyle: TextStyle(
+                    color: theme.colorScheme.onSurfaceVariant.withAlpha(150),
+                  ),
+                ),
+                style: theme.textTheme.bodyLarge,
+              ),
             ),
-          ),
-          style: theme.textTheme.bodyLarge,
+          ],
         ),
         actions: [
           if (_controller.text.isNotEmpty)
@@ -109,11 +121,11 @@ class _SearchScreenState extends State<SearchScreen> {
           ...sharedAppBarActions(context, showSearch: false),
         ],
       ),
-      body: _buildBody(theme),
+      body: _buildBody(theme, state),
     );
   }
 
-  Widget _buildBody(ThemeData theme) {
+  Widget _buildBody(ThemeData theme, AppState state) {
     if (_contentLoading) {
       return Center(
         child: Column(
@@ -165,7 +177,7 @@ class _SearchScreenState extends State<SearchScreen> {
             ),
             const SizedBox(height: 20),
             Text(
-              'Search All Content',
+              _scopeEmptyTitle(state.searchScope),
               style: theme.textTheme.titleSmall?.copyWith(
                 color: theme.colorScheme.onSurfaceVariant,
                 fontWeight: FontWeight.w600,
@@ -173,7 +185,7 @@ class _SearchScreenState extends State<SearchScreen> {
             ),
             const SizedBox(height: 6),
             Text(
-              'Find text across the BCO and Westminster Standards',
+              _scopeEmptySubtitle(state.searchScope),
               style: theme.textTheme.bodySmall?.copyWith(
                 color: theme.colorScheme.onSurfaceVariant.withAlpha(140),
               ),
@@ -267,6 +279,74 @@ class _SearchScreenState extends State<SearchScreen> {
         );
       },
     );
+  }
+
+  // ---------------------------------------------------------------------------
+  // Scope-aware helpers
+  // ---------------------------------------------------------------------------
+
+  /// Compact dropdown for choosing the search scope (All / BCO / Standards).
+  Widget _buildScopeDropdown(ThemeData theme, AppState state) {
+    return DropdownButton<SearchScope>(
+      value: state.searchScope,
+      underline: const SizedBox.shrink(), // no underline — blends with AppBar
+      isDense: true,
+      style: theme.textTheme.bodyMedium?.copyWith(
+        color: theme.colorScheme.onSurface,
+      ),
+      iconEnabledColor: theme.colorScheme.onSurface,
+      dropdownColor: theme.colorScheme.surface,
+      items: const [
+        DropdownMenuItem(value: SearchScope.all, child: Text('All')),
+        DropdownMenuItem(value: SearchScope.bco, child: Text('BCO')),
+        DropdownMenuItem(value: SearchScope.standards, child: Text('Standards')),
+      ],
+      onChanged: (scope) {
+        if (scope != null) {
+          state.setSearchScope(scope);
+          // Re-run the current query immediately with the new scope.
+          if (_controller.text.trim().length >= 2) {
+            _performSearch(_controller.text);
+          }
+        }
+      },
+    );
+  }
+
+  /// Short hint text for the TextField, reflecting the current scope.
+  String _scopeHintText(SearchScope scope) {
+    switch (scope) {
+      case SearchScope.all:
+        return 'Search...';
+      case SearchScope.bco:
+        return 'Search BCO...';
+      case SearchScope.standards:
+        return 'Search Standards...';
+    }
+  }
+
+  /// Title for the empty state (shown before the user types a query).
+  String _scopeEmptyTitle(SearchScope scope) {
+    switch (scope) {
+      case SearchScope.all:
+        return 'Search All Content';
+      case SearchScope.bco:
+        return 'Search the BCO';
+      case SearchScope.standards:
+        return 'Search the Standards';
+    }
+  }
+
+  /// Subtitle for the empty state (shown before the user types a query).
+  String _scopeEmptySubtitle(SearchScope scope) {
+    switch (scope) {
+      case SearchScope.all:
+        return 'Find text across the BCO and Westminster Standards';
+      case SearchScope.bco:
+        return 'Find text across the Book of Church Order';
+      case SearchScope.standards:
+        return 'Find text across the Westminster Standards';
+    }
   }
 
   Widget _buildHighlightedSnippet(

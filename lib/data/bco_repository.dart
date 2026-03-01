@@ -4,6 +4,9 @@ import '../models/bco_models.dart';
 import 'bco_structure.dart';
 import 'westminster_structure.dart';
 
+/// Defines which document collection the global search should search.
+enum SearchScope { all, bco, standards }
+
 class BcoRepository {
   final Map<String, String> _contentCache = {};
 
@@ -45,17 +48,31 @@ class BcoRepository {
     }
   }
 
-  /// Search across all loaded content.
-  List<SearchResult> search(String query) {
+  /// Search across loaded content, filtered by [scope].
+  ///
+  /// [scope] controls which collection is searched:
+  ///   - all: BCO + Westminster Standards (default, existing behaviour)
+  ///   - bco: BCO chapters only
+  ///   - standards: Westminster Standards only
+  List<SearchResult> search(String query, {SearchScope scope = SearchScope.all}) {
     final results = <SearchResult>[];
     final lowerQuery = query.toLowerCase();
 
-    final allChapters = [
-      ...BcoStructure.allChapters,
-      ...WestminsterStructure.allChapters,
-    ];
+    // Select chapters based on the requested scope.
+    final List<BcoChapter> chaptersToSearch;
+    switch (scope) {
+      case SearchScope.all:
+        chaptersToSearch = [
+          ...BcoStructure.allChapters,
+          ...WestminsterStructure.allChapters,
+        ];
+      case SearchScope.bco:
+        chaptersToSearch = BcoStructure.allChapters;
+      case SearchScope.standards:
+        chaptersToSearch = WestminsterStructure.allChapters;
+    }
 
-    for (final chapter in allChapters) {
+    for (final chapter in chaptersToSearch) {
       final text = chapter.plainText;
       if (text == null) continue;
 
@@ -79,7 +96,7 @@ class BcoRepository {
 
         searchFrom = idx + query.length;
 
-        if (results.where((r) => r.chapter.id == chapter.id).length >= 3) break;
+        if (results.where((r) => r.chapter.id == chapter.id).length >= 10) break;
       }
     }
     return results;
